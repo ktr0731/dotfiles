@@ -6,7 +6,6 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 
-# This will set the default prompt to the walters theme
 prompt walters
 
 typeset -U path
@@ -32,6 +31,6 @@ alias cp='cp -i'
 alias clr='clear'
 alias ls='ls -CF'
 alias la='ls -aCF'
-alias ll='ls -lCF'
+alias ll='ls -l'
 alias l='ls -CF'
 
