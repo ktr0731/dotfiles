@@ -1,36 +1,53 @@
-#環境変数
-export LANG=ja_JP.UTF-8
+#################################################
+#
+#   .zshrc
+#   Created by T.A.
+#
+#################################################
 
-#色をつける
-autoload -Uz compinit promptinit
-compinit
-promptinit
+####  history  ####
+HISTSIZE=200
+HISTFILE=~/.zhistory
+SAVEHIST=180
 
-prompt walters
+####  prompt  ####
+PROMPT='%m{%n}%% '
+RPROMPT='[%~]'
 
-typeset -U path
-path=(~/bin /other/things/in/path $path)
+####  shell options  ####
+setopt auto_cd 
+setopt auto_name_dirs
+setopt extended_history hist_ignore_dups hist_ignore_space prompt_subst
+setopt extended_glob list_types no_beep always_last_prompt
+setopt cdable_vars sh_word_split auto_param_keys pushd_ignore_dups
 
-setopt HIST_IGNORE_DUPS
-
-[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"    history-beginning-search-backward
-[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}"  history-beginning-search-forward
-
-# Prompt
-PROMPT="[%F{9}%n%f@%F{cyan}%m%f] \$ " 
-
-##### ALIASES #####
-alias rm='rmtrash'
-alias ssh='ssh -X'
-alias vi='vim'
-
-#ファイル管理
-alias mv='mv -i'
+####  aliases  ####
+alias cp='cp -ip'
 alias rm='rm -i'
-alias cp='cp -i'
-alias clr='clear'
-alias ls='ls -CF'
-alias la='ls -aCF'
-alias ll='ls -l'
-alias l='ls -CF'
+alias mv='mv -i'
+alias clear='clr'
+alias ls='ls -F'
+alias la='ls -a'
+alias ll='ls -la'
+
+alias pu=pushd
+alias po=popd
+alias dirs='dirs -v'
+
+alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
+
+####  functions  ####
+h () {history $* | less}
+mdcd () {mkdir -p "$@" && cd "$*[-1]"}
+mdpu () {mkdir -p "$@" && pushd "$*[-1]"}
+
+####  suffix  ####
+
+####  binding keys  ####
+bindkey -e
+
+####  completion  ####
+zstyle ':completion:*' format '%BCompleting %d%b'
+zstyle ':completion:*' group-name ''
+autoload -U compinit && compinit
 
