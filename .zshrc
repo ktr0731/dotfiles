@@ -5,27 +5,36 @@
 #
 #################################################
 
-####  history  ####
+####  history config  ####
 HISTSIZE=200
 HISTFILE=~/.zhistory
 SAVEHIST=180
 
-####  prompt  ####
+####  prompt config  ####
 PROMPT='%m{%n}%% '
 RPROMPT='[%~]'
 
 ####  shell options  ####
-setopt auto_cd 
+#---  directory  ---#
+setopt auto_cd              # When name only, interpreted as 'cd name'
+setopt cdable_vars          # If dir not found, add '~/' to top
+setopt pushd_ignore_dups    # Don't add if name duplicated
+
+#--- history ---#
+setopt extended_history     # Save as extended format
+setopt hist_ignore_dups     # Ignore duplicated history
+setopt hist_ignore_space    # Ignore contains space to head
+
 setopt auto_name_dirs
-setopt extended_history hist_ignore_dups hist_ignore_space prompt_subst
+setopt prompt_subst
 setopt extended_glob list_types no_beep always_last_prompt
-setopt cdable_vars sh_word_split auto_param_keys pushd_ignore_dups
+setopt sh_word_split auto_param_keys 
 
 ####  aliases  ####
 alias cp='cp -ip'
 alias rm='rm -i'
 alias mv='mv -i'
-alias clear='clr'
+alias clr='clear'
 alias ls='ls -F'
 alias la='ls -a'
 alias ll='ls -la'
@@ -34,6 +43,7 @@ alias pu=pushd
 alias po=popd
 alias dirs='dirs -v'
 
+#---  language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
 
 ####  functions  ####
