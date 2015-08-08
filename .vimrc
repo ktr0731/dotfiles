@@ -15,10 +15,12 @@ set wildmenu
 set showcmd
 set clipboard=unnamed
 set autoindent
+
+"  indent  "
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set tabstop=4
+
 set nf=hex
 imap <C-j> <esc>
 imap [ []<left>
