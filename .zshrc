@@ -9,6 +9,10 @@
 autoload colors
 colors
 
+####  load all completion  ####
+autoload -U compinit
+compinit
+
 ####  key map  ####
 bindkey -v                  # Use vi style key map
 
@@ -27,9 +31,12 @@ setopt hist_ignore_space    # Ignore contains space to head
 setopt prompt_subst         # Deploy prompt var
 setopt transient_rprompt    # When run command, delete rprompt
 
+#--- completion ---#
+setopt no_beep              # Don't use beep
+
 setopt always_last_prompt   #
 setopt auto_name_dirs
-setopt extended_glob list_types no_beep 
+setopt extended_glob list_types
 setopt sh_word_split auto_param_keys 
 
 ####  history config  ####
