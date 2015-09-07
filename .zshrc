@@ -50,7 +50,6 @@ PROMPT=$'%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{
 RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 
 ####  aliases  ####
-alias cp='cp -ip'
 alias rm='rm -i'
 alias mv='mv -i'
 alias clr='clear'

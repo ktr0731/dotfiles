@@ -1,4 +1,5 @@
 source $VIMRUNTIME/macros/matchit.vim
+
 let b:match_ignorecase = 1
 set t_Co=256
 syntax enable
@@ -16,9 +17,9 @@ set showcmd
 set clipboard=unnamed
 set autoindent
 
-"  indent  "
-set shiftwidth=4
-set softtabstop=4
+"  indent
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 set nf=hex
@@ -28,3 +29,26 @@ imap ( ()<left>
 imap { {}<left>
 imap < <><left>
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+"  NeoBundle
+if 0 | endif
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+" Write plugin here
+NeoBundle 'mattn/emmet-vim'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+NeoBundleCheck
+
