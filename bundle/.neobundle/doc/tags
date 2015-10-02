@@ -1,3 +1,4 @@
+:EditorConfigReload	editorconfig.txt	/*:EditorConfigReload*
 :Emmet	emmet.txt	/*:Emmet*
 :EmmetInstall	emmet.txt	/*:EmmetInstall*
 :NeoBundle	neobundle.txt	/*:NeoBundle*
@@ -40,7 +41,16 @@
 <C-y>k	emmet.txt	/*<C-y>k*
 <C-y>m	emmet.txt	/*<C-y>m*
 <C-y>n	emmet.txt	/*<C-y>n*
+EditorConfig#AddNewHook()	editorconfig.txt	/*EditorConfig#AddNewHook()*
 Emmet	emmet.txt	/*Emmet*
+editorconfig-advanced	editorconfig.txt	/*editorconfig-advanced*
+editorconfig-commands	editorconfig.txt	/*editorconfig-commands*
+editorconfig-contents	editorconfig.txt	/*editorconfig-contents*
+editorconfig-hook	editorconfig.txt	/*editorconfig-hook*
+editorconfig-installation	editorconfig.txt	/*editorconfig-installation*
+editorconfig-overview	editorconfig.txt	/*editorconfig-overview*
+editorconfig-settings	editorconfig.txt	/*editorconfig-settings*
+editorconfig.txt	editorconfig.txt	/*editorconfig.txt*
 emmet	emmet.txt	/*emmet*
 emmet-#	emmet.txt	/*emmet-#*
 emmet-$	emmet.txt	/*emmet-$*
@@ -104,6 +114,13 @@ emmet-variables	emmet.txt	/*emmet-variables*
 emmet-wrap-with-abbreviation	emmet.txt	/*emmet-wrap-with-abbreviation*
 emmet-{}	emmet.txt	/*emmet-{}*
 emmet.txt	emmet.txt	/*emmet.txt*
+g:EditorConfig_core_mode	editorconfig.txt	/*g:EditorConfig_core_mode*
+g:EditorConfig_exclude_patterns	editorconfig.txt	/*g:EditorConfig_exclude_patterns*
+g:EditorConfig_exec_path	editorconfig.txt	/*g:EditorConfig_exec_path*
+g:EditorConfig_max_line_indicator	editorconfig.txt	/*g:EditorConfig_max_line_indicator*
+g:EditorConfig_preserve_formatoptions	editorconfig.txt	/*g:EditorConfig_preserve_formatoptions*
+g:EditorConfig_python_files_dir	editorconfig.txt	/*g:EditorConfig_python_files_dir*
+g:EditorConfig_verbose	editorconfig.txt	/*g:EditorConfig_verbose*
 g:emmet_curl_command	emmet.txt	/*g:emmet_curl_command*
 g:emmet_docroot	emmet.txt	/*g:emmet_docroot*
 g:emmet_html5	emmet.txt	/*g:emmet_html5*

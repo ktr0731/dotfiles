@@ -1,9 +1,20 @@
 source $VIMRUNTIME/macros/matchit.vim
 
 let b:match_ignorecase = 1
+
+" emmet
+let g:user_emmet_leader_key='<c-e>'
+let g:user_emmet_settings = {
+  \ 'lang' : 'ja',
+  \}
+
+" sass
+au BufRead,BufNewFile *.scss set filetype=sass
+
 set t_Co=256
 syntax enable
-colorscheme zenburn
+set background=dark
+colorscheme solarized
 set nowrap
 set noswapfile
 set hlsearch
@@ -30,6 +41,11 @@ imap { {}<left>
 imap < <><left>
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+nnoremap ; :
+nnoremap : ;
+
+inoremap ;; <C-O>$;<CR>
+
 "  NeoBundle
 if 0 | endif
 if has('vim_starting')
@@ -45,6 +61,8 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 " Write plugin here
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 call neobundle#end()
 

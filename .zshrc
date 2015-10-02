@@ -36,8 +36,9 @@ setopt no_beep              # Don't use beep
 
 setopt always_last_prompt   #
 setopt auto_name_dirs
-setopt extended_glob list_types
+setopt list_types
 setopt sh_word_split auto_param_keys 
+#setopt extended_glob
 
 ####  history config  ####
 HISTSIZE=200

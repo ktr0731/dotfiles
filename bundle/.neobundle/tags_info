@@ -1,2 +1,4 @@
+editorconfig-vim
 emmet-vim
 neobundle.vim
+vim-css3-syntax
