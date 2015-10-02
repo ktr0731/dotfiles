@@ -8,6 +8,12 @@ let g:user_emmet_settings = {
   \ 'lang' : 'ja',
   \}
 
+" neocomplete
+let g:neocompelete#enable_at_startup = 1
+let g:neocompelete#enable_smart_case = 1
+let g:neocompelete#enable_ignore_case = 1
+let g:neocomplete#keyword_patterns = '\h\w*'
+
 " sass
 au BufRead,BufNewFile *.scss set filetype=sass
 
@@ -63,6 +69,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'Shougo/neocomplete'
 
 call neobundle#end()
 
