@@ -9,10 +9,13 @@ let g:user_emmet_settings = {
   \}
 
 " neocomplete
-let g:neocompelete#enable_at_startup = 1
-let g:neocompelete#enable_smart_case = 1
-let g:neocompelete#enable_ignore_case = 1
-let g:neocomplete#keyword_patterns = '\h\w*'
+" let g:neocomplete#enable_at_startup = 1
+" let g:neocomplete#enable_ignore_case = 1
+" let g:neocomplete#enable_smart_case = 1
+" if !exists('g:neocomplete#keyword_patterns')
+" let g:neocomplete#keyword_patterns = {}
+" endif
+" let g:neocomplete#keyword_patterns._ = '\h\w*'
 
 " sass
 au BufRead,BufNewFile *.scss set filetype=sass
@@ -40,17 +43,22 @@ set softtabstop=2
 set expandtab
 
 set nf=hex
-imap <C-j> <esc>
-imap [ []<left>
-imap ( ()<left>
-imap { {}<left>
-imap < <><left>
+inoremap <C-j> <esc>
+inoremap [ []<left>
+inoremap ( ()<left>
+inoremap { {}<left>
+inoremap < <><left>
+
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 nnoremap ; :
 nnoremap : ;
 
-inoremap ;; <C-O>$;<CR>
+" cursor
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 "  NeoBundle
 if 0 | endif

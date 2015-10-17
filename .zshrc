@@ -62,6 +62,8 @@ alias pu=pushd
 alias po=popd
 alias dirs='dirs -v'
 
+alias vi='vim'
+
 #---  language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
 
