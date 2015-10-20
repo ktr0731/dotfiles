@@ -3,3 +3,4 @@ emmet-vim
 neobundle.vim
 neocomplete
 vim-css3-syntax
+vim-smartinput

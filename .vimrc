@@ -9,13 +9,32 @@ let g:user_emmet_settings = {
   \}
 
 " neocomplete
-" let g:neocomplete#enable_at_startup = 1
-" let g:neocomplete#enable_ignore_case = 1
-" let g:neocomplete#enable_smart_case = 1
-" if !exists('g:neocomplete#keyword_patterns')
-" let g:neocomplete#keyword_patterns = {}
-" endif
-" let g:neocomplete#keyword_patterns._ = '\h\w*'
+let g:neocomplete#enable_at_startup = 1    " 使用する
+let g:neocomplete#max_list = 5             " 候補の数
+let g:neocomplete#enable_ignore_case = 1   " 
+let g:neocomplete#enable_auto_select = 1   " 自動選択
+let g:neocomplete#enable_smart_case = 1    " 大文字小文字を無視
+
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" smartinput
+
+" backspace で削除
+imap <expr> <BS>
+      \ neocomplete#smart_close_popup() . "\<Plug>(smartinput_BS)"
+
+" <C-h> で閉じる
+imap <expr> <C-h>
+      \ neocomplete#smart_close_popup()
+
+" Enterで候補選択する なかったら普通に改行
+imap <expr> <CR> pumvisible() ?
+      \ neocomplete#close_popup() : "\<Plug>(smartinput_CR)"
+
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+  let g:neocomplete#keyword_patterns._ = '\h\w*'
 
 " sass
 au BufRead,BufNewFile *.scss set filetype=sass
@@ -24,7 +43,9 @@ set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
+set backspace=indent,eol,start
 set nowrap
+set cindent
 set noswapfile
 set hlsearch
 set ignorecase
@@ -32,6 +53,7 @@ set smartcase
 set ruler
 set number
 set list
+set listchars=tab:>-,trail:.
 set wildmenu
 set showcmd
 set clipboard=unnamed
@@ -44,10 +66,6 @@ set expandtab
 
 set nf=hex
 inoremap <C-j> <esc>
-inoremap [ []<left>
-inoremap ( ()<left>
-inoremap { {}<left>
-inoremap < <><left>
 
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
@@ -78,10 +96,18 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'Shougo/neocomplete'
-
-call neobundle#end()
-
-filetype plugin indent on
+NeoBundle 'kana/vim-smartinput'
 
 NeoBundleCheck
+call neobundle#end()
+filetype plugin indent on
 
+call smartinput#map_to_trigger('i', '<Plug>(smartinput_BS)',
+      \                        '<BS>',
+      \                        '<BS>')
+call smartinput#map_to_trigger('i', '<Plug>(smartinput_C-h)',
+      \                        '<BS>',
+      \                        '<C-h>')
+call smartinput#map_to_trigger('i', '<Plug>(smartinput_CR)',
+      \                        '<Enter>',
+      \                        '<Enter>')

@@ -72,6 +72,11 @@ h () {history $* | less}
 mdcd () {mkdir -p "$@" && cd "$*[-1]"}
 mdpu () {mkdir -p "$@" && pushd "$*[-1]"}
 
+# dict
+function dict() {
+  grep $1 $HOME/utils/gene.txt -A 1 -wi --color
+}
+
 ####  suffix  ####
 
 ####  binding keys  ####
