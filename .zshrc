@@ -5,6 +5,10 @@
 #
 #################################################
 
+### use japanese ###
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 ####  load colors  ####
 autoload colors
 colors
@@ -21,6 +25,7 @@ bindkey -v                  # Use vi style key map
 setopt auto_cd              # When name only, interpreted as 'cd name'
 setopt cdable_vars          # If dir not found, add '~/' to top
 setopt pushd_ignore_dups    # Don't add if name duplicated
+setopt auto_pushd           # Back to dires
 
 #--- history ---#
 setopt extended_history     # Save as extended format
@@ -30,7 +35,10 @@ setopt hist_ignore_space    # Ignore contains space to head
 #--- prompt ---#
 setopt prompt_subst         # Deploy prompt var
 setopt transient_rprompt    # When run command, delete rprompt
-
+autoload -U promptinit
+promptinit
+autoload -Uz colors
+colors
 #--- completion ---#
 setopt no_beep              # Don't use beep
 
@@ -38,7 +46,7 @@ setopt always_last_prompt   #
 setopt auto_name_dirs
 setopt list_types
 setopt sh_word_split auto_param_keys 
-#setopt extended_glob
+setopt correct
 
 ####  history config  ####
 HISTSIZE=200
@@ -64,6 +72,8 @@ alias dirs='dirs -v'
 
 alias vi='vim'
 
+alias sl='sl -e'
+
 #---  language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
 
@@ -72,9 +82,9 @@ h () {history $* | less}
 mdcd () {mkdir -p "$@" && cd "$*[-1]"}
 mdpu () {mkdir -p "$@" && pushd "$*[-1]"}
 
-# dict
-function dict() {
-  grep $1 $HOME/utils/gene.txt -A 1 -wi --color
+# dic
+function dic() {
+  grep "$1" $HOME/utils/gene.txt -A 1 -wi --color
 }
 
 ####  suffix  ####
