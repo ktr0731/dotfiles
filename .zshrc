@@ -5,13 +5,16 @@
 #
 #################################################
 
-### use japanese ###
+#### use japanese ####
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 ####  load colors  ####
 autoload colors
 colors
+
+#### load vcs_info ####
+autoload -Uz vcs_info
 
 ####  load all completion  ####
 autoload -U compinit
@@ -54,8 +57,15 @@ HISTFILE=~/.zhistory
 SAVEHIST=180
 
 ####  prompt config  ####
-PROMPT=$'%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{${fg[red]}%})%n%{${reset_color}%}@%(?.%{${fg[yellow]}%}.%{${fg[red]}%})%m%{${reset_color}%} %# '
+zstyle ':vcs_info:*' enable git svn
+zstyle ':vcs_info:*' formats '[%s %F{green}%b%f'
+zstyle ':vcs_info:*' actionformats '%s)-[* %F{green}%b%f(%F{red}%a%f)'
+precmd () {
+  LANG=en_US.UTF-8 vcs_info
+  LOADAVG=$(sysctl -n vm.loadavg | perl -anpe '$_=$F[1]')
+}
 
+PROMPT=$'${vcs_info_msg_0_}] %6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{${fg[red]}%})%n%{${reset_color}%}@%(?.%{${fg[yellow]}%}.%{${fg[red]}%})%m%{${reset_color}%} %# '
 RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 
 ####  aliases  ####

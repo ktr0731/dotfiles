@@ -39,6 +39,27 @@ endif
 " sass
 au BufRead,BufNewFile *.scss set filetype=sass
 
+" unite
+noremap <C-p> :Unite buffer<CR>
+noremap <C-n> :Unite -buffer-name=file file<CR>
+noremap <C-z> :Unite file_mru<CR>
+noremap :uff :<C-u>UnitewithBufferDir file -buffer-name=file<CR>
+" split
+au FileType unite nnoremap <silent> <buffer> <expr> <C-j> Unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-j> Unite#do_action('split')
+" vsplit
+au FileType unite nnoremap <silent> <buffer> <expr> <C-k> Unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-k> Unite#do_action('vsplit')
+" End by esc*2
+au FileType Unite nnoremap <silent> <buffer> <Esc><Esc> :q<CR>
+au FileType Unite inoremap <silent> <buffer> <Esc><Esc> <Esc>:q<CR>
+
+" lightline
+let g:lightline = {
+  \ 'colorscheme': 'solarized'
+  \ }
+
+set laststatus=2
 set t_Co=256
 syntax enable
 set background=dark
@@ -97,6 +118,11 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'Shougo/neocomplete'
 NeoBundle 'kana/vim-smartinput'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
 
 NeoBundleCheck
 call neobundle#end()
