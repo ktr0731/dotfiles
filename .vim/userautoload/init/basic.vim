@@ -4,8 +4,6 @@ let b:match_ignorecase = 1
 
 syntax enable
 set laststatus=2
-set t_Co=256
-set background=dark
 set backspace=indent,eol,start
 set nowrap
 set cindent

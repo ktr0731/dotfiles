@@ -34,6 +34,8 @@ setopt auto_pushd           # Back to dires
 setopt extended_history     # Save as extended format
 setopt hist_ignore_dups     # Ignore duplicated history
 setopt hist_ignore_space    # Ignore contains space to head
+setopt hist_expand          # Expand history when comp
+setopt share_history        # Share history between zsh
 
 #--- prompt ---#
 setopt prompt_subst         # Deploy prompt var
@@ -52,9 +54,9 @@ setopt sh_word_split auto_param_keys
 setopt correct
 
 ####  history config  ####
-HISTSIZE=200
-HISTFILE=~/.zhistory
-SAVEHIST=180
+export HISTFILE=~/.zhistory
+export HISTSIZE=1000
+export SAVEHIST=10000
 
 ####  prompt config  ####
 zstyle ':vcs_info:*' enable git svn
@@ -84,6 +86,7 @@ alias vi='vim'
 
 alias sl='sl -e'
 
+
 #---  language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
 
@@ -107,3 +110,6 @@ zstyle ':completion:*' format '%BCompleting %d%b'
 zstyle ':completion:*' group-name ''
 autoload -U compinit && compinit
 
+print '\nTime waits for no one.'
+print '             ↑'
+print '             ( ﾟД ﾟ)ハァ?\n'

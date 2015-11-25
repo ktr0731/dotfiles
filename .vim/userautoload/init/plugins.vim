@@ -22,6 +22,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'kevinw/pyflakes-vim'
 
 NeoBundleCheck
 call neobundle#end()
