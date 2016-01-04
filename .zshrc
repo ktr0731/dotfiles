@@ -50,7 +50,7 @@ setopt no_beep              # Don't use beep
 setopt always_last_prompt   #
 setopt auto_name_dirs
 setopt list_types
-setopt sh_word_split auto_param_keys 
+setopt sh_word_split auto_param_keys
 setopt correct
 
 ####  history config  ####
@@ -109,6 +109,29 @@ bindkey -e
 zstyle ':completion:*' format '%BCompleting %d%b'
 zstyle ':completion:*' group-name ''
 autoload -U compinit && compinit
+
+###  zplug  ###
+source ~/.zplug/zplug
+
+### enhancd ###
+zplug "junegunn/fzf-bin", \
+    as:command, \
+    file:"fzf", \
+    from:gh-r, \
+    | zplug "b4b4r07/enhancd", of:enhancd.sh
+
+# check コマンドで未インストール項目があるかどうか verbose にチェックし
+# false のとき（つまり未インストール項目がある）y/N プロンプトで
+# インストールする
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# プラグインを読み込み、コマンドにパスを通す
+zplug load --verbose
 
 print '\nTime waits for no one.'
 print '             ↑'

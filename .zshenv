@@ -7,11 +7,13 @@
 
 limit coredumpsize 0
 
-####  set command search path  ####
-typeset -U path
-path=($path /usr/*/bin(N-/) /usr/local/*/bin(N-/) /var/*/bin(N-/))
+# use language
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
-####  set remote command env  ####
+#  set command search path
+typeset -U path
+
+#  set remote command env
 export RSYNC_RSH=ssh
 export CVS_RSH=ssh
-
