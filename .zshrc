@@ -82,8 +82,6 @@ alias pu=pushd
 alias po=popd
 alias dirs='dirs -v'
 
-alias vi='vim'
-
 alias sl='sl -e'
 
 
@@ -120,6 +118,12 @@ zplug "junegunn/fzf-bin", \
     from:gh-r, \
     | zplug "b4b4r07/enhancd", of:enhancd.sh
 
+### zsh-syntax-highlighting ###
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
+
+### zsh-users/zsh-completions ###
+zplug "zsh-users/zsh-completions"
+
 # check コマンドで未インストール項目があるかどうか verbose にチェックし
 # false のとき（つまり未インストール項目がある）y/N プロンプトで
 # インストールする
@@ -136,3 +140,6 @@ zplug load --verbose
 print '\nTime waits for no one.'
 print '             ↑'
 print '             ( ﾟД ﾟ)ハァ?\n'
+
+export NVM_DIR="/Users/lycoris/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
