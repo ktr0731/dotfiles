@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/lycoris/works/ej_blog/wp-blog/wordpress'
-let g:netrw_dirhist_2='/Users/lycoris/works/ej_blog/wp-blog/wordpress/wp-admin'
-let g:netrw_dirhist_3='/Users/lycoris/works/ej_blog/wp-blog/wordpress/wp-admin/includes'
-let g:netrw_dirhist_4='/Users/lycoris/AndroidStudioProjects/Groover/.git'
-let g:netrw_dirhist_5='/Users/lycoris/works/namie-tablet-html5/www_dev/app/modules/view/login'
-let g:netrw_dirhist_6='/Users/lycoris/works/namie-tablet-html5/www_dev/app/modules/model/article'
-let g:netrw_dirhist_7='/Users/lycoris/works/namie-tablet-html5/www_dev/app/modules/collection/article'
-let g:netrw_dirhist_8='/Users/lycoris/works/namie-tablet-html5/www_dev/app/modules/collection'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/lycoris/works/namie-tablet-html5-bitbucket/www_dev'
+let g:netrw_dirhist_2='/Users/lycoris/works/namie-tablet-html5-bitbucket/www_dev/build'
+let g:netrw_dirhist_3='/Users/lycoris/works/namie-tablet-html5-bitbucket/www_dev'

@@ -24,6 +24,8 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'kevinw/pyflakes-vim'
+NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'mattn/jscomplete-vim'
 
 NeoBundleCheck
 call neobundle#end()

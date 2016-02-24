@@ -78,6 +78,8 @@ alias ls='ls -F'
 alias la='ls -a'
 alias ll='ls -la'
 
+alias vi='vim'
+
 alias pu=pushd
 alias po=popd
 alias dirs='dirs -v'
