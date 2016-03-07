@@ -3,20 +3,38 @@ source $VIMRUNTIME/macros/matchit.vim
 let b:match_ignorecase = 1
 
 syntax enable
+
+" Show bottom status
 set laststatus=2
+
 set backspace=indent,eol,start
+
 set nowrap
-set cindent
+
+" Not create swap file
 set noswapfile
+
 set hlsearch
+
+" Search options
 set ignorecase
 set smartcase
-set ruler
-set number
-set list
-set listchars=tab:>-,trail:.
-set wildmenu
-set showcmd
-set clipboard=unnamed
-set autoindent
 
+set ruler
+
+" Show row number
+set number
+
+" Show space char
+set list
+set listchars=tab:>-,trail:.,nbsp:+
+
+" Use tab completion
+set wildmenu
+
+set showcmd
+
+" Use clipboard of system
+set clipboard=unnamed
+
+set autoindent

@@ -1,9 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/lycoris/works/namie-tablet-html5-bitbucket/www_dev'
-let g:netrw_dirhist_2='/Users/lycoris/works/namie-tablet-html5-bitbucket/www_dev/build'
-let g:netrw_dirhist_3='/Users/lycoris/works/namie-tablet-html5-bitbucket/www_dev'
-let g:netrw_dirhist_4='/Users/lycoris'
-let g:netrw_dirhist_5='/Users'
-let g:netrw_dirhist_6='/Users/lycoris/works/namie-gitlab/www_dev/app/templates/pen/article'
-let g:netrw_dirhist_7='/Users/lycoris/works/namie-gitlab/www_dev/app/modules'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/lycoris'
+let g:netrw_dirhist_2='/Users/lycoris/private_works'
+let g:netrw_dirhist_3='/Users/lycoris/private_works/syfm-old'
+let g:netrw_dirhist_4='/Users/lycoris/private_works/syfm-old/html'
+let g:netrw_dirhist_5='/Users/lycoris/private_works/syfm-old'
