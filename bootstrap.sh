@@ -20,5 +20,5 @@ for f in .??*
 do
   [ "$f" = ".git" ] && continue
 
-  ln -s "$ROOT"/"$f" "$HOME"/"$f"
+  ln -sf "$ROOT"/dotfiles-master/"$f" "$HOME"/"$f"
 done
