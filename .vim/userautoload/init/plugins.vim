@@ -1,32 +1,40 @@
-"  NeoBundle
-if 0 | endif
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"  [Start] dein Scripts  --------------------
+if &compatible
+  set nocompatible               " Be iMproved
 endif
+" Required :
+set runtimepath^=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+" Required :
+call dein#begin(expand('~/.vim/bundle/'))
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+" Required :
+call dein#add('Shougo/dein.vim')
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'kevinw/pyflakes-vim'
-NeoBundle 'scrooloose/syntastic.git'
-NeoBundle 'mattn/jscomplete-vim'
+" My plugins
+call dein#add('mattn/emmet-vim')
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('editorconfig/editorconfig-vim')
+call dein#add('Shougo/neocomplete')
+call dein#add('kana/vim-smartinput')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neomru.vim')
+call dein#add('itchyny/lightline.vim')
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('davidhalter/jedi-vim')
+call dein#add('kevinw/pyflakes-vim')
+call dein#add('scrooloose/syntastic')
+call dein#add('mattn/jscomplete-vim')
 
-NeoBundleCheck
-call neobundle#end()
+" Required :
+call dein#end()
+
+" Required :
 filetype plugin indent on
+
+" If some plugins not installed on startup
+if dein#check_install()
+  call dein#install()
+endif
+"  [End] dein Scripts --------------------
