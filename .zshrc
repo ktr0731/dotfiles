@@ -74,9 +74,16 @@ RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 alias rm='rm -i'
 alias mv='mv -i'
 alias clr='clear'
-alias ls='ls -F'
-alias la='ls -a'
-alias ll='ls -la'
+
+if [ "$(uname)" = 'Darwin' ]; then
+  alias ls='ls -FG'
+  alias la='ls -aG'
+  alias ll='ls -laG'
+else
+  alias ls='ls -F --color=auto'
+  alias la='ls -a --color=auto'
+  alias ll='ls -la --color=auto'
+fi
 
 alias vi='vim'
 
