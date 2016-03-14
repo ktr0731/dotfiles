@@ -85,7 +85,7 @@ else
   alias ll='ls -la --color=auto'
 fi
 
-alias vi='vim'
+alias vi='nvim'
 
 alias pu=pushd
 alias po=popd
@@ -146,11 +146,7 @@ fi
 # プラグインを読み込み、コマンドにパスを通す
 zplug load --verbose
 
-
-
-
-
-
+clear
 echo ""
 echo "                                                              ............"
 echo "           .|'''.|     .             ||                       ||'' ...'|||          ."
