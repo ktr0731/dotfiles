@@ -2,7 +2,7 @@ source $VIMRUNTIME/macros/matchit.vim
 
 let b:match_ignorecase = 1
 
-let g:python3_host_prog = expand($HOME) . "/.pyenv/shims/python"
+let g:python3_host_prog = expand($HOME) . "/.pyenv/shims/python3"
 
 syntax enable
 
