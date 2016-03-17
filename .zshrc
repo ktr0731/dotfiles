@@ -107,6 +107,11 @@ function dic() {
   grep "$1" $HOME/utils/gene.txt -A 1 -wi --color
 }
 
+# Do ls when change current directory
+chpwd () {
+  ls
+}
+
 ####  suffix  ####
 
 ####  binding keys  ####
