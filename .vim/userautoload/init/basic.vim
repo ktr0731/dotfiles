@@ -40,3 +40,6 @@ set showcmd
 set clipboard=unnamed
 
 set autoindent
+
+" Margin scroll
+set scrolloff=5

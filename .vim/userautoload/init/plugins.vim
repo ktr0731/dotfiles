@@ -11,6 +11,7 @@ call dein#begin(expand('~/.vim/bundle/'))
 call dein#add('Shougo/dein.vim')
 
 " My plugins
+call dein#add('altercation/vim-colors-solarized')
 call dein#add('mattn/emmet-vim')
 call dein#add('hail2u/vim-css3-syntax')
 call dein#add('editorconfig/editorconfig-vim')
@@ -26,6 +27,7 @@ call dein#add('davidhalter/jedi-vim')
 call dein#add('kevinw/pyflakes-vim')
 call dein#add('scrooloose/syntastic')
 call dein#add('mattn/jscomplete-vim')
+call dein#add('plasticboy/vim-markdown')
 
 " Required :
 call dein#end()
