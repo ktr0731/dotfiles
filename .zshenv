@@ -17,3 +17,12 @@ typeset -U path
 #  set remote command env
 export RSYNC_RSH=ssh
 export CVS_RSH=ssh
+
+# use vim
+if type nvim > /dev/null 2>&1; then
+  EDITOR='nvim'
+elif type vim > /dev/null 2>&1; then
+  EDITOR='vim'
+else
+  EDITOR='vi'
+fi

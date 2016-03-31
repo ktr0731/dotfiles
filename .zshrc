@@ -55,8 +55,8 @@ setopt correct
 
 ####  history config  ####
 export HISTFILE=~/.zhistory
-export HISTSIZE=1000
-export SAVEHIST=10000
+export HISTSIZE=10000
+export SAVEHIST=50000
 
 ####  prompt config  ####
 zstyle ':vcs_info:*' enable git svn
@@ -71,21 +71,26 @@ PROMPT=$'${vcs_info_msg_0_}%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.
 RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 
 ####  aliases  ####
+#---  command  ---#
 alias rm='rm -i'
 alias mv='mv -i'
 alias clr='clear'
 
 if [ "$(uname)" = 'Darwin' ]; then
   alias ls='ls -FG'
-  alias la='ls -aG'
-  alias ll='ls -laG'
+  alias la='ls -aFG'
+  alias ll='ls -lFG'
 else
   alias ls='ls -F --color=auto'
-  alias la='ls -a --color=auto'
-  alias ll='ls -la --color=auto'
+  alias la='ls -aF --color=auto'
+  alias ll='ls -lF --color=auto'
 fi
 
-alias vi='nvim'
+if type nvim > /dev/null 2>&1; then
+  alias vi='nvim'
+elif type vim > /dev/null 2>&1; then
+  alias vi='vim'
+fi
 
 alias pu=pushd
 alias po=popd
@@ -93,6 +98,10 @@ alias dirs='dirs -v'
 
 alias sl='sl -e'
 
+#---  suffix   --#
+alias -s py='python'
+alias -s js='js'
+alias -s php='php'
 
 #---  language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
@@ -151,7 +160,6 @@ fi
 # プラグインを読み込み、コマンドにパスを通す
 zplug load --verbose
 
-clear
 echo ""
 echo "                                                              ............"
 echo "           .|'''.|     .             ||                       ||'' ...'|||          ."

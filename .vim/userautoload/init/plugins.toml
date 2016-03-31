@@ -1,0 +1,21 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'kana/vim-smartinput'

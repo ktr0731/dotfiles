@@ -1,0 +1,39 @@
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_i = 1
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = 'unite.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_source = 'deoplete.nvim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+on_source = 'neosnippet.vim'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_i = 1
+
+[[plugins]]
+repo = 'mattn/jscomplete-vim'
+on_i = 1
+on_ft = ['js']
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
