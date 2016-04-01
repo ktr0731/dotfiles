@@ -36,4 +36,4 @@ on_ft = ['js']
 
 [[plugins]]
 repo = 'cespare/vim-toml'
-on_ft = ['toml']
+on_ft = 'toml'

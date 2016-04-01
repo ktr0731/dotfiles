@@ -92,6 +92,8 @@ elif type vim > /dev/null 2>&1; then
   alias vi='vim'
 fi
 
+alias sha1='openssl sha1'
+
 alias pu=pushd
 alias po=popd
 alias dirs='dirs -v'
