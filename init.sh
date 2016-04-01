@@ -1,6 +1,6 @@
 #! /bin/sh
 
-DOTPATH=~/.dotfiles
+DOTPATH=~/dotfiles
 RIPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
 
 ROOT=$(cd $(dirname $0);pwd)
