@@ -37,3 +37,7 @@ on_ft = ['js']
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+on_i = 1
