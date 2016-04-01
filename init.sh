@@ -18,9 +18,9 @@ if [ ! -e $DOTPATH ]; then
 fi
 
 # make synbolic links
-#for f in .??*
-#do
-#  [ "$f" = ".git" ] && continue
+for f in .??*
+do
+  [ "$f" = ".git" ] && continue
 
-#  ln -sf "$ROOT"/dotfiles-master/"$f" "$HOME"/"$f"
-#done
+  ln -sf "$ROOT"/dotfiles-master/"$f" "$HOME"/"$f"
+done
