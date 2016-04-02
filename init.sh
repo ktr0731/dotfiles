@@ -1,15 +1,16 @@
 #! /bin/sh
 
-DOTPATH=~/dotfiles
+DOTPATH=$HOME/dotfiles
 RIPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
 
 ROOT=$(cd $(dirname $0);pwd)
 
 if [ ! -e $DOTPATH ]; then
-  # clone repository
+  # Clone repository
   which git > /dev/null 2>&1
   if [ $? -eq 0 ]; then
     git clone --recursive "$RIPOSITORY_URL" "$DOTPATH"
+    cd $DOTPATH
 
   else
     echo "Please install git!"
@@ -17,10 +18,13 @@ if [ ! -e $DOTPATH ]; then
   fi
 fi
 
-# make synbolic links
+# Make synbolic links
 for f in .??*
 do
-  [ "$f" = ".git" ] && continue
+  # Exclude files
+  if [ "$f" = ".git" ] || [ "$f" = ".gitignore" ] || [ "$f" = ".DS_Store" ];then
+    continue
+  fi
 
-  ln -sf "$ROOT"/dotfiles-master/"$f" "$HOME"/"$f"
+  ln -sf "$DOTPATH"/"$f" "$HOME"/"$f"
 done
