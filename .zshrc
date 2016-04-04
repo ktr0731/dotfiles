@@ -134,6 +134,10 @@ zstyle ':completion:*' group-name ''
 autoload -U compinit && compinit
 
 ###  zplug  ###
+if [ ! -e $HOME"/.zplug" ]; then
+  git clone https://github.com/b4b4r07/zplug ~/.zplug
+fi
+
 source ~/.zplug/zplug
 
 ### enhancd ###
