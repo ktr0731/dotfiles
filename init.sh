@@ -1,7 +1,7 @@
 #! /bin/sh
 
 DOTPATH=$HOME/dotfiles
-RIPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
+REPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
 
 ROOT=$(cd $(dirname $0);pwd)
 
@@ -9,7 +9,7 @@ if [ ! -e $DOTPATH ]; then
   # Clone repository
   which git > /dev/null 2>&1
   if [ $? -eq 0 ]; then
-    git clone --recursive "$RIPOSITORY_URL" "$DOTPATH"
+    git clone --recursive "$REPOSITORY_URL" "$DOTPATH"
     cd $DOTPATH
 
   else
@@ -28,3 +28,6 @@ do
 
   ln -sf "$DOTPATH"/"$f" "$HOME"/"$f"
 done
+
+# Install zplug
+
