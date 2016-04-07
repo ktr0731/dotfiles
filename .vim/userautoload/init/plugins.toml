@@ -6,9 +6,6 @@ repo = 'Shougo/vimproc.vim'
 build = 'make'
 
 [[plugins]]
-repo = 'altercation/vim-colors-solarized'
-
-[[plugins]]
 repo = 'hail2u/vim-css3-syntax'
 
 [[plugins]]
