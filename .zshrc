@@ -17,8 +17,8 @@ colors
 autoload -Uz vcs_info
 
 ####  load all completion  ####
-autoload -U compinit
-compinit
+fpath=($HOME/.zsh/completions $fpath)
+autoload -U compinit && compinit
 
 ####  key map  ####
 bindkey -v                  # Use vi style key map
