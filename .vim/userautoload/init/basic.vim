@@ -43,3 +43,5 @@ set autoindent
 
 " Margin scroll
 set scrolloff=5
+
+set nobackup
