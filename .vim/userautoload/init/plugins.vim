@@ -30,7 +30,7 @@ if dein#load_state(s:dein_dir)
 endif
 
 if dein#check_install()
-  call dein#update()
+  call dein#install()
 endif
 
 " Required :
