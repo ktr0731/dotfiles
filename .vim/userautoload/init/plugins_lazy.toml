@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'mattn/emmet-vim'
+on_ft = ['html', 'htm']
 on_i = 1
 
 [[plugins]]
@@ -31,9 +32,13 @@ on_i = 1
 
 [[plugins]]
 repo = 'mattn/jscomplete-vim'
-on_i = 1
 on_ft = ['js']
+on_i = 1
 
 [[plugins]]
 repo = 'cespare/vim-toml'
-on_ft = 'toml'
+on_ft = ['toml']
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+on_i = 1

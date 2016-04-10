@@ -108,9 +108,6 @@ alias -s php='php'
 #---  language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
 
-#---  GitHub  ---#
-eval "$(hub alias -s)"
-
 ####  functions  ####
 h () {history $* | less}
 mdcd () {mkdir -p "$@" && cd "$*[-1]"}
