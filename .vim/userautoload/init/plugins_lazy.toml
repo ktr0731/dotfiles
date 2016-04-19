@@ -32,7 +32,7 @@ on_i = 1
 
 [[plugins]]
 repo = 'mattn/jscomplete-vim'
-on_ft = ['js']
+on_ft = ['javascript']
 on_i = 1
 
 [[plugins]]
@@ -53,5 +53,5 @@ repo = 'hail2u/vim-css3-syntax'
 on_ft = ['css']
 
 [[plugins]]
-repo = 'othree/yajs.vim'
-on_ft = ['js']
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript']
