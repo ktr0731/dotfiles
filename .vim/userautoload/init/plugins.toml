@@ -19,3 +19,7 @@ repo = 'kana/vim-smartinput'
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
+

@@ -27,10 +27,6 @@ repo = 'Shougo/neosnippet-snippets'
 on_source = 'neosnippet.vim'
 
 [[plugins]]
-repo = 'scrooloose/syntastic'
-on_i = 1
-
-[[plugins]]
 repo = 'mattn/jscomplete-vim'
 on_ft = ['javascript']
 on_i = 1
