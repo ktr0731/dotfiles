@@ -72,9 +72,7 @@ RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 
 ####  aliases  ####
 #---  command  ---#
-alias rm='rm -i'
-alias mv='mv -i'
-alias clr='clear'
+alias cdg='cd-gitroot'
 
 if [ "$(uname)" = 'Darwin' ]; then
   alias ls='ls -FG'
@@ -152,6 +150,9 @@ zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 ### zsh-users/zsh-completions ###
 zplug "zsh-users/zsh-completions"
+
+### cd-gitroot
+zplug "mollifier/cd-gitroot"
 
 # check コマンドで未インストール項目があるかどうか verbose にチェックし
 # false のとき（つまり未インストール項目がある）y/N プロンプトで
