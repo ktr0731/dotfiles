@@ -14,10 +14,10 @@ if !dein#load_state(s:dein_dir)
   finish
 endif
 
-let s:toml      = '~/.vim/userautoload/init/plugins.toml'
-let s:lazy_toml = '~/.vim/userautoload/init/plugins_lazy.toml'
+let s:toml      = '~/.vim/rc/init/plugins.toml'
+let s:lazy_toml = '~/.vim/rc/init/plugins_lazy.toml'
 
-call dein#begin(s:dein_dir, [expand('<sfile>')] + split(glob('~/.vim/userautoload/init/*.toml'), '\n'))
+call dein#begin(s:dein_dir, [s:toml, s:lazy_toml])
 
 call dein#load_toml(s:toml,      {'lazy': 0})
 call dein#load_toml(s:lazy_toml, {'lazy': 1})

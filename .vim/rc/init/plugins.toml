@@ -28,3 +28,7 @@ repo = 'tpope/vim-pathogen'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'benekastah/neomake'
+on_i = 1
