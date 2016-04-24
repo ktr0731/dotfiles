@@ -3,7 +3,7 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-"set runtimepath^=~/.vim/bundle/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -16,7 +16,7 @@ endif
 
 if dein#load_state(s:dein_dir)
 
-  let s:toml = '~/.vim/userautoload/init/plugins.toml'
+  let s:toml      = '~/.vim/userautoload/init/plugins.toml'
   let s:lazy_toml = '~/.vim/userautoload/init/plugins_lazy.toml'
 
   call dein#begin(s:dein_dir)

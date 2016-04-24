@@ -23,3 +23,8 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 
+[[plugins]]
+repo = 'tpope/vim-pathogen'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
