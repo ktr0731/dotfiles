@@ -1,2 +1,2 @@
-runtime! userautoload/init/**/*.vim
-runtime! userautoload/plugins/**/*.vim
+runtime! rc/init/**/*.vim
+runtime! rc/plugins/**/*.vim
