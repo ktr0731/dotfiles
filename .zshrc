@@ -1,10 +1,3 @@
-#################################################
-#
-#   .zshrc
-#   Created by T.A.
-#
-#################################################
-
 #### use japanese ####
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -47,7 +40,7 @@ colors
 #--- completion ---#
 setopt no_beep              # Don't use beep
 
-setopt always_last_prompt   #
+setopt always_last_prompt
 setopt auto_name_dirs
 setopt list_types
 setopt sh_word_split auto_param_keys
@@ -121,8 +114,6 @@ chpwd () {
   ls
 }
 
-####  suffix  ####
-
 ####  binding keys  ####
 bindkey -e
 
@@ -184,7 +175,3 @@ The fish that lives in the sea doesn't know the world in the land. It also ruins
            It can be said that this is an final ultimatum from the god to the people who can fight.
 
 STEINS_GATE
-
-export NVM_DIR="/Users/lycoris/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
