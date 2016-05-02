@@ -29,6 +29,13 @@ path=(
   $path
 )
 
+PYTHONPATH=(
+  $PYTHONPATH
+  /usr/local/google_appengine(N-/)
+  /usr/local/google_appengine/lib(N-/)
+  /usr/local/google_appengine/lib/yaml/lib(N-/)
+)
+
 eval "$(pyenv init -)"
 
 #  set remote command env

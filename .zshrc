@@ -95,6 +95,7 @@ alias sl='sl -e'
 alias -s py='python'
 alias -s js='js'
 alias -s php='php'
+alias -s rb='ruby'
 
 #---  language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
