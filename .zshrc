@@ -71,10 +71,12 @@ if [ "$(uname)" = 'Darwin' ]; then
   alias ls='ls -FG'
   alias la='ls -aFG'
   alias ll='ls -lFG'
+  alias lla='ls -alFG'
 else
   alias ls='ls -F --color=auto'
   alias la='ls -aF --color=auto'
   alias ll='ls -lF --color=auto'
+  alias lla='ls -alF --color=auto'
 fi
 
 if type nvim > /dev/null 2>&1; then
