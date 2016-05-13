@@ -25,6 +25,7 @@ export PYENV_ROOT=$HOME/.pyenv
 path=(
   $HOME/Library/Android/sdk/platform-tools(N-/)
   $HOME/Library/Android/sdk/tools(N-/)
+  $HOME/bin(N-/)
   $PYENV_ROOT/bin(N-/)
   $path
 )

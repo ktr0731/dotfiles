@@ -3,8 +3,6 @@
 DOTPATH=$HOME/dotfiles
 REPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
 
-ROOT=$(cd $(dirname $0);pwd)
-
 EXIST_GIT=0
 
 
