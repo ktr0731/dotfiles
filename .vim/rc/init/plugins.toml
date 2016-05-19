@@ -31,4 +31,6 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'benekastah/neomake'
-on_i = 1
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'

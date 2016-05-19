@@ -4,10 +4,6 @@ on_ft = ['html', 'htm']
 on_i = 1
 
 [[plugins]]
-repo = 'editorconfig/editorconfig-vim'
-on_i = 1
-
-[[plugins]]
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
