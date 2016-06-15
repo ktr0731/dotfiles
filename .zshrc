@@ -1,43 +1,44 @@
-#### use japanese ####
+#### Use japanese ####
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-####  load colors  ####
+####  Load colors  ####
 autoload colors
 colors
 
-#### load vcs_info ####
+#### Load vcs_info ####
 autoload -Uz vcs_info
 
-####  load all completion  ####
+####  Load all completion  ####
 fpath=($HOME/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
-####  key map  ####
+####  Key map  ####
 bindkey -v                  # Use vi style key map
 
-####  shell options  ####
-#---  directory  ---#
+####  Shell options  ####
+#---  Directory  ---#
 setopt auto_cd              # When name only, interpreted as 'cd name'
 setopt cdable_vars          # If dir not found, add '~/' to top
 setopt pushd_ignore_dups    # Don't add if name duplicated
 setopt auto_pushd           # Back to dires
 
-#--- history ---#
+#--- History ---#
 setopt extended_history     # Save as extended format
 setopt hist_ignore_dups     # Ignore duplicated history
 setopt hist_ignore_space    # Ignore contains space to head
 setopt hist_expand          # Expand history when comp
 setopt share_history        # Share history between zsh
 
-#--- prompt ---#
+#--- Prompt ---#
 setopt prompt_subst         # Deploy prompt var
 setopt transient_rprompt    # When run command, delete rprompt
 autoload -U promptinit
 promptinit
 autoload -Uz colors
 colors
-#--- completion ---#
+
+#--- Completion ---#
 setopt no_beep              # Don't use beep
 
 setopt always_last_prompt
@@ -46,12 +47,12 @@ setopt list_types
 setopt sh_word_split auto_param_keys
 setopt correct
 
-####  history config  ####
+####  History config  ####
 export HISTFILE=~/.zhistory
 export HISTSIZE=10000
 export SAVEHIST=50000
 
-####  prompt config  ####
+####  Prompt config  ####
 zstyle ':vcs_info:*' enable git svn
 zstyle ':vcs_info:*' formats '[%s %F{green}%b%f] '
 zstyle ':vcs_info:*' actionformats '%s)-[* %F{green}%b%f(%F{red}%a%f)'
@@ -63,9 +64,10 @@ precmd () {
 PROMPT=$'${vcs_info_msg_0_}%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{${fg[red]}%})%n%{${reset_color}%}@%(?.%{${fg[yellow]}%}.%{${fg[red]}%})%m%{${reset_color}%} %# '
 RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 
-####  aliases  ####
-#---  command  ---#
+####  Aliases  ####
+#---  Command  ---#
 alias cdg='cd-gitroot'
+alias trans='trans -t'
 
 if [ "$(uname)" = 'Darwin' ]; then
   alias ls='ls -FG'
@@ -93,21 +95,29 @@ alias dirs='dirs -v'
 
 alias sl='sl -e'
 
-#---  suffix   --#
+#--- Global aliases ---#
+alias -g A=' | ag'
+alias -g G=' | grep'
+alias -g L=' | less'
+alias -g H=' | head'
+alias -g T=' | tail'
+alias -g W=' | wc'
+
+#---  Suffix   --#
 alias -s py='python'
 alias -s js='js'
 alias -s php='php'
 alias -s rb='ruby'
 
-#---  language  ---#
+#---  Language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
 
-####  functions  ####
+####  Functions  ####
 h () {history $* | less}
 mdcd () {mkdir -p "$@" && cd "$*[-1]"}
 mdpu () {mkdir -p "$@" && pushd "$*[-1]"}
 
-# dic
+# Dictionary command
 function dic() {
   grep "$1" $HOME/utils/gene.txt -A 1 -wi --color
 }
@@ -117,10 +127,10 @@ chpwd () {
   ls
 }
 
-####  binding keys  ####
+####  Binding keys  ####
 bindkey -e
 
-####  completion  ####
+####  Completion  ####
 zstyle ':completion:*' format '%BCompleting %d%b'
 zstyle ':completion:*' group-name ''
 autoload -U compinit && compinit
