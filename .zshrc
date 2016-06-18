@@ -58,7 +58,7 @@ zstyle ':vcs_info:*' formats '[%s %F{green}%b%f] '
 zstyle ':vcs_info:*' actionformats '%s)-[* %F{green}%b%f(%F{red}%a%f)'
 precmd () {
   LANG=en_US.UTF-8 vcs_info
-  LOADAVG=$(sysctl -n vm.loadavg | perl -anpe '$_=$F[1]')
+  #LOADAVG=$(sysctl -n vm.loadavg | perl -anpe '$_=$F[1]')
 }
 
 PROMPT=$'${vcs_info_msg_0_}%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{${fg[red]}%})%n%{${reset_color}%}@%(?.%{${fg[yellow]}%}.%{${fg[red]}%})%m%{${reset_color}%} %# '
