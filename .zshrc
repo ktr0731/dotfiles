@@ -83,8 +83,10 @@ fi
 
 if type nvim > /dev/null 2>&1; then
   alias vi='nvim'
+  alias viro='nvim -R'
 elif type vim > /dev/null 2>&1; then
   alias vi='vim'
+  alias viro='vim -R'
 fi
 
 alias sha1='openssl sha1'

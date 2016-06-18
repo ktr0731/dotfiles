@@ -36,5 +36,5 @@ done
 
 which zsh > /dev/null 2>&1
 if [ $? -eq 0 ]; then
-  source $HOME/.zshrc
+  . $HOME/.zshrc
 fi
