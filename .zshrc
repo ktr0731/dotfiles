@@ -69,17 +69,24 @@ RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 alias cdg='cd-gitroot'
 alias trans='trans -t'
 
-if [ "$(uname)" = 'Darwin' ]; then
-  alias ls='ls -FG'
-  alias la='ls -aFG'
-  alias ll='ls -lFG'
-  alias lla='ls -alFG'
-else
-  alias ls='ls -F --color=auto'
-  alias la='ls -aF --color=auto'
-  alias ll='ls -lF --color=auto'
-  alias lla='ls -alF --color=auto'
+# Enable ls colors
+if type gdircolors > /dev/null 2>&1; then
+  eval $(gdircolors $HOME/.dircolors)
+elif type dircolors > /dev/null 2>&1; then
+  eval $(dircolors $HOME/.dircolors)
 fi
+
+if type gls > /dev/null 2>&1; then
+  ls='gls'
+else
+  ls='ls'
+fi
+
+alias l=$ls' -F --color=auto'
+alias ls=$ls' -F --color=auto'
+alias la=$ls' -aF --color=auto'
+alias ll=$ls' -lF --color=auto'
+alias lla=$ls' -alF --color=auto'
 
 if type nvim > /dev/null 2>&1; then
   alias vi='nvim'
