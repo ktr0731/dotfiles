@@ -67,6 +67,7 @@ RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 ####  Aliases  ####
 #---  Command  ---#
 alias szshrc="source $HOME/.zshrc"
+alias szshenv="source $HOME/.zshenv"
 
 alias cdg='cd-gitroot'
 alias trans='trans -t'
