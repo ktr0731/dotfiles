@@ -24,6 +24,7 @@ if [ ! -e $DOTPATH ]; then
 fi
 
 # Make synbolic links
+echo "Make dotfile symbolic links."
 for f in .??*
 do
   # Exclude files
@@ -32,9 +33,12 @@ do
   fi
 
   ln -sf "$DOTPATH"/"$f" "$HOME"/"$f"
+  if [ $? -eq 0 ]; then
+    echo "    $f"
+  fi
 done
 
-which zsh > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-  . $HOME/.zshrc
-fi
+# which zsh > /dev/null 2>&1
+# if [ $? -eq 0 ]; then
+#   . $HOME/.zshrc
+# fi

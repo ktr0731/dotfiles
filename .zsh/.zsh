@@ -1,0 +1,1 @@
+/Users/lycoris/dotfiles/.zsh
