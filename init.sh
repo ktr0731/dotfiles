@@ -5,6 +5,16 @@ REPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
 
 EXIST_GIT=0
 
+# http://www.kammerl.de/ascii/AsciiSignature.php, Font: stop
+cat << TITLE
+     _             ___ _ _
+    | |      _    / __|_) |
+  _ | | ___ | |_ | |__ _| | ____  ___
+ / || |/ _ \|  _)|  __) | |/ _  )/___)
+( (_| | |_| | |__| |  | | ( (/ /|___ |
+ \____|\___/ \___)_|  |_|_|\____|___/
+
+TITLE
 
 which git > /dev/null 2>&1
 if [ $? -eq 0 ]; then
@@ -37,8 +47,3 @@ do
     echo "    $f"
   fi
 done
-
-# which zsh > /dev/null 2>&1
-# if [ $? -eq 0 ]; then
-#   . $HOME/.zshrc
-# fi
