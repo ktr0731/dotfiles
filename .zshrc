@@ -85,11 +85,11 @@ else
   ls='ls'
 fi
 
-alias l=$ls' -F --color=auto'
-alias ls=$ls' -F --color=auto'
-alias la=$ls' -aF --color=auto'
-alias ll=$ls' -lF --color=auto'
-alias lla=$ls' -alF --color=auto'
+alias l=$ls' -F --color=always'
+alias ls=$ls' -F --color=always'
+alias la=$ls' -aF --color=always'
+alias ll=$ls' -lF --color=always'
+alias lla=$ls' -alF --color=always'
 
 if type nvim > /dev/null 2>&1; then
   alias vi='nvim'
