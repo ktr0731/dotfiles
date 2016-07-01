@@ -16,7 +16,7 @@ cat << TITLE
 
 TITLE
 
-which git > /dev/null 2>&1
+type git > /dev/null 2>&1
 if [ $? -eq 0 ]; then
   EXIST_GIT=1
 fi
@@ -34,16 +34,4 @@ if [ ! -e $DOTPATH ]; then
 fi
 
 # Make synbolic links
-echo "Make dotfile symbolic links."
-for f in .??*
-do
-  # Exclude files
-  if [ "$f" = ".git" ] || [ "$f" = ".gitignore" ] || [ "$f" = ".DS_Store" ];then
-    continue
-  fi
-
-  ln -sf "$DOTPATH"/"$f" "$HOME"/"$f"
-  if [ $? -eq 0 ]; then
-    echo "    $f"
-  fi
-done
+./bin/mkln.sh

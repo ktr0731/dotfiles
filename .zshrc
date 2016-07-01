@@ -107,6 +107,9 @@ alias dirs='dirs -v'
 
 alias sl='sl -e'
 
+alias less='less -R'
+alias rm='rm -rf'
+
 #--- Global aliases ---#
 alias -g A=' | ag'
 alias -g G=' | grep'

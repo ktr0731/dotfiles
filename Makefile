@@ -1,6 +1,10 @@
 all:
-	install
-install:
+	@./init.sh
+
+zsh:
+	@./init.sh
+
+nvim:
 	@./init.sh
 
 update:
