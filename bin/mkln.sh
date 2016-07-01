@@ -3,7 +3,8 @@
 
 DOTPATH=$HOME/dotfiles
 
-echo "Make dotfile symbolic links."
+echo '$DOTPATH : '$DOTPATH
+echo "Created dotfile symbolic links."
 for f in .??*
 do
   # Exclude files
@@ -13,6 +14,7 @@ do
 
   ln -sf "$DOTPATH"/"$f" "$HOME"/"$f"
   if [ $? -eq 0 ]; then
-    echo "    $f"
+    printf "    %-25s -> %s\n" '$DOTPATH'/$f '$HOME'/$f
   fi
 done
+echo ""

@@ -1,11 +1,13 @@
-all:
-	@./init.sh
+all: aa nvim zsh
+	@./bin/init.sh
 
-zsh:
-	@./init.sh
+aa:
+	@./bin/util/aa.sh
+
+zsh: ;
 
 nvim:
-	@./init.sh
+	@./bin/nvim/init.sh
 
 update:
-	@./update.sh
+	@./bin/update.sh
