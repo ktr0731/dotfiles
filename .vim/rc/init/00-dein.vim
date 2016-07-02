@@ -25,7 +25,7 @@ call dein#load_toml(s:lazy_toml, {'lazy': 1})
 call dein#end()
 call dein#save_state()
 
-if !has('vim_starting') && dein#check_install()
+if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 

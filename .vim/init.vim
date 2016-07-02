@@ -1,1 +1,1 @@
-/Users/lycoris/.vimrc
+/Users/lycoris/dotfiles/.vimrc
