@@ -19,7 +19,9 @@ typeset -U path
 [[ -s $HOME/.npm/npm.sh ]] && . $HOME/.nvm/npm.sh
 
 # python3
-export PYENV_ROOT=$HOME/.pyenv
+if type > /dev/null 2>&1; then
+  export PYENV_ROOT=$HOME/.pyenv
+fi
 
 # Environment variables path
 path=(
@@ -38,7 +40,9 @@ PYTHONPATH=(
   /usr/local/google_appengine/lib/yaml/lib(N-/)
 )
 
-eval "$(pyenv init -)"
+if type > /dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 #  set remote command env
 export RSYNC_RSH=ssh
