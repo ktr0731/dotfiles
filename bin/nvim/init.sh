@@ -7,4 +7,4 @@ echo "Created synbolick link for nvim configulation files:"
 echo '    $DOTPATH/.vim -> $HOME/.cache/nvim'
 echo ""
 
-ln -sf $DOTPATH/.vim $HOME/.cache/nvim
+ln -sf $DOTPATH/.vimrc $HOME/dotfiles/.vim/init.vim
