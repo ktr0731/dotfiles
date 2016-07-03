@@ -9,5 +9,14 @@ zsh: ;
 nvim:
 	@./bin/nvim/init.sh
 
+python:
+	@./bin/python/init.sh
+
+ruby:
+	@./bin/ruby/init.sh
+
 update:
 	@./bin/update.sh
+
+nvim-clean:
+	@rm -rf $HOME/.cache/dein
