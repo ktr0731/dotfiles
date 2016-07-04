@@ -1,4 +1,10 @@
-all: aa nvim zsh
+help:
+	@echo "make all                          -- Install all environment settings"
+	@echo "make update                       -- Do update dotfiles by git repository"
+	@echo "make (nvim|zsh|ruby|python)       -- Install selected packages"
+	@echo "make (nvim|zsh|ruby|python)-clean -- Clean selected packages"
+
+all: aa nvim zsh ruby python
 	@./bin/init.sh
 
 aa:
