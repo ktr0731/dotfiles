@@ -4,7 +4,7 @@ Dotfiles
 ## Installation
 ### Make all configuration files.
 ``` sh
-$ make install
+$ make all
 ```
 
 ### Others
@@ -12,8 +12,8 @@ $ make install
 $ make --help
 ```
 
-- If $DOTPATH does not exist, git clone this repository.
-- Make symbolic links to $HOME.
+- If `$DOTPATH` does not exist, clone this repository.
+- Make symbolic links to `$HOME`.
 
 ## Update
 ``` sh

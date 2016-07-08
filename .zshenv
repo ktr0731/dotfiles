@@ -19,8 +19,13 @@ typeset -U path
 [[ -s $HOME/.npm/npm.sh ]] && . $HOME/.nvm/npm.sh
 
 # python3
-if type > /dev/null 2>&1; then
+if type pyenv > /dev/null 2>&1; then
   export PYENV_ROOT=$HOME/.pyenv
+fi
+
+# Ruby
+if type rbenv > /dev/null 2>&1; then
+  export RBENV_ROOT=$HOME/.rbenv
 fi
 
 # Environment variables path
@@ -40,8 +45,12 @@ PYTHONPATH=(
   /usr/local/google_appengine/lib/yaml/lib(N-/)
 )
 
-if type > /dev/null 2>&1; then
+if type pyenv > /dev/null 2>&1; then
   eval "$(pyenv init -)"
+fi
+
+if type rbenv > /dev/null 2>&1; then
+  eval "$(rbenv init -)"
 fi
 
 #  set remote command env
