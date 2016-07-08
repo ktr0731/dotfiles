@@ -79,6 +79,10 @@ elif type dircolors > /dev/null 2>&1; then
   eval $(dircolors $HOME/.dircolors)
 fi
 
+if type xdg-open > /dev/null 2>&1; then
+  alias open='xdg-open'
+fi
+
 if type gls > /dev/null 2>&1; then
   ls='gls'
 else

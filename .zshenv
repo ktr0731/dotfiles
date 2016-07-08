@@ -18,15 +18,8 @@ typeset -U path
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
 [[ -s $HOME/.npm/npm.sh ]] && . $HOME/.nvm/npm.sh
 
-# python3
-if type pyenv > /dev/null 2>&1; then
-  export PYENV_ROOT=$HOME/.pyenv
-fi
-
-# Ruby
-if type rbenv > /dev/null 2>&1; then
-  export RBENV_ROOT=$HOME/.rbenv
-fi
+PYENV_ROOT=$HOME/.pyenv
+RBENV_ROOT=$HOME/.rbenv
 
 # Environment variables path
 path=(
