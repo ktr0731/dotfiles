@@ -1,5 +1,5 @@
 " Indent type: c lang
-" set cindent
+set cindent
 "
 " set shiftwidth=2
 " set softtabstop=2

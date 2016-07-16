@@ -1,4 +1,6 @@
 inoremap <C-j> <esc>
+
+" Emacs bind in insert mode
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 

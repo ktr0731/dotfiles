@@ -34,3 +34,10 @@ repo = 'benekastah/neomake'
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'AndrewRadev/splitjoin.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
