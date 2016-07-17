@@ -9,3 +9,5 @@ if [ $? -eq 0 ]; then
   git pull
 fi
 
+source $HOME/.zshrc
+source $HOME/.zshenv

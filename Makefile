@@ -4,25 +4,28 @@ help:
 	@echo "make (nvim|zsh|ruby|python)       -- Install selected packages"
 	@echo "make (nvim|zsh|ruby|python)-clean -- Clean selected packages"
 
-all: aa nvim zsh ruby python
+all: aa check nvim zsh ruby python
 	@./bin/init.sh
 
 aa:
 	@./bin/util/aa.sh
 
-zsh: ;
+check:
+	@./bin/check.sh
 
-nvim:
+zsh: check
+
+nvim: check
 	@./bin/nvim/init.sh
 
-python:
+python: check
 	@./bin/python/init.sh
 
-ruby:
+ruby: check
 	@./bin/ruby/init.sh
 
-update:
+update: check
 	@./bin/update.sh
 
-nvim-clean:
+nvim-clean: check
 	@rm -rf $HOME/.cache/dein
