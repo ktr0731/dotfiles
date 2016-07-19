@@ -7,12 +7,11 @@ _exit() {
 }
 
 # Can do sudo
-if ! sudo -l | grep '(ALL) ALL' 1>/dev/null 2>&1; then
+if ! sudo -v 1>/dev/null 2>&1; then
   _exit 'You are not sudoers!'
 fi
 
-which git > /dev/null 2>&1
-if [ $? -eq 0 ]; then
+if ! which git > /dev/null 2>&1; then
   _exit 'Please install git.'
 fi
 
