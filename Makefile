@@ -7,11 +7,19 @@ help:
 all: aa check nvim zsh ruby python
 	@./bin/init.sh
 
+#
+# Utils
+#
+
 aa:
 	@./bin/util/aa.sh
 
 check:
-	@./bin/check.sh
+	@./lib/check.sh
+
+#
+# Groups
+#
 
 zsh: check
 
