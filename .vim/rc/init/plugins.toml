@@ -20,8 +20,8 @@ repo = 'kana/vim-smartinput'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
-[[plugins]]
-repo = 'scrooloose/syntastic'
+# [[plugins]]
+# repo = 'scrooloose/syntastic'
 
 [[plugins]]
 repo = 'tpope/vim-pathogen'
@@ -31,6 +31,9 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'benekastah/neomake'
+hook_add = '''
+  autocmd! BufWritePost * Neomake
+'''
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
