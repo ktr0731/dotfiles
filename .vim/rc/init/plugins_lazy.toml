@@ -48,3 +48,6 @@ on_ft = ['css']
 repo = 'pangloss/vim-javascript'
 on_ft = ['javascript']
 
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = ['json']
