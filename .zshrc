@@ -114,6 +114,9 @@ alias sl='sl -e'
 alias less='less -R'
 alias rm='rm -rf'
 
+alias strace='strace -fi'
+alias ltrace='ltrace -fi'
+
 #--- Global aliases ---#
 alias -g A=' | ag'
 alias -g G=' | grep'

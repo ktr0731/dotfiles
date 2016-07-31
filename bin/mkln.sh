@@ -7,7 +7,7 @@ echo "Created dotfile symbolic links."
 for f in .??*
 do
   # Exclude files
-  if [ "$f" = ".git" ] || [ "$f" = ".gitignore" ] || [ "$f" = ".DS_Store" ];then
+  if [ "$f" = ".git" ] || [ "$f" = ".DS_Store" ];then
     continue
   fi
 

@@ -1,2 +1,6 @@
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+let NERDTreeShowHidden = 1
+
+" ファイルを指定して起動していなければ最初から表示する
+if argc() == 0
+  let g:nerdtree_tabs_open_on_console_startup = 1
+end

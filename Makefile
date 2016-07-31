@@ -17,6 +17,9 @@ aa:
 check:
 	@./lib/check.sh
 
+link:
+	@./bin/mkln.sh
+
 #
 # Groups
 #

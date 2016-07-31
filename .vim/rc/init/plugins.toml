@@ -44,3 +44,8 @@ repo = 'AndrewRadev/splitjoin.vim'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
