@@ -20,8 +20,8 @@ repo = 'kana/vim-smartinput'
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
-# [[plugins]]
-# repo = 'scrooloose/syntastic'
+[[plugins]]
+repo = 'scrooloose/syntastic'
 
 [[plugins]]
 repo = 'tpope/vim-pathogen'
@@ -49,3 +49,6 @@ repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'thinca/vim-splash'
