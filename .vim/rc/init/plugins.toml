@@ -50,5 +50,8 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 
+# [[plugins]]
+# repo = 'thinca/vim-splash'
+
 [[plugins]]
-repo = 'thinca/vim-splash'
+repo = 'lycoris0731/neovim-splash'

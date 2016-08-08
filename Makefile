@@ -1,42 +1,16 @@
 help:
 	@echo "make all                          -- Install all environment settings"
 	@echo "make update                       -- Do update dotfiles by git repository"
-	@echo "make (nvim|zsh|ruby|python)       -- Install selected packages"
-	@echo "make (nvim|zsh|ruby|python)-clean -- Clean selected packages"
+	@echo "make link                         -- Make symbolick links"
 
-all: aa check nvim zsh ruby python
+all: aa link
 	@./bin/init.sh
 
-#
-# Utils
-#
-
 aa:
-	@./bin/util/aa.sh
-
-check:
-	@./lib/check.sh
+	@./script/aa.sh
 
 link:
 	@./bin/mkln.sh
 
-#
-# Groups
-#
-
-zsh: check
-
-nvim: check
-	@./bin/nvim/init.sh
-
-python: check
-	@./bin/python/init.sh
-
-ruby: check
-	@./bin/ruby/init.sh
-
 update: check
 	@./bin/update.sh
-
-nvim-clean: check
-	@rm -rf $HOME/.cache/dein
