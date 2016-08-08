@@ -7,17 +7,20 @@ Dotfiles
 $ make all
 ```
 
-### Others
-``` sh
-$ make --help
-```
-
 - If `$DOTPATH` does not exist, clone this repository.
 - Make symbolic links to `$HOME`.
+  
+### Help
+``` sh
+$ make help
+```
 
+- Show description of some make commands.
+  
+  
 ## Update
 ``` sh
 $ make update
 ```
-
+  
 - Git pull
