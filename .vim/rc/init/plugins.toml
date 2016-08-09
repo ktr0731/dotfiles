@@ -52,6 +52,6 @@ repo = 'ctrlpvim/ctrlp.vim'
 
 # [[plugins]]
 # repo = 'thinca/vim-splash'
-
+#
 [[plugins]]
 repo = 'lycoris0731/neovim-splash'
