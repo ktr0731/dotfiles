@@ -96,10 +96,9 @@ alias ll=$ls' -lF --color=always'
 alias lla=$ls' -alF --color=always'
 
 if type nvim > /dev/null 2>&1; then
-  alias vi='nvim'
+  alias vim='nvim'
   alias viro='nvim -R'
 elif type vim > /dev/null 2>&1; then
-  alias vi='vim'
   alias viro='vim -R'
 fi
 
@@ -180,9 +179,6 @@ zplug "zsh-users/zsh-completions"
 ### cd-gitroot
 zplug "mollifier/cd-gitroot"
 
-# check コマンドで未インストール項目があるかどうか verbose にチェックし
-# false のとき（つまり未インストール項目がある）y/N プロンプトで
-# インストールする
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -190,7 +186,6 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# プラグインを読み込み、コマンドにパスを通す
 zplug load --verbose
 
 cat << STEINS_GATE

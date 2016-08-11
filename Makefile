@@ -12,5 +12,5 @@ aa:
 link:
 	@./bin/mkln.sh
 
-update: check
+update:
 	@./bin/update.sh
