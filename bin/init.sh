@@ -18,3 +18,4 @@ fi
 
 # Create synbolic links
 ./bin/mkln.sh
+
