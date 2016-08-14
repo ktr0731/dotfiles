@@ -1,10 +1,11 @@
 " python3 plugins
 call remote#host#RegisterPlugin('python3', '/Users/lycoris/.cache/dein/repos/github.com/Shougo/deoplete.nvim/rplugin/python3/deoplete', [
      \ ])
-call remote#host#RegisterPlugin('python3', '/Users/lycoris/.cache/dein/repos/github.com/Shougo/deoplete.nvim/rplugin/python3/deoplete.py', [
-      \ {'sync': v:true, 'name': '_deoplete', 'type': 'function', 'opts': {}},
-     \ ])
 call remote#host#RegisterPlugin('python3', '/Users/lycoris/.cache/dein/repos/github.com/Shougo/neosnippet.vim/rplugin/python3/deoplete', [
+     \ ])
+call remote#host#RegisterPlugin('python3', '/Users/lycoris/.cache/dein/.dein/rplugin/python3/splash', [
+     \ ])
+call remote#host#RegisterPlugin('python3', '/Users/lycoris/.cache/dein/.dein/rplugin/python3/splash.py', [
      \ ])
 
 

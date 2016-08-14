@@ -72,6 +72,8 @@ alias szshenv="source $HOME/.zshenv"
 alias cdg='cd-gitroot'
 alias trans='trans -t'
 
+alias g='git'
+
 # Enable ls colors
 if type gdircolors > /dev/null 2>&1; then
   eval $(gdircolors $HOME/.dircolors)

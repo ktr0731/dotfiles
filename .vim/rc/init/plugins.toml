@@ -51,4 +51,4 @@ repo = 'airblade/vim-gitgutter'
 repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
-repo = 'mhinz/vim-startify'
+repo = 'lycoris0731/splash.nvim'
