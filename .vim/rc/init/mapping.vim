@@ -8,3 +8,5 @@ nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 nnoremap ; :
 nnoremap : ;
+
+noremap <CR> i<CR><ESC>
