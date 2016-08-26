@@ -2,5 +2,8 @@
 
 
 " python plugins
+call remote#host#RegisterPlugin('python', '/Users/lycoris/private_works/nvim/rplugin/python/splash', [
+      \ {'sync': v:false, 'name': 'Splash', 'type': 'command', 'opts': {}},
+     \ ])
 
 

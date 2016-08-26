@@ -52,3 +52,5 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=r
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
+
+set runtimepath+=~/private_works/nvim
