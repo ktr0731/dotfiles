@@ -51,3 +51,4 @@ on_ft = ['javascript', 'js']
 [[plugins]]
 repo = 'elzr/vim-json'
 on_ft = ['json']
+

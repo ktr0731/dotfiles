@@ -51,5 +51,5 @@ fi
 export RSYNC_RSH=ssh
 export CVS_RSH=ssh
 
-# use vim
+# use vi
 EDITOR='vi'
