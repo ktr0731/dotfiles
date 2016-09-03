@@ -52,3 +52,6 @@ repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = 'tomlion/vim-solidity'
+
+[[plugins]]
+repo = 'junegunn/seoul256.vim'
