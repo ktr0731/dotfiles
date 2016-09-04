@@ -23,11 +23,11 @@ RBENV_ROOT=$HOME/.rbenv
 
 # Environment variables path
 path=(
+  $PYENV_ROOT/bin(N-/)
+  $RBENV_ROOT/bin(N-/)
   $HOME/Library/Android/sdk/platform-tools(N-/)
   $HOME/Library/Android/sdk/tools(N-/)
   $HOME/bin(N-/)
-  $PYENV_ROOT/bin(N-/)
-  $RBENV_ROOT/bin(N-/)
   ./node_modules/.bin(N-/)
   $path
 )

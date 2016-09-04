@@ -18,7 +18,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'mattn/emmet-vim'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim', { 'on': 'Unite' }
-" Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets', { 'on': 'Neosnippet' }
 Plug 'mattn/jscomplete-vim'
