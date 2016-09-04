@@ -2,6 +2,7 @@ source $VIMRUNTIME/macros/matchit.vim
 
 let b:match_ignorecase = 1
 
+" let g:python3_host_prog = "/usr/local/python3"
 let g:python3_host_prog = expand($HOME) . "/.pyenv/shims/python3"
 
 syntax enable
@@ -53,4 +54,4 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-set runtimepath+=~/private_works/nvim
+" set runtimepath+=~/private_works/nvim
