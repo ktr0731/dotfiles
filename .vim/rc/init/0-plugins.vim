@@ -20,7 +20,7 @@ Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim', { 'on': 'Unite' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets', { 'on': 'Neosnippet' }
+Plug 'Shougo/neosnippet-snippets'
 Plug 'mattn/jscomplete-vim'
 Plug 'cespare/vim-toml'
 Plug 'tpope/vim-surround'
