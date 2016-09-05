@@ -21,10 +21,14 @@ typeset -U path
 PYENV_ROOT=$HOME/.pyenv
 RBENV_ROOT=$HOME/.rbenv
 
+# Go path
+export GOPATH=~/.go
+
 # Environment variables path
 path=(
   $PYENV_ROOT/bin(N-/)
   $RBENV_ROOT/bin(N-/)
+  $GOPATH/bin(N-/)
   $HOME/Library/Android/sdk/platform-tools(N-/)
   $HOME/Library/Android/sdk/tools(N-/)
   $HOME/bin(N-/)
@@ -50,9 +54,6 @@ fi
 #  set remote command env
 export RSYNC_RSH=ssh
 export CVS_RSH=ssh
-
-# Go path
-export GOPATH=~/.go
 
 # use vi
 EDITOR='vi'
