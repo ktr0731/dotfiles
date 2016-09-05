@@ -51,5 +51,8 @@ fi
 export RSYNC_RSH=ssh
 export CVS_RSH=ssh
 
+# Go path
+export GOPATH=~/.go
+
 # use vi
 EDITOR='vi'
