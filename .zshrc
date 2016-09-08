@@ -182,6 +182,9 @@ zplug "zsh-users/zsh-completions"
 ### cd-gitroot
 zplug "mollifier/cd-gitroot"
 
+### zsh-autopair
+zplug "hlissner/zsh-autopair", nice:10
+
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
