@@ -61,7 +61,8 @@ precmd () {
   #LOADAVG=$(sysctl -n vm.loadavg | perl -anpe '$_=$F[1]')
 }
 
-PROMPT=$'${vcs_info_msg_0_}%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{${fg[red]}%})%n%{${reset_color}%}@%(?.%{${fg[yellow]}%}.%{${fg[red]}%})%m%{${reset_color}%} %# '
+# PROMPT=$'${vcs_info_msg_0_}%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{${fg[red]}%})%n%{${reset_color}%}@%(?.%{${fg[yellow]}%}.%{${fg[red]}%})%m%{${reset_color}%} %# '
+PROMPT="${vcs_info_msg_0_}%# "
 RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 
 ####  Aliases  ####
