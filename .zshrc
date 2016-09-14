@@ -61,8 +61,8 @@ precmd () {
   #LOADAVG=$(sysctl -n vm.loadavg | perl -anpe '$_=$F[1]')
 }
 
-# PROMPT=$'${vcs_info_msg_0_}%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{${fg[red]}%})%n%{${reset_color}%}@%(?.%{${fg[yellow]}%}.%{${fg[red]}%})%m%{${reset_color}%} %# '
-PROMPT="${vcs_info_msg_0_}%# "
+PROMPT=$'${vcs_info_msg_0_}%6(~|\n%{${fg[white]}%}[%~]%{${reset_color}%}\n|)%(?.%{${fg[cyan]}%}.%{${fg[red]}%})%n%{${reset_color}%}@%(?.%{${fg[yellow]}%}.%{${fg[red]}%})%m%{${reset_color}%} %# '
+# PROMPT="${vcs_info_msg_0_}%# "
 RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 
 ####  Aliases  ####
@@ -136,6 +136,9 @@ alias -s rb='ruby'
 #---  Language  ---#
 alias ja='LANG=ja_JP.eucJP XMODIFIERS=@im=kinput2'
 
+#---  Utils  ---#
+alias all-color='for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo'
+
 ####  Functions  ####
 h () {history $* | less}
 mdcd () {mkdir -p "$@" && cd "$*[-1]"}
@@ -199,6 +202,8 @@ if ! zplug check --verbose; then
 fi
 
 zplug load --verbose
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
 
 cat << STEINS_GATE
                                                               ............
