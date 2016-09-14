@@ -20,6 +20,7 @@ typeset -U path
 
 PYENV_ROOT=$HOME/.pyenv
 RBENV_ROOT=$HOME/.rbenv
+PHPENV_ROOT=$HOME/.phpenv
 
 # Go path
 export GOPATH=~/.go
@@ -28,6 +29,7 @@ export GOPATH=~/.go
 path=(
   $PYENV_ROOT/bin(N-/)
   $RBENV_ROOT/bin(N-/)
+  $PHPENV_ROOT/bin(N-/)
   $GOPATH/bin(N-/)
   $HOME/Library/Android/sdk/platform-tools(N-/)
   $HOME/Library/Android/sdk/tools(N-/)
@@ -49,6 +51,10 @@ fi
 
 if type rbenv > /dev/null 2>&1; then
   eval "$(rbenv init -)"
+fi
+
+if type phpenv > /dev/null 2>&1; then
+  eval "$(phpenv init -)"
 fi
 
 #  set remote command env
