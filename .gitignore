@@ -1,3 +1,21 @@
 *.o
-.DS_Store
 *~
+
+### Mac ###
+.DS_Store
+
+### Vim ###
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+
+# session
+Session.vim
+
+# temporary
+.netrwhist
+*~
+*.vim-rplugin~
+
+# auto-generated tag files
+tags
