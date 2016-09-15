@@ -67,9 +67,6 @@ RPROMPT="%6(~||%{${fg[white]}%}[%~]%{${reset_color}%}"
 
 ####  Aliases  ####
 #---  Command  ---#
-alias szshrc="source $HOME/.zshrc"
-alias szshenv="source $HOME/.zshenv"
-
 alias cdg='cd-gitroot'
 alias trans='trans -t'
 
@@ -128,7 +125,7 @@ alias -g T=' | tail'
 alias -g W=' | wc'
 
 #---  Suffix   --#
-alias -s py='python'
+# alias -s py='python3'
 alias -s js='js'
 alias -s php='php'
 alias -s rb='ruby'
@@ -189,7 +186,7 @@ zplug "mollifier/cd-gitroot"
 zplug "hlissner/zsh-autopair", nice:10
 
 ### zsh-autosuggestions
-zplug zsh-users/zsh-autosuggestions
+zplug "zsh-users/zsh-autosuggestions"
 
 ### zsh-bd
 zplug Tarrasch/zsh-bd
