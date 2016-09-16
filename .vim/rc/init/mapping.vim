@@ -10,3 +10,5 @@ nnoremap ; :
 nnoremap : ;
 
 noremap <CR> i<CR><ESC>
+
+nnoremap <silent><C-l> :NERDTreeToggle<CR>
