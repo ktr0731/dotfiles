@@ -29,5 +29,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'thinca/vim-quickrun'
+Plug 'zerowidth/vim-copy-as-rtf'
 
 call plug#end()
