@@ -12,3 +12,4 @@ nnoremap : ;
 noremap <CR> i<CR><ESC>
 
 nnoremap <silent><C-l> :NERDTreeToggle<CR>
+nnoremap <silent><C-r><C-u> :QuickRun<CR>
