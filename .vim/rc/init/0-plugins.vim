@@ -28,5 +28,6 @@ Plug 'othree/html5.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
+Plug 'thinca/vim-quickrun'
 
 call plug#end()
