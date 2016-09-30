@@ -86,7 +86,7 @@ noremap <CR> o<ESC>
 noremap <Space> i<Space><ESC>
 
 nnoremap <silent><C-l> :NERDTreeToggle<CR>
-nnoremap <silent><C-r><C-u> :QuickRun<CR>
+nnoremap <silent><C-i> :QuickRun<CR>
 
 """ Plugins
 call plug#begin('~/.vim/plugged')
@@ -209,6 +209,16 @@ call smartinput#define_rule({
     \     })
 call smartinput#define_rule({
     \     'at'    : '( \%# )',
+    \     'char'  : '<BS>',
+    \     'input' : '<Del><BS>',
+    \     })
+call smartinput#define_rule({
+    \     'at'    : '{\%#}',
+    \     'char'  : '<Space>',
+    \     'input' : '<Space><Space><Left>',
+    \     })
+call smartinput#define_rule({
+    \     'at'    : '{ \%# }',
     \     'char'  : '<BS>',
     \     'input' : '<Del><BS>',
     \     })
