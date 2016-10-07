@@ -16,3 +16,7 @@
 
 [core]
   editor = vim
+
+[ghq]
+  root = ~/.ghq
+  root = ~/.go/src

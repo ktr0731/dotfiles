@@ -105,6 +105,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomlion/vim-solidity'
 Plug 'junegunn/seoul256.vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
 Plug 'mattn/emmet-vim'
 Plug 'Shougo/unite.vim'
