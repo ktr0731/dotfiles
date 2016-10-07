@@ -89,11 +89,17 @@ else
   ls='ls'
 fi
 
-alias l=$ls' -F --color=always'
-alias ls=$ls' -F --color=always'
-alias la=$ls' -aF --color=always'
-alias ll=$ls' -lF --color=always'
-alias lla=$ls' -alF --color=always'
+if ([ `uname` = "Darwin" ] && [ $ls = "gls" ]) || [ `uname` -eq "SunOS" ]; then
+  ls="$ls --color=always"
+else
+  ls="$ls -G"
+fi
+
+alias ls="$ls -F"
+alias l=ls
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -al"
 
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
