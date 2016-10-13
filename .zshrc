@@ -11,7 +11,7 @@ autoload -Uz vcs_info
 
 ####  Load all completion  ####
 fpath=($HOME/.zsh/completions $fpath)
-autoload -U compinit && compinit
+autoload -U compinit && compinit -C
 
 ####  Key map  ####
 bindkey -v                  # Use vi style key map
@@ -225,3 +225,8 @@ The fish that lives in the sea doesn't know the world in the land. It also ruins
            It can be said that this is an final ultimatum from the god to the people who can fight.
 
 STEINS_GATE
+
+# For profile performance
+if type zprof > /dev/null 2>&1; then
+  zprof | less
+fi

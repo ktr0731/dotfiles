@@ -63,3 +63,6 @@ export CVS_RSH=ssh
 
 # use vi
 EDITOR='vi'
+
+# For profile performance
+# zmodload zsh/zprof

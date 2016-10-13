@@ -122,6 +122,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'thinca/vim-quickrun'
 Plug 'zerowidth/vim-copy-as-rtf'
+Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go'
 
 call plug#end()
 
