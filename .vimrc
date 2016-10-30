@@ -91,46 +91,48 @@ nnoremap <silent><C-i> :QuickRun<CR>
 """ Plugins
 call plug#begin('~/.vim/plugged')
 
-Plug 'hail2u/vim-css3-syntax'
+Plug 'cocopon/iceberg.vim'
+
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
+
 Plug 'kana/vim-smartinput'
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-pathogen'
-Plug 'scrooloose/nerdtree'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-surround'
+
+Plug 'tomlion/vim-solidity', { 'for': 'sol' }
+
+Plug 'editorconfig/editorconfig-vim'
+
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'jsx'] }
+Plug 'mattn/jscomplete-vim', { 'for': 'js' }
+Plug 'pangloss/vim-javascript', { 'for': 'js' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+
 Plug 'benekastah/neomake'
 autocmd! BufWritePost * Neomake
-Plug 'editorconfig/editorconfig-vim'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'tomlion/vim-solidity'
-Plug 'junegunn/seoul256.vim'
-Plug 'Glench/Vim-Jinja2-Syntax'
-
-Plug 'mattn/emmet-vim'
+Plug 'scrooloose/nerdtree'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim', { 'on': 'Unite' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'mattn/jscomplete-vim'
-Plug 'cespare/vim-toml'
-Plug 'tpope/vim-surround'
-Plug 'othree/html5.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'elzr/vim-json'
 Plug 'thinca/vim-quickrun'
 Plug 'zerowidth/vim-copy-as-rtf'
-Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go'
+
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'zchee/deoplete-go', { 'for': 'go' }
 
 call plug#end()
 
-""" Plugin settings
-"" seoul256
-colorscheme seoul256
+colorscheme iceberg
 
+""" Plugin settings
 "" CTRL-P
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
@@ -199,10 +201,6 @@ let g:quickrun_config={
 \}
 
 "" smartinput
-" call smartinput#map_to_trigger('i', '<Plug>(smartinput_BS)', '<BS>', '<BS>')
-" call smartinput#map_to_trigger('i', '<Plug>(smartinput_C-h)', '<BS>', '<C-h>')
-" call smartinput#map_to_trigger('i', '<Plug>(smartinput_CR)', '<Enter>', '<Enter>')
-"
 " (#) -> ( # ), ( # ) -> (#)
 call smartinput#map_to_trigger('i', '<Space>', '<Space>', '<Space>')
 call smartinput#define_rule({
@@ -247,7 +245,11 @@ let g:indent_guides_auto_colors=0
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', '']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
-execute pathogen#infect()
+
+" vim-go
+let g:go_fmt_command = "goimports"
+au FileType go nmap <C-g>t <Plug>(go-test)
+au FileType go nmap <C-g>r <Plug>(go-run)
 
 " For my development
 let g:splash#path = $HOME . '/dotfiles/.vim/rc/plugins/splash.txt'

@@ -10,8 +10,9 @@ colors
 autoload -Uz vcs_info
 
 ####  Load all completion  ####
-fpath=($HOME/.zsh/completions $fpath)
-autoload -U compinit && compinit -C
+# fpath=($HOME/.zsh/completions $fpath)
+# autoload -U compinit
+# && compinit -C
 
 ####  Key map  ####
 bindkey -v                  # Use vi style key map
@@ -163,7 +164,7 @@ bindkey -e
 ####  Completion  ####
 zstyle ':completion:*' format '%BCompleting %d%b'
 zstyle ':completion:*' group-name ''
-autoload -U compinit && compinit
+# autoload -U compinit && compinit
 
 ###  zplug  ###
 if [ ! -e $HOME"/.zplug" ]; then
@@ -207,24 +208,24 @@ fi
 zplug load --verbose
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
-
-cat << STEINS_GATE
-                                                              ............
-           .|'''.|     .             ||                       ||'' ...'|||          .
-           ||..  '   .||.    ....   ...  .. ...    ....    || |' .|||||.||   ....   .||.     ....
-            ''|||.    ||   .|...||   ||   ||  ||  ||. '       |  ||||''''|  '' .||   ||    .|...||
-          .     '||   ||   ||        ||   ||  ||  . '|..   || |. '||||  ||  .|' ||   ||    ||
-          |'....|'    '|.'  '|...'  .||. .||. ||. |'..|'   |' ||.. ..'. ||  '|..'|'  '|.'   '|.
-                                                          '  '''''''''''''"
- ============================================================================================================
-                        There is no end though there is a start in space. -- Infinity.
-         It has own power, it ruins, and it goes though there is a start also in the star. ---Finite.
-                Only the person who was wisdom can read the most foolish one from the history.
-The fish that lives in the sea doesn't know the world in the land. It also ruins and goes if they have wisdom.
-            It is funnier that man exceeds the speed of light than fish start living in the land.
-           It can be said that this is an final ultimatum from the god to the people who can fight.
-
-STEINS_GATE
+#
+# cat << STEINS_GATE
+#                                                               ............
+#            .|'''.|     .             ||                       ||'' ...'|||          .
+#            ||..  '   .||.    ....   ...  .. ...    ....    || |' .|||||.||   ....   .||.     ....
+#             ''|||.    ||   .|...||   ||   ||  ||  ||. '       |  ||||''''|  '' .||   ||    .|...||
+#           .     '||   ||   ||        ||   ||  ||  . '|..   || |. '||||  ||  .|' ||   ||    ||
+#           |'....|'    '|.'  '|...'  .||. .||. ||. |'..|'   |' ||.. ..'. ||  '|..'|'  '|.'   '|.
+#                                                           '  '''''''''''''"
+#  ============================================================================================================
+#                         There is no end though there is a start in space. -- Infinity.
+#          It has own power, it ruins, and it goes though there is a start also in the star. ---Finite.
+#                 Only the person who was wisdom can read the most foolish one from the history.
+# The fish that lives in the sea doesn't know the world in the land. It also ruins and goes if they have wisdom.
+#             It is funnier that man exceeds the speed of light than fish start living in the land.
+#            It can be said that this is an final ultimatum from the god to the people who can fight.
+#
+# STEINS_GATE
 
 # For profile performance
 if type zprof > /dev/null 2>&1; then
