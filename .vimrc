@@ -89,6 +89,10 @@ nnoremap <silent><C-l> :NERDTreeToggle<CR>
 nnoremap <silent><C-i> :QuickRun<CR>
 
 """ Plugins
+if !filereadable(expand("~/.config/nvim/autoload/plug.vim"))
+  execute '!curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'cocopon/iceberg.vim'
