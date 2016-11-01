@@ -50,6 +50,8 @@ set scrolloff=5
 
 set nobackup
 
+set mouse=c
+
 augroup auto_comment_off
   autocmd!
   autocmd BufEnter * setlocal formatoptions-=r
