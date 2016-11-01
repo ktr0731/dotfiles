@@ -13,6 +13,7 @@ syntax enable
 set laststatus=2
 
 set backspace=indent,eol,start
+set ambiwidth=double
 
 set nowrap
 
@@ -96,7 +97,9 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'cocopon/iceberg.vim'
+Plug 'junegunn/seoul256.vim'
 
+Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 
@@ -134,7 +137,7 @@ Plug 'zchee/deoplete-go', { 'for': 'go' }
 
 call plug#end()
 
-colorscheme iceberg
+colorscheme seoul256
 
 """ Plugin settings
 "" CTRL-P
