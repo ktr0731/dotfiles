@@ -14,9 +14,6 @@ autoload -Uz vcs_info
 # autoload -U compinit
 # && compinit -C
 
-####  Key map  ####
-bindkey -v                  # Use vi style key map
-
 ####  Shell options  ####
 #---  Directory  ---#
 setopt auto_cd              # When name only, interpreted as 'cd name'

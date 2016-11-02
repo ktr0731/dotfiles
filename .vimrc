@@ -116,8 +116,8 @@ Plug 'editorconfig/editorconfig-vim'
 
 Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'jsx'] }
-Plug 'mattn/jscomplete-vim', { 'for': 'js' }
-Plug 'pangloss/vim-javascript', { 'for': 'js' }
+Plug 'mattn/jscomplete-vim', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 
