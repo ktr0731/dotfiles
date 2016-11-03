@@ -120,6 +120,7 @@ Plug 'mattn/jscomplete-vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
