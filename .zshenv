@@ -34,6 +34,7 @@ path=(
   $HOME/Library/Android/sdk/platform-tools(N-/)
   $HOME/Library/Android/sdk/tools(N-/)
   $HOME/bin(N-/)
+  $HOME/.yarn/bin(N-/)
   ./node_modules/.bin(N-/)
   $path
 )
