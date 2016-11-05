@@ -183,19 +183,18 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
+### fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 ###  zplug  ###
 if [ ! -e $HOME"/.zplug" ]; then
   git clone https://github.com/b4b4r07/zplug ~/.zplug
 fi
 
-source ~/.zplug/zplug
+source ~/.zplug/init.zsh
 
 ### enhancd ###
-zplug "junegunn/fzf-bin", \
-    as:command, \
-    file:"fzf", \
-    from:gh-r, \
-    | zplug "b4b4r07/enhancd", of:enhancd.sh
+zplug "b4b4r07/enhancd", use:init.sh
 
 ### zsh-syntax-highlighting ###
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
@@ -224,7 +223,7 @@ fi
 
 zplug load --verbose
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
 #
 # cat << STEINS_GATE
 #                                                               ............
