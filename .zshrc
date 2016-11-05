@@ -11,8 +11,7 @@ autoload -Uz vcs_info
 
 ####  Load all completion  ####
 # fpath=($HOME/.zsh/completions $fpath)
-# autoload -U compinit
-# && compinit -C
+autoload -U compinit && compinit
 
 ####  Shell options  ####
 #---  Directory  ---#
@@ -196,9 +195,6 @@ source ~/.zplug/init.zsh
 ### enhancd ###
 zplug "b4b4r07/enhancd", use:init.sh
 
-### zsh-syntax-highlighting ###
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
-
 ### zsh-users/zsh-completions ###
 zplug "zsh-users/zsh-completions"
 
@@ -223,8 +219,6 @@ fi
 
 zplug load --verbose
 
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
-#
 # cat << STEINS_GATE
 #                                                               ............
 #            .|'''.|     .             ||                       ||'' ...'|||          .
@@ -247,3 +241,6 @@ zplug load --verbose
 if type zprof > /dev/null 2>&1; then
   zprof | less
 fi
+
+### zsh-syntax-highlighting ###
+zplug "zsh-users/zsh-syntax-highlighting", nice:10
