@@ -77,6 +77,11 @@ path=(
   $path
 )
 
+
+if [ $(uname) = "SunOS" ]; then
+  path=$HOME/usr/solaris/bin(N-/):$path
+fi
+
 #
 # Performance
 #
