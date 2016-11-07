@@ -1,19 +1,27 @@
-#! /bin/sh
+#! /bin/zsh
 
 DOTPATH=$HOME/dotfiles
 
 echo "\$DOTPATH : $DOTPATH"
 echo "Created dotfile symbolic links."
-for f in .??*
-do
-  # Exclude files
-  if [ $f = ".git" ] || [ $f = ".gitignore" ] || [ $f = ".DS_Store" ] || [ $f = ".dircolors" ] || [ $f = ".eslintrc.json" ];then
-    continue
-  fi
 
-  ln -sf "$DOTPATH"/"$f" "$HOME"/"$f"
+#
+# Zsh
+#
+
+for rcfile in "$DOTPATH"/zsh/*; do
+  ln -sf "$rcfile" "$HOME/.${rcfile:t}"
   if [ $? -eq 0 ]; then
-    printf "    %-25s -> %s\n" "\$DOTPATH/$f" "\$HOME/$f"
+    print "    - $rcfile"
   fi
 done
 echo ""
+
+#
+# Prezto
+#
+
+# setopt EXTENDED_GLOB
+# for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+#   ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+# done

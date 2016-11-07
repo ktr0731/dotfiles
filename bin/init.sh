@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/zsh
 
 DOTPATH=$HOME/dotfiles
 REPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
@@ -16,6 +16,16 @@ if [ ! -e $DOTPATH ]; then
   fi
 fi
 
-# Create synbolic links
-./bin/mkln.sh
+#
+# Prezto
+#
 
+if [ ! -e "$HOME/.zprezto" ]; then
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+fi
+
+#
+# Synbolic links
+#
+
+./bin/mkln.sh
