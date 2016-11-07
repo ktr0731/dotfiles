@@ -11,7 +11,7 @@ autoload -Uz vcs_info
 
 ####  Load all completion  ####
 # fpath=($HOME/.zsh/completions $fpath)
-autoload -U compinit && compinit
+autoload -U compinit && compinit -C
 
 ####  Shell options  ####
 #---  Directory  ---#
@@ -86,7 +86,7 @@ else
   ls='ls'
 fi
 
-if ([ `uname` = "Darwin" ] && [ $ls = "gls" ]) || [ `uname` -eq "SunOS" ]; then
+if ([ `uname` = "Darwin" ] && [ $ls = "gls" ]) || [ `uname` = "SunOS" ]; then
   ls="$ls --color=always"
 else
   ls="$ls -G"
@@ -187,28 +187,19 @@ load-nvmrc
 
 ###  zplug  ###
 if [ ! -e $HOME"/.zplug" ]; then
-  git clone https://github.com/b4b4r07/zplug ~/.zplug
+  # git clone https://github.com/b4b4r07/zplug ~/.zplug
+  curl -sL zplug.sh/installer | zsh
 fi
 
 source ~/.zplug/init.zsh
 
-### enhancd ###
 zplug "b4b4r07/enhancd", use:init.sh
-
-### zsh-users/zsh-completions ###
 zplug "zsh-users/zsh-completions"
-
-### cd-gitroot
 zplug "mollifier/cd-gitroot"
-
-### zsh-autopair
-zplug "hlissner/zsh-autopair", nice:10
-
-### zsh-autosuggestions
 zplug "zsh-users/zsh-autosuggestions"
-
-### zsh-bd
-zplug Tarrasch/zsh-bd
+zplug "Tarrasch/zsh-bd"
+zplug "hlissner/zsh-autopair", nice:10
+# zplug "zsh-users/zsh-syntax-highlighting", nice:10
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -241,6 +232,3 @@ zplug load --verbose
 if type zprof > /dev/null 2>&1; then
   zprof | less
 fi
-
-### zsh-syntax-highlighting ###
-zplug "zsh-users/zsh-syntax-highlighting", nice:10

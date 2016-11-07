@@ -138,6 +138,8 @@ Plug 'zerowidth/vim-copy-as-rtf'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'zchee/deoplete-go', { 'for': 'go' }
 
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+
 call plug#end()
 
 colorscheme seoul256
