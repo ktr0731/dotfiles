@@ -8,6 +8,12 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
 fi
 
 #
+# Language
+#
+
+LANG='en_US.UTF-8'
+
+#
 # pyenv
 #
 
@@ -45,7 +51,7 @@ fi
 # Go
 #
 
-GOPATH=~/.go
+export GOPATH=~/.go
 
 # Environment variables path
 path=(
