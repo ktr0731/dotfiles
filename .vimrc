@@ -145,11 +145,6 @@ call plug#end()
 colorscheme seoul256
 
 """ Plugin settings
-"" CTRL-P
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-
 "" deoplete
 let g:deoplete#enable_at_startup = 1
 
