@@ -161,24 +161,24 @@ chpwd () {
 # nvm
 #
 
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" != "N/A" ] && [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   local node_version="$(nvm version)"
+#   local nvmrc_path="$(nvm_find_nvmrc)"
+#
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+#
+#     if [ "$nvmrc_node_version" != "N/A" ] && [ "$nvmrc_node_version" != "$node_version" ]; then
+#       nvm use
+#     fi
+#   elif [ "$node_version" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
 
 #
 # fzf
@@ -190,28 +190,28 @@ load-nvmrc
 # zplug
 #
 
-if [ ! -e $HOME"/.zplug" ]; then
-  curl -sL zplug.sh/installer | zsh
-fi
-
-source ~/.zplug/init.zsh
-
-zplug "b4b4r07/enhancd", use:init.sh
-# zplug "zsh-users/zsh-completions"
-zplug "mollifier/cd-gitroot"
-# zplug "zsh-users/zsh-autosuggestions"
-# zplug "Tarrasch/zsh-bd"
-zplug "hlissner/zsh-autopair", nice:10
-# zplug "zsh-users/zsh-syntax-highlighting", nice:10
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load --verbose
+# if [ ! -e $HOME"/.zplug" ]; then
+#   curl -sL zplug.sh/installer | zsh
+# fi
+#
+# source ~/.zplug/init.zsh
+#
+# zplug "b4b4r07/enhancd", use:init.sh
+# # zplug "zsh-users/zsh-completions"
+# zplug "mollifier/cd-gitroot"
+# # zplug "zsh-users/zsh-autosuggestions"
+# # zplug "Tarrasch/zsh-bd"
+# zplug "hlissner/zsh-autopair", nice:10
+# # zplug "zsh-users/zsh-syntax-highlighting", nice:10
+#
+# if ! zplug check --verbose; then
+#     printf "Install? [y/N]: "
+#     if read -q; then
+#         echo; zplug install
+#     fi
+# fi
+#
+# zplug load --verbose
 
 # cat << STEINS_GATE
 #                                                               ............
