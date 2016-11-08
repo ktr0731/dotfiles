@@ -7,22 +7,6 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# limit coredumpsize 0
-
-# use language
-# export LC_CTYPE=en_US.UTF-8
-# export LC_ALL=en_US.UTF-8
-
-#  set command search path
-# typeset -U path
-
-#
-# nvm
-#
-
-# [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh
-# [[ -s $HOME/.npm/npm.sh ]] && . $HOME/.nvm/npm.sh
-
 #
 # pyenv
 #
