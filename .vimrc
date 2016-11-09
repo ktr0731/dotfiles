@@ -101,7 +101,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'cocopon/iceberg.vim'
 Plug 'junegunn/seoul256.vim'
 
-Plug 'mhinz/vim-startify'
 Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 
@@ -110,7 +109,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-surround'
 
-Plug 'tomlion/vim-solidity', { 'for': 'sol' }
+Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
 Plug 'editorconfig/editorconfig-vim'
 
