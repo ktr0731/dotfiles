@@ -29,10 +29,11 @@ alias trans='trans -t'
 
 alias g='git'
 
-alias l=ls
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -al"
+
+alias l='less'
 
 alias sha1='openssl sha1'
 
