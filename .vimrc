@@ -82,11 +82,17 @@ inoremap <C-b> <Left>
 
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
+nnoremap <Space>s <C-w>s
+nnoremap <Space>v <C-w>v
+nnoremap <Space>q <C-w>q
+nnoremap <Space>w <C-w>w
+nnoremap <Space>h <C-w>h
+nnoremap <Space>j <C-w>j
+nnoremap <Space>k <C-w>k
+nnoremap <Space>l <C-w>l
+
 nnoremap ; :
 nnoremap : ;
-
-noremap <CR> o<ESC>
-noremap <Space> i<Space><ESC>
 
 nnoremap <silent><C-l> :NERDTreeToggle<CR>
 nnoremap <silent><C-i> :QuickRun<CR>
