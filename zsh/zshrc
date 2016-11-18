@@ -49,7 +49,9 @@ alias -g H=' | head'
 alias -g L=' | less'
 alias -g T=' | tail'
 alias -g W=' | wc'
-alias -g P=' | pbcopy'
+if type pbcopy > /dev/null 2>&1; then
+  alias -g P=' | pbcopy'
+fi
 
 alias -s js='js'
 alias -s php='php'
