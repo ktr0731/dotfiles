@@ -120,7 +120,7 @@ Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'jsx'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'jsx', 'typescript'] }
 Plug 'mattn/jscomplete-vim', { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }

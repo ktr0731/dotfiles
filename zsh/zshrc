@@ -65,6 +65,11 @@ function dic() {
   grep "$1" $HOME/utils/gene.txt -A 1 -wi --color
 }
 
+function mkcd() {
+  mkdir "$1"
+  cd "$1"
+}
+
 chpwd () {
   ls
 }
@@ -91,7 +96,7 @@ zplug "mollifier/cd-gitroot"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "Tarrasch/zsh-bd"
 zplug "hlissner/zsh-autopair", nice:10
-zplug "zsh-users/zsh-syntax-highlighting", nice:10
+# zplug "zsh-users/zsh-syntax-highlighting", nice:5
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
