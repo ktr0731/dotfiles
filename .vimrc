@@ -94,7 +94,7 @@ nnoremap <Space>l <C-w>l
 nnoremap ; :
 nnoremap : ;
 
-nnoremap <silent><C-l> :NERDTreeToggle<CR>
+" nnoremap <silent><C-l> :NERDTreeToggle<CR>
 nnoremap <silent><C-i> :QuickRun<CR>
 
 """ Plugins
@@ -126,12 +126,13 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
 
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 Plug 'benekastah/neomake'
 autocmd! BufWritePost * Neomake
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim', { 'on': 'Unite' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -190,15 +191,15 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 "" NERDTree
 " For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-let NERDTreeShowHidden = 1
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif
+" let NERDTreeShowHidden = 1
 
 " Show NERDTree if buffer is empty.
-if argc() == 0
-  let g:nerdtree_tabs_open_on_console_startup = 1
-end
+" if argc() == 0
+"   let g:nerdtree_tabs_open_on_console_startup = 1
+" end
 
 "" QuickRun
 let g:quickrun_config={
@@ -247,7 +248,7 @@ au FileType Unite inoremap <silent> <buffer> <Esc><Esc> <Esc>:q<CR>
 " Indent Guides
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_auto_colors=0
-let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', '']
+" let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', '']
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 
