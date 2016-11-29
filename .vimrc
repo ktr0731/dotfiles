@@ -119,29 +119,29 @@ Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
 Plug 'editorconfig/editorconfig-vim'
 
-Plug 'othree/html5.vim', { 'for': 'html' }
-Plug 'mattn/emmet-vim', { 'for': ['html', 'jsx', 'typescript'] }
-Plug 'mattn/jscomplete-vim', { 'for': 'javascript' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'othree/html5.vim',           { 'for': 'html' }
+Plug 'mattn/emmet-vim',            { 'for': ['html', 'jsx', 'typescript'] }
+Plug 'mattn/jscomplete-vim',       { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript',    { 'for': 'javascript' }
+Plug 'hail2u/vim-css3-syntax',     { 'for': 'css' }
+Plug 'elzr/vim-json',              { 'for': 'json' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi', { 'for': 'typescript' }
+Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
 
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 Plug 'benekastah/neomake'
 autocmd! BufWritePost * Neomake
 " Plug 'scrooloose/nerdtree'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/neomru.vim', { 'on': 'Unite' }
+Plug 'Shougo/neomru.vim',    { 'on': 'Unite' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/unite.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'thinca/vim-quickrun'
 Plug 'zerowidth/vim-copy-as-rtf'
 
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go',      { 'for': 'go' }
 Plug 'zchee/deoplete-go', { 'for': 'go' }
 
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
@@ -174,7 +174,7 @@ let g:neomake_javascript_enabled_markers  = ['eslint']
 let g:neomake_html_enabled_markers        = ['htmlhint']
 let g:neomake_shellscript_enabled_markers = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
-let g:neomake_typescript_tsc_markers  = { 'args': ['--experimentalDecorators'] }
+let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
 autocmd! BufWritePost * Neomake
 
 "" neosnippet
