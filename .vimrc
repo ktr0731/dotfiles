@@ -1,6 +1,4 @@
 """ Basic
-set runtimepath+=~/private_works/nvim
-
 source $VIMRUNTIME/macros/matchit.vim
 
 let b:match_ignorecase = 1
@@ -108,7 +106,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'junegunn/seoul256.vim'
 
 Plug 'itchyny/lightline.vim'
-Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'nathanaelkane/vim-indent-guides'
 
 Plug 'kana/vim-smartinput'
 Plug 'tomtom/tcomment_vim'
@@ -140,6 +138,9 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'thinca/vim-quickrun'
 Plug 'zerowidth/vim-copy-as-rtf'
+
+Plug 'thinca/vim-splash'
+let g:splash#path = $HOME . '/dotfiles/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',      { 'for': 'go' }
 Plug 'zchee/deoplete-go', { 'for': 'go' }
@@ -259,4 +260,4 @@ au FileType go nmap <C-g>t <Plug>(go-test)
 au FileType go nmap <C-g>r <Plug>(go-run)
 
 " For my development
-let g:splash#path = $HOME . '/dotfiles/.vim/rc/plugins/splash.txt'
+" set runtimepath+=~/private_works/nvim
