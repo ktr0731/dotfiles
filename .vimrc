@@ -50,6 +50,9 @@ set nobackup
 
 set mouse=c
 
+" Do auto write when do make
+set autowrite
+
 augroup auto_comment_off
   autocmd!
   autocmd BufEnter * setlocal formatoptions-=r
