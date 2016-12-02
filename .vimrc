@@ -92,6 +92,9 @@ nnoremap <Space>j <C-w>j
 nnoremap <Space>k <C-w>k
 nnoremap <Space>l <C-w>l
 
+nnoremap <silent> [q :cnext<CR>
+nnoremap <silent> ]q :cprevious<CR>
+
 nnoremap ; :
 nnoremap : ;
 
