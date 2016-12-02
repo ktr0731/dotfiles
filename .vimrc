@@ -262,6 +262,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 
 " vim-go
 let g:go_fmt_command = "goimports"
+let g:go_list_type = "quickfix"
+au FileType go nmap <C-g>b <Plug>(go-build)
 au FileType go nmap <C-g>t <Plug>(go-test)
 au FileType go nmap <C-g>r <Plug>(go-run)
 
