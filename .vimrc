@@ -144,6 +144,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'thinca/vim-quickrun'
 Plug 'zerowidth/vim-copy-as-rtf'
+Plug 'junegunn/vim-emoji'
 
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/dotfiles/.vim/splash.txt' " All you need is Vim.
@@ -268,4 +269,4 @@ au FileType go nmap <C-g>t <Plug>(go-test)
 au FileType go nmap <C-g>r <Plug>(go-run)
 
 " For my development
-" set runtimepath+=~/private_works/nvim
+set runtimepath^=~/private_works/tweet-nvim
