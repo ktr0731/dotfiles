@@ -57,6 +57,10 @@ alias -s js='js'
 alias -s php='php'
 alias -s rb='ruby'
 
+if [ uname = 'Darwin' ]; then
+  alias ctags=$(brew --prefix)"/bin/ctags"
+fi
+
 #
 # Function
 #

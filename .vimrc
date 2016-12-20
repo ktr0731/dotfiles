@@ -123,6 +123,8 @@ Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
 Plug 'editorconfig/editorconfig-vim'
 
+" Plug 'lycoris0731/tweet.nvim', { 'do': ['make', 'UpdateRemotePlugins'] }
+
 Plug 'othree/html5.vim',           { 'for': 'html' }
 Plug 'mattn/emmet-vim',            { 'for': ['html', 'jsx', 'typescript'] }
 Plug 'mattn/jscomplete-vim',       { 'for': 'javascript' }
@@ -138,7 +140,7 @@ Plug 'benekastah/neomake'
 autocmd! BufWritePost * Neomake
 " Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neomru.vim',    { 'on': 'Unite' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -150,7 +152,7 @@ Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/dotfiles/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',      { 'for': 'go' }
-Plug 'zchee/deoplete-go', { 'for': 'go' }
+" Plug 'zchee/deoplete-go', { 'for': 'go' }
 
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
@@ -160,7 +162,7 @@ colorscheme seoul256
 
 """ Plugin settings
 "" deoplete
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 "" editorconfig
 let g:EditorConfig_verbose=1
@@ -268,5 +270,4 @@ au FileType go nmap <C-g>b <Plug>(go-build)
 au FileType go nmap <C-g>t <Plug>(go-test)
 au FileType go nmap <C-g>r <Plug>(go-run)
 
-" For my development
-set runtimepath^=~/private_works/tweet-nvim
+" set runtimepath^=~/private_works/tweet-nvim
