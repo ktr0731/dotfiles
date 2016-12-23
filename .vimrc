@@ -112,7 +112,6 @@ Plug 'cocopon/iceberg.vim'
 Plug 'junegunn/seoul256.vim'
 
 Plug 'itchyny/lightline.vim'
-" Plug 'nathanaelkane/vim-indent-guides'
 
 Plug 'kana/vim-smartinput'
 Plug 'tomtom/tcomment_vim'
@@ -140,9 +139,7 @@ Plug 'benekastah/neomake'
 autocmd! BufWritePost * Neomake
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Shougo/neomru.vim',    { 'on': 'Unite' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/unite.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'thinca/vim-quickrun'
@@ -235,28 +232,6 @@ call smartinput#define_rule({
     \     'char'  : '<BS>',
     \     'input' : '<Del><BS>',
     \     })
-
-"" Unite
-noremap <C-p> :Unite buffer<CR>
-noremap <C-n> :Unite -buffer-name=file file<CR>
-noremap <C-z> :Unite file_mru<CR>
-noremap :uff :<C-u>UnitewithBufferDir file -buffer-name=file<CR>
-" split
-au FileType unite nnoremap <silent> <buffer> <expr> <C-j> Unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-j> Unite#do_action('split')
-" vsplit
-au FileType unite nnoremap <silent> <buffer> <expr> <C-k> Unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-k> Unite#do_action('vsplit')
-" End by esc*2
-au FileType Unite nnoremap <silent> <buffer> <Esc><Esc> :q<CR>
-au FileType Unite inoremap <silent> <buffer> <Esc><Esc> <Esc>:q<CR>
-
-" Indent Guides
-" let g:indent_guides_enable_on_vim_startup=1
-" let g:indent_guides_auto_colors=0
-" let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', '']
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 
 " vim-go
 let g:go_fmt_command = "goimports"
