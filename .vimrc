@@ -101,6 +101,8 @@ nnoremap : ;
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 nnoremap <silent><C-i> :QuickRun<CR>
 
+tnoremap <C-j> <C-\><C-n>
+
 """ Plugins
 if !filereadable(expand("~/.config/nvim/autoload/plug.vim"))
   execute '!curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
