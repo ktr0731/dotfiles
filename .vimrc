@@ -98,7 +98,7 @@ nnoremap <silent> ]q :cprevious<CR>
 nnoremap ; :
 nnoremap : ;
 
-" nnoremap <silent><C-l> :NERDTreeToggle<CR>
+nnoremap <silent><C-l> :NERDTreeToggle<CR>
 nnoremap <silent><C-i> :QuickRun<CR>
 
 """ Plugins
@@ -138,9 +138,9 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 Plug 'benekastah/neomake'
 autocmd! BufWritePost * Neomake
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'Shougo/neomru.vim',    { 'on': 'Unite' }
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
@@ -152,8 +152,7 @@ Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/dotfiles/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',      { 'for': 'go' }
-" Plug 'zchee/deoplete-go', { 'for': 'go' }
-
+Plug 'zchee/deoplete-go', { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 
 call plug#end()
@@ -162,7 +161,7 @@ colorscheme seoul256
 
 """ Plugin settings
 "" deoplete
-" let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 "" editorconfig
 let g:EditorConfig_verbose=1
@@ -202,15 +201,15 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 "" NERDTree
 " For conceal markers.
-" if has('conceal')
-"   set conceallevel=2 concealcursor=niv
-" endif
-" let NERDTreeShowHidden = 1
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+let NERDTreeShowHidden = 1
 
 " Show NERDTree if buffer is empty.
-" if argc() == 0
-"   let g:nerdtree_tabs_open_on_console_startup = 1
-" end
+if argc() == 0
+  let g:nerdtree_tabs_open_on_console_startup = 1
+end
 
 "" QuickRun
 let g:quickrun_config={
@@ -257,11 +256,11 @@ au FileType Unite nnoremap <silent> <buffer> <Esc><Esc> :q<CR>
 au FileType Unite inoremap <silent> <buffer> <Esc><Esc> <Esc>:q<CR>
 
 " Indent Guides
-let g:indent_guides_enable_on_vim_startup=1
-let g:indent_guides_auto_colors=0
+" let g:indent_guides_enable_on_vim_startup=1
+" let g:indent_guides_auto_colors=0
 " let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', '']
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=234
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
 
 " vim-go
 let g:go_fmt_command = "goimports"
