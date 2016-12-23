@@ -102,6 +102,8 @@ nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 nnoremap <silent><C-i> :QuickRun<CR>
 
 tnoremap <C-j> <C-\><C-n>
+nnoremap <silent><Space>t :sp<CR>:terminal<CR>
+nnoremap <silent><Space>vt :vs<CR>:terminal<CR>
 
 """ Plugins
 if !filereadable(expand("~/.config/nvim/autoload/plug.vim"))
