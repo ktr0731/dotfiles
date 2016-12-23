@@ -16,6 +16,7 @@
 
 [core]
   editor = vim
+  excludefile = ~/.gitignore_global
 
 [ghq]
   root = ~/.ghq
