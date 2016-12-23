@@ -98,7 +98,7 @@ nnoremap <silent> ]q :cprevious<CR>
 nnoremap ; :
 nnoremap : ;
 
-nnoremap <silent><C-l> :NERDTreeToggle<CR>
+nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 nnoremap <silent><C-i> :QuickRun<CR>
 
 """ Plugins
@@ -139,6 +139,7 @@ Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'benekastah/neomake'
 autocmd! BufWritePost * Neomake
 Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/neomru.vim',    { 'on': 'Unite' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/unite.vim'
@@ -205,11 +206,6 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 let NERDTreeShowHidden = 1
-
-" Show NERDTree if buffer is empty.
-if argc() == 0
-  let g:nerdtree_tabs_open_on_console_startup = 1
-end
 
 "" QuickRun
 let g:quickrun_config={
