@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 DOTPATH=$HOME/dotfiles
 REPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
