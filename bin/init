@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DOTPATH=$HOME/dotfiles
 REPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
+BREW_INSTALL_COMMAND='/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' # From brew.sh/index_ja.html
 
 EXIST_GIT=0
 if [ ! -e $DOTPATH ]; then
@@ -13,6 +14,16 @@ if [ ! -e $DOTPATH ]; then
   else
     echo "Please install git!"
     exit 1
+  fi
+fi
+
+if type zsh > /dev/null 2>&1; then
+  if [ $(uname) = 'Darwin' ] && type brew > /dev/null 2>&1; then
+    "$BREW_INSTALL_COMMAND" && brew install zsh
+  fi
+
+  if type apt > /dev/null 2>&1; then
+    sudo apt install zsh
   fi
 fi
 
