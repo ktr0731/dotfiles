@@ -65,6 +65,7 @@ path=(
   $HOME/bin(N-/)
   $HOME/.yarn/bin(N-/)
   ./node_modules/.bin(N-/)
+  /usr/local/go/bin(N-/)
   $path
 )
 
