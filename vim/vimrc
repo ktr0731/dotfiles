@@ -165,9 +165,6 @@ colorscheme seoul256
 "" deoplete
 let g:deoplete#enable_at_startup = 1
 
-"" editorconfig
-let g:EditorConfig_verbose=1
-
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_settings = {
