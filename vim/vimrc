@@ -147,7 +147,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'thinca/vim-quickrun'
-Plug 'zerowidth/vim-copy-as-rtf'
 Plug 'junegunn/vim-emoji'
 
 Plug 'thinca/vim-splash'
@@ -186,9 +185,9 @@ let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators
 autocmd! BufWritePost * Neomake
 
 "" neosnippet
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " imap <expr><TAB>
