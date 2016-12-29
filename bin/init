@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
 DOTPATH=$HOME/dotfiles
-REPOSITORY_URL="https://github.com/lycoris0731/dotfiles"
-BREW_INSTALL_COMMAND='/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"' # From brew.sh/index_ja.html
+REPOSITORY_URL=https://github.com/lycoris0731/dotfiles
+BREW_INSTALL_COMMAND="/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install) # From brew.sh/index_ja.html
 
-EXIST_GIT=0
-if [ ! -e $DOTPATH ]; then
+if [ ! -e "$DOTPATH" ]; then
   # Clone repository
-  if [ $EXIST_GIT -eq 1 ]; then
+  if type git > /dev/null 2>&1; then
     git clone --recursive "$REPOSITORY_URL" "$DOTPATH"
-    cd $DOTPATH
-
+    cd "$DOTPATH" || exit
   else
     echo "Please install git!"
     exit 1
@@ -18,7 +16,7 @@ if [ ! -e $DOTPATH ]; then
 fi
 
 if type zsh > /dev/null 2>&1; then
-  if [ $(uname) = 'Darwin' ] && type brew > /dev/null 2>&1; then
+  if [ "$(uname)" = 'Darwin' ] && type brew > /dev/null 2>&1; then
     "$BREW_INSTALL_COMMAND" && brew install zsh
   fi
 
@@ -31,6 +29,6 @@ fi
 # Prezto
 #
 
-if [ ! -e "$HOME/.zprezto" ]; then
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+if [ ! -e "$HOME"/.zprezto ]; then
+  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}"/.zprezto
 fi

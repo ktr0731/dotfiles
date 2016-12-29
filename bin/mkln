@@ -1,70 +1,35 @@
-#! /bin/zsh
+#!/bin/zsh
 
 DOTPATH=$HOME/dotfiles
 
 echo "\$DOTPATH : $DOTPATH"
 echo "Created dotfile symbolic links."
 
-#
-# Zsh
-#
-echo "Zsh"
-for rcfile in "$DOTPATH"/zsh/*; do
-  ln -sf "$rcfile" "$HOME/.${rcfile:t}"
-  if [ $? -eq 0 ]; then
-    print "    - $rcfile"
-  fi
-done
-echo ""
+directories=(zsh vim git others)
 
-#
-# Vim
-#
-echo "Vim"
-ln -sf "$DOTPATH"/vim/vim "$HOME"/.vim
-ln -sf "$DOTPATH"/vim/vimrc "$HOME"/.vimrc
-# for rcfile in "$DOTPATH"/vim/*; do
-#   if [ "$rcfile" != "$DOTPATH"/vim/vim ]; then
-#     ln -sf "$rcfile" "$HOME/.${rcfile:t}"
-#     if [ $? -eq 0 ]; then
-#       print "    - $rcfile"
-#     fi
-#   fi
-# done
-echo ""
+for dir in ${directories[@]}; do
+  echo "$dir"
 
-# Neovim
-echo "Neovim"
-ln -sf "$DOTPATH"/vim/vim "$HOME"/.config/nvim
-ln -sf "$DOTPATH"/vim/vimrc "$HOME"/.config/nvim/init.vim
-if [ $? -eq 0 ]; then
-print "    - init.vim"
-fi
+  for rcfile in "$DOTPATH"/"$dir"/*; do
+    ln -sf "$rcfile" "$HOME/.${rcfile:t}"
+    if [ $? -eq 0 ]; then
+      print "    - $rcfile"
+    fi
 
-echo ""
+    if [ "$dir" = vim ]; then
+      ln -sf "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim
+      if [ $? -eq 0 ]; then
+        print "    - $rcfile (Neovim)"
+      fi
 
-#
-# Git
-#
-echo "Git"
-for rcfile in "$DOTPATH"/git/*; do
+      ln -sf "$DOTPATH"/"$dir"/vimrc "$HOME"/.config/nvim/init.vim
+      if [ $? -eq 0 ]; then
+        print "    - $rcfile (Neovim)"
+      fi
+    fi
+  done
 
-  ln -sf "$rcfile" "$HOME/.${rcfile:t}"
-  if [ $? -eq 0 ]; then
-    print "    - $rcfile"
-  fi
-done
-
-#
-# Others
-#
-echo "Others"
-for rcfile in "$DOTPATH"/others/*; do
-
-  ln -sf "$rcfile" "$HOME/.${rcfile:t}"
-  if [ $? -eq 0 ]; then
-    print "    - $rcfile"
-  fi
+  echo ""
 done
 
 #
