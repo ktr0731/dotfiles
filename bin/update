@@ -1,14 +1,13 @@
-#! /usr/bin/env zsh
+#!/usr/bin/env zsh
 
-DOTPATH=$HOME/dotfiles
+DOTPATH="$HOME"/dotfiles
 
-cd $DOTPATH
+cd "$DOTPATH"
 
-which git > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-  git fetch origin
-  git reset --hard origin/master
+if type git > /dev/null 2>&1; then
+  git stash -u
+  git pull origin master
 fi
 
-source $HOME/.zshrc
-source $HOME/.zshenv
+test -e "$HOME"/.zshrc && source "$HOME"/.zshrc
+test -e "$HOME"/.zshenv && source "$HOME"/.zshenv
