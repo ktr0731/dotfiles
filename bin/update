@@ -2,6 +2,8 @@
 
 DOTPATH="$HOME"/dotfiles
 
+! test -e "$DOTPATH" && echo "\$DOTPATH does not exist" && exit 0
+
 cd "$DOTPATH"
 
 if type git > /dev/null 2>&1; then
