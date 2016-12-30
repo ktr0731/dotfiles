@@ -15,19 +15,20 @@ for dir in ${directories[@]}; do
     if [ $? -eq 0 ]; then
       print "    - $rcfile"
     fi
-
-    if [ "$dir" = vim ]; then
-      ln -sf "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim
-      if [ $? -eq 0 ]; then
-        print "    - $rcfile (Neovim)"
-      fi
-
-      ln -sf "$DOTPATH"/"$dir"/vimrc "$HOME"/.config/nvim/init.vim
-      if [ $? -eq 0 ]; then
-        print "    - $rcfile (Neovim)"
-      fi
-    fi
   done
+
+  # Neovim
+  if [ "$dir" = vim ]; then
+    ln -sf "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim
+    if [ $? -eq 0 ]; then
+      print "    - nvim (Neovim)"
+    fi
+
+    ln -sf "$DOTPATH"/"$dir"/vimrc "$HOME"/.config/nvim/init.vim
+    if [ $? -eq 0 ]; then
+      print "    - init.vim (Neovim)"
+    fi
+  fi
 
   echo ""
 done
