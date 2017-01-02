@@ -4,7 +4,7 @@ DOTPATH=$HOME/dotfiles
 REPOSITORY_URL=https://github.com/lycoris0731/dotfiles
 BREW_INSTALL_COMMAND="/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install) # From brew.sh/index_ja.html
 
-if [ ! -e "$DOTPATH" ]; then
+if [ ! -d "$DOTPATH" ]; then
   # Clone repository
   if type git > /dev/null 2>&1; then
     git clone --recursive "$REPOSITORY_URL" "$DOTPATH"
@@ -29,6 +29,6 @@ fi
 # Prezto
 #
 
-if [ ! -e "$HOME"/.zprezto ]; then
+if [ ! -d "$HOME"/.zprezto ]; then
   git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}"/.zprezto
 fi

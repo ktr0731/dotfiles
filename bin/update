@@ -2,7 +2,7 @@
 
 DOTPATH="$HOME"/dotfiles
 
-! test -e "$DOTPATH" && echo "\$DOTPATH does not exist" && exit 0
+[ ! -e "$DOTPATH" ] && echo "\$DOTPATH does not exist" && exit 0
 
 cd "$DOTPATH"
 
@@ -11,5 +11,5 @@ if type git > /dev/null 2>&1; then
   git pull origin master
 fi
 
-test -e "$HOME"/.zshrc && source "$HOME"/.zshrc
-test -e "$HOME"/.zshenv && source "$HOME"/.zshenv
+[ -f "$HOME"/.zshrc ] && source "$HOME"/.zshrc
+[ -f "$HOME"/.zshenv ] && source "$HOME"/.zshenv
