@@ -92,14 +92,16 @@ nnoremap <Space>j <C-w>j
 nnoremap <Space>k <C-w>k
 nnoremap <Space>l <C-w>l
 
-nnoremap <silent> [q :cnext<CR>
-nnoremap <silent> ]q :cprevious<CR>
+nnoremap <silent> [q :cprevious<CR>
+nnoremap <silent> ]q :cnext<CR>
+nnoremap <silent> [Q :cfirst<CR>
+nnoremap <silent> ]Q :clast<CR>
 
 nnoremap ; :
 nnoremap : ;
 
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
-nnoremap <silent><C-i> :QuickRun<CR>
+" nnoremap <silent><C-i> :QuickRun<CR>
 
 tnoremap <C-j> <C-\><C-n>
 nnoremap <silent><Space>t :sp<CR>:terminal<CR>
@@ -186,6 +188,7 @@ let g:neomake_html_enabled_markers        = ['htmlhint']
 let g:neomake_shellscript_enabled_markers = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
 let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
+let g:neomake_go_enabled_markers          = ['golint']
 autocmd! BufWritePost * Neomake
 
 "" neosnippet
@@ -209,9 +212,9 @@ endif
 let NERDTreeShowHidden = 1
 
 "" QuickRun
-let g:quickrun_config={
-\ '*': {'split': ''}
-\}
+" let g:quickrun_config={
+" \ '*': {'split': ''}
+" \}
 
 "" smartinput
 " (#) -> ( # ), ( # ) -> (#)
