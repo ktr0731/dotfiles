@@ -153,6 +153,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'thinca/vim-quickrun'
 Plug 'junegunn/vim-emoji'
+Plug 'junegunn/limelight.vim'
 Plug 'vim-jp/vimdoc-ja'
 
 Plug 'thinca/vim-splash'
