@@ -101,7 +101,6 @@ nnoremap ; :
 nnoremap : ;
 
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
-" nnoremap <silent><C-i> :QuickRun<CR>
 
 tnoremap <C-j> <C-\><C-n>
 nnoremap <silent><Space>t :sp<CR>:terminal<CR>
@@ -211,11 +210,6 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 let NERDTreeShowHidden = 1
-
-"" QuickRun
-" let g:quickrun_config={
-" \ '*': {'split': ''}
-" \}
 
 "" smartinput
 " (#) -> ( # ), ( # ) -> (#)
