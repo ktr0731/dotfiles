@@ -94,6 +94,15 @@ fi
 
 source ~/.zplug/init.zsh
 
+# My CLI tools
+zplug "lycoris0731/tmp", as:command
+zplug "lycoris0731/clip", as:command
+
+# Other CLI tools
+zplug "nishanths/license", as:command
+zplug "motemen/ghq", as:command
+
+# Plugins
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "zsh-users/zsh-completions"
 zplug "mollifier/cd-gitroot"
