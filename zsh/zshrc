@@ -43,7 +43,7 @@ alias strace='strace -fi'
 alias ltrace='ltrace -fi'
 
 alias -g A=' | ag'
-alias -g F=' | fzf'
+alias -g F=' | fzy |'
 alias -g G=' | grep'
 alias -g H=' | head'
 alias -g L=' | less'
