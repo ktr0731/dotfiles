@@ -173,7 +173,9 @@ let g:deoplete#enable_at_startup = 1
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_settings = {
-  \ 'lang' : 'ja',
+  \ 'variables': {
+  \   'lang' : 'ja'
+  \ }
   \}
 
 "" Lightline

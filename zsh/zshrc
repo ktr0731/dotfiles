@@ -20,6 +20,18 @@ export SAVEHIST=50000
 # Aliases
 #
 
+alias -g A=' | ag'
+alias -g F=' | fzy |'
+alias -g G=' | grep'
+alias -g H=' | head'
+alias -g L=' | less'
+alias -g T=' | tail'
+alias -g W=' | wc'
+
+if type pbcopy > /dev/null 2>&1; then
+  alias -g P=' | pbcopy'
+fi
+
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
@@ -42,16 +54,7 @@ alias rm='rm -rf'
 alias strace='strace -fi'
 alias ltrace='ltrace -fi'
 
-alias -g A=' | ag'
-alias -g F=' | fzy |'
-alias -g G=' | grep'
-alias -g H=' | head'
-alias -g L=' | less'
-alias -g T=' | tail'
-alias -g W=' | wc'
-if type pbcopy > /dev/null 2>&1; then
-  alias -g P=' | pbcopy'
-fi
+alias tmpcd='tmp ls F cd'
 
 alias -s js='js'
 alias -s php='php'
