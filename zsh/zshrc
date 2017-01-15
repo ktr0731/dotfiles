@@ -55,6 +55,7 @@ alias strace='strace -fi'
 alias ltrace='ltrace -fi'
 
 alias tmpcd='tmp ls F cd'
+alias tmprm='tmp ls F tmp rm'
 
 alias -s js='js'
 alias -s php='php'

@@ -141,10 +141,13 @@ Plug 'elzr/vim-json',              { 'for': 'json' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
 
-Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'cespare/vim-toml', { 'for': ['toml', 'tml'] }
 
 Plug 'benekastah/neomake'
-autocmd! BufWritePost * Neomake
+augroup neomake
+  autocmd!
+  autocmd! BufWritePost * Neomake
+augroup END
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -173,15 +176,15 @@ let g:deoplete#enable_at_startup = 1
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_settings = {
-  \ 'variables': {
-  \   'lang' : 'ja'
-  \ }
-  \}
+      \ 'variables': {
+      \   'lang' : 'ja'
+      \ }
+      \}
 
 "" Lightline
 let g:lightline = {
-  \ 'colorscheme': 'solarized',
-  \ }
+      \ 'colorscheme': 'solarized',
+      \ }
 
 "" neomake
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -190,7 +193,7 @@ let g:neomake_html_enabled_markers        = ['htmlhint']
 let g:neomake_shellscript_enabled_markers = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
 let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
-let g:neomake_go_enabled_markers          = ['golint']
+" let g:neomake_go_enabled_markers          = ['golint', 'gotest', 'gobuild']
 autocmd! BufWritePost * Neomake
 
 "" neosnippet
@@ -204,7 +207,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 " \ neosnippet#expandable_or_jumpable() ?
 " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 "" NERDTree
 " For conceal markers.
@@ -217,25 +220,25 @@ let NERDTreeShowHidden = 1
 " (#) -> ( # ), ( # ) -> (#)
 call smartinput#map_to_trigger('i', '<Space>', '<Space>', '<Space>')
 call smartinput#define_rule({
-    \     'at'    : '(\%#)',
-    \     'char'  : '<Space>',
-    \     'input' : '<Space><Space><Left>',
-    \     })
+      \     'at'    : '(\%#)',
+      \     'char'  : '<Space>',
+      \     'input' : '<Space><Space><Left>',
+      \     })
 call smartinput#define_rule({
-    \     'at'    : '( \%# )',
-    \     'char'  : '<BS>',
-    \     'input' : '<Del><BS>',
-    \     })
+      \     'at'    : '( \%# )',
+      \     'char'  : '<BS>',
+      \     'input' : '<Del><BS>',
+      \     })
 call smartinput#define_rule({
-    \     'at'    : '{\%#}',
-    \     'char'  : '<Space>',
-    \     'input' : '<Space><Space><Left>',
-    \     })
+      \     'at'    : '{\%#}',
+      \     'char'  : '<Space>',
+      \     'input' : '<Space><Space><Left>',
+      \     })
 call smartinput#define_rule({
-    \     'at'    : '{ \%# }',
-    \     'char'  : '<BS>',
-    \     'input' : '<Del><BS>',
-    \     })
+      \     'at'    : '{ \%# }',
+      \     'char'  : '<BS>',
+      \     'input' : '<Del><BS>',
+      \     })
 
 " vim-go
 let g:go_fmt_command = "goimports"
@@ -243,5 +246,10 @@ let g:go_list_type = "quickfix"
 au FileType go nmap <C-g>b <Plug>(go-build)
 au FileType go nmap <C-g>t <Plug>(go-test)
 au FileType go nmap <C-g>r <Plug>(go-run)
+
+" augroup golang
+"   autocmd!
+"   au BufWritePost *.go GoBuild
+" augroup END
 
 " set runtimepath^=~/private_works/tweet-nvim
