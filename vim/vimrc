@@ -190,11 +190,9 @@ let g:lightline = {
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:neomake_javascript_enabled_markers  = ['eslint']
 let g:neomake_html_enabled_markers        = ['htmlhint']
-let g:neomake_shellscript_enabled_markers = ['shellcheck']
+let g:neomake_sh_enabled_markers          = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
 let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
-" let g:neomake_go_enabled_markers          = ['golint', 'gotest', 'gobuild']
-autocmd! BufWritePost * Neomake
 
 "" neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
