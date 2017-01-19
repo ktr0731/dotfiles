@@ -126,6 +126,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-surround'
 Plug 'szw/vim-tags'
+Plug 'majutsushi/tagbar'
 
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
@@ -193,6 +194,7 @@ let g:neomake_html_enabled_markers        = ['htmlhint']
 let g:neomake_sh_enabled_markers          = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
 let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
+autocmd! BufWritePost * Neomake
 
 "" neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -249,5 +251,8 @@ au FileType go nmap <C-g>r <Plug>(go-run)
 "   autocmd!
 "   au BufWritePost *.go GoBuild
 " augroup END
+
+" vim-tags
+let g:vim_tags_auto_generate = 1
 
 " set runtimepath^=~/private_works/tweet-nvim
