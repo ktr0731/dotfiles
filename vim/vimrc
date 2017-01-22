@@ -143,6 +143,8 @@ Plug 'hail2u/vim-css3-syntax',     { 'for': 'css' }
 Plug 'elzr/vim-json',              { 'for': 'json' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
+Plug 'pangloss/vim-javascript',    { 'for': ['javascript', 'riot'] }
+Plug 'ryym/vim-riot',              { 'for': 'riot' }
 
 Plug 'cespare/vim-toml', { 'for': ['toml', 'tml'] }
 
