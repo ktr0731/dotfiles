@@ -57,6 +57,8 @@ alias ltrace='ltrace -fi'
 alias tmpcd='tmp ls F cd'
 alias tmprm='tmp ls F tmp rm'
 
+alias it='itunes'
+
 alias ghql='ghq list F xargs | ghq look'
 
 alias -s js='js'
@@ -103,6 +105,7 @@ source ~/.zplug/init.zsh
 # My CLI tools
 zplug "lycoris0731/tmp", as:command
 zplug "lycoris0731/clip", as:command
+zplug "lycoris0731/itunes", as:command
 
 # Other CLI tools
 zplug "nishanths/license", as:command
