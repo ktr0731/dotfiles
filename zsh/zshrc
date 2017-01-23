@@ -31,6 +31,7 @@ export SAVEHIST=50000
 #
 
 bindkey -e
+export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>'
 
 #
 # Aliases
