@@ -16,7 +16,7 @@ if [ ! -d "$DOTPATH" ]; then
 fi
 
 if type zsh > /dev/null 2>&1; then
-  if [ "$(uname)" = 'Darwin' ] && type brew > /dev/null 2>&1; then
+  if [ "$(uname)" = 'Darwin' ] && ! type brew > /dev/null 2>&1; then
     "$BREW_INSTALL_COMMAND" && brew install zsh
   fi
 
