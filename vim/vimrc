@@ -136,7 +136,7 @@ Plug 'editorconfig/editorconfig-vim'
 " Plug 'lycoris0731/tweet.nvim', { 'do': ['make', 'UpdateRemotePlugins'] }
 
 Plug 'othree/html5.vim',           { 'for': 'html' }
-Plug 'mattn/emmet-vim',            { 'for': ['html', 'jsx', 'typescript'] }
+Plug 'mattn/emmet-vim',            { 'for': ['html', 'jsx', 'typescript', 'riot'] }
 Plug 'mattn/jscomplete-vim',       { 'for': 'javascript' }
 Plug 'pangloss/vim-javascript',    { 'for': 'javascript' }
 Plug 'hail2u/vim-css3-syntax',     { 'for': 'css' }
@@ -162,6 +162,7 @@ Plug 'thinca/vim-quickrun'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/limelight.vim'
 Plug 'vim-jp/vimdoc-ja'
+Plug 'tpope/vim-fugitive'
 
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.

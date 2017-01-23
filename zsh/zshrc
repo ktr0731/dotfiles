@@ -61,6 +61,9 @@ alias it='itunes'
 
 alias ghql='ghq list F xargs | ghq look'
 
+alias vimrc='vim ~/.vimrc'
+alias zshrc='vim ~/.zshrc'
+
 alias -s js='js'
 alias -s php='php'
 alias -s rb='ruby'
@@ -105,7 +108,7 @@ source ~/.zplug/init.zsh
 # My CLI tools
 zplug "lycoris0731/tmp", as:command
 zplug "lycoris0731/clip", as:command
-zplug "lycoris0731/itunes", as:command
+export ITUNES_CLI_FUZZY_TOOL='fzf'
 
 # Other CLI tools
 zplug "nishanths/license", as:command
@@ -117,7 +120,7 @@ zplug "zsh-users/zsh-completions"
 zplug "mollifier/cd-gitroot"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "Tarrasch/zsh-bd"
-zplug "hlissner/zsh-autopair", nice:10
+zplug "hlissner/zsh-autopair", defer:3
 # zplug "zsh-users/zsh-syntax-highlighting", nice:5
 
 if ! zplug check --verbose; then
@@ -127,7 +130,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load --verbose
+zplug load
 
 # cat << STEINS_GATE
 #                                                               ............
