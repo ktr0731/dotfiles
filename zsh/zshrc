@@ -10,6 +10,15 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
 fi
 
 #
+# User configuration sourced by interactive shells
+#
+
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
+
+#
 # History
 #
 
@@ -17,6 +26,11 @@ export HISTFILE=~/.zhistory
 export HISTSIZE=10000
 export SAVEHIST=50000
 
+#
+# Bindkey
+#
+
+bindkey -e
 
 #
 # Aliases
