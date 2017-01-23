@@ -26,9 +26,9 @@ if type zsh > /dev/null 2>&1; then
 fi
 
 #
-# Prezto
+# Zim
 #
 
-if [ ! -d "$HOME"/.zprezto ]; then
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}"/.zprezto
+if [ ! -d ${ZDOTDIR:-${HOME}}/.zim ]; then
+  git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
 fi
