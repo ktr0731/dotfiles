@@ -17,3 +17,6 @@ links:
 
 update:
 	@./bin/update
+
+clean:
+	@./bin/clean
