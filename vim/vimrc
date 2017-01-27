@@ -145,6 +145,7 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
 Plug 'pangloss/vim-javascript',    { 'for': ['javascript', 'riot'] }
 Plug 'ryym/vim-riot',              { 'for': 'riot' }
+Plug 'nikvdp/ejs-syntax',          { 'for': 'ejs' }
 
 Plug 'cespare/vim-toml', { 'for': ['toml', 'tml'] }
 

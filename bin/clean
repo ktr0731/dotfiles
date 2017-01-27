@@ -1,4 +1,8 @@
 #!/bin/bash
 
 # Remove all symbolick linkse
-find $HOME -maxdepth 1 -type l | while read line; do unlink $line; done
+find $HOME -maxdepth 1 -type l |
+while read line; do
+  unlink $line;
+done
+echo "Remove all symbolick links in \$HOME"

@@ -19,12 +19,12 @@ for dir in ${directories[@]}; do
 
   # Neovim
   if [ "$dir" = vim ]; then
-    ln -sf "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim
+    ln -s "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim > /dev/null 2>&1
     if [ $? -eq 0 ]; then
       print "    - nvim (Neovim)"
     fi
 
-    ln -sf "$DOTPATH"/"$dir"/vimrc "$HOME"/.config/nvim/init.vim
+    ln -s "$DOTPATH"/"$dir"/vimrc "$HOME"/.config/nvim/init.vim > /dev/null 2>&1
     if [ $? -eq 0 ]; then
       print "    - init.vim (Neovim)"
     fi
