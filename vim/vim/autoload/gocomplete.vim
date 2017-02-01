@@ -1,0 +1,1 @@
+/Users/lycoris/.vim/plugged/gocode/vim/autoload/gocomplete.vim

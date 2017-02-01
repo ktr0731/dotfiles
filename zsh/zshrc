@@ -106,6 +106,12 @@ chpwd () {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #
+# direnv
+#
+
+eval "$(direnv hook zsh)"
+
+#
 # zplug
 #
 
