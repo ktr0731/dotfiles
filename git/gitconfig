@@ -14,6 +14,7 @@
   p = push
   cancel = reset --hard HEAD~
   b = for-each-ref --sort=committerdate refs/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+  delb = branch --merged | grep -v develop -v master | xargs git branch -d
 
 [core]
   editor = vim
