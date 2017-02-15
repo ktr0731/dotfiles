@@ -104,9 +104,11 @@ nnoremap : ;
 
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 
+nnoremap <silent><Space> :GFiles<CR>
+
 tnoremap <C-j> <C-\><C-n>
-nnoremap <silent><Space>t :sp<CR>:terminal<CR>
-nnoremap <silent><Space>vt :vs<CR>:terminal<CR>
+" nnoremap <silent><Space>t :sp<CR>:terminal<CR>
+" nnoremap <silent><Space>vt :vs<CR>:terminal<CR>
 
 """ ctags
 nnoremap <C-]> g<C-]>
@@ -174,8 +176,6 @@ Plug 'fatih/vim-go',      { 'for': 'go' }
 Plug 'zchee/deoplete-go', { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-
-
 
 call plug#end()
 
