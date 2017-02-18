@@ -78,6 +78,10 @@ alias -s js='js'
 alias -s php='php'
 alias -s rb='ruby'
 
+if which mmake > /dev/null 2>&1; then
+  alias make='mmake'
+fi
+
 if [ uname = 'Darwin' ]; then
   alias ctags=$(brew --prefix)"/bin/ctags"
 fi
@@ -129,6 +133,7 @@ export ITUNES_CLI_FUZZY_TOOL='fzf'
 # Other CLI tools
 zplug "nishanths/license", as:command
 zplug "motemen/ghq", as:command
+zplug "tj/mmake", as:command
 
 # Plugins
 zplug "b4b4r07/enhancd", use:init.sh
