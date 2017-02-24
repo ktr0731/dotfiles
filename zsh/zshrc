@@ -25,6 +25,12 @@ bindkey -e
 export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>'
 
 #
+# Source
+#
+
+source /usr/local/bin/aws_zsh_completer.sh
+
+#
 # Aliases
 #
 
@@ -69,7 +75,7 @@ alias tmprm='tmp ls F tmp rm'
 
 alias it='itunes'
 
-alias ghql='ghq list F xargs | ghq look'
+alias ghql='(cd $(ghq list -p | fzf); $SHELL)'
 
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
@@ -114,6 +120,12 @@ chpwd () {
 #
 
 eval "$(direnv hook zsh)"
+
+#
+# ssh-agent
+#
+
+# eval "$(ssh-agent)"
 
 #
 # zplug
