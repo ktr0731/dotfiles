@@ -112,15 +112,37 @@ chpwd () {
 
 # dotc "commit message"
 dotc() {
-  if [ $# -ne 1 ]; then
+  if [ "$#" -ne 1 ]; then
     echo "Usage: dotc commit_msg"
     return
   fi
 
-  cd $HOME/dotfiles
-  g a .
-  g cm $1
-  g p origin master
+  cd "$HOME"/dotfiles
+  git add .
+  git commit -m "$1"
+  git push origin master
+}
+
+# gini [--gh repo_name]
+# gini does initial commit after initialize current directory
+gini() {
+  touch README.md
+
+  git init
+  git add .
+  git commit -m '[ADD] Initial commit'
+
+  if [ "$#" -ge 1 ]; then
+    case "$1" in
+      "--gh")
+        REPO_NAME=${2:-$(basename $(pwd))}
+        hub create -p "$REPO_NAME"
+        ;;
+      *)
+        echo 'Usage: dotc commit_msg --gh repo_name'
+        return
+    esac
+  fi
 }
 
 #
