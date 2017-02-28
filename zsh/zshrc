@@ -110,6 +110,10 @@ chpwd () {
   ls
 }
 
+precmd () {
+  echo $*
+}
+
 # dotc "commit message"
 dotc() {
   if [ "$#" -ne 1 ]; then

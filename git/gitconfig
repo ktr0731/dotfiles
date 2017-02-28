@@ -18,7 +18,7 @@
   delb = ! git branch --merged | grep -v develop -v master | xargs git branch -d
 
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = ~/.gitignore_global
 
 [ghq]
