@@ -167,6 +167,7 @@ Plug 'junegunn/vim-emoji'
 Plug 'junegunn/limelight.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/gina.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 
 Plug 'thinca/vim-splash'
