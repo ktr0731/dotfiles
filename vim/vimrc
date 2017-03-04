@@ -125,7 +125,7 @@ Plug 'junegunn/seoul256.vim'
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'kana/vim-smartinput'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-surround'
@@ -227,30 +227,6 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 let NERDTreeShowHidden = 1
-
-"" smartinput
-" (#) -> ( # ), ( # ) -> (#)
-call smartinput#map_to_trigger('i', '<Space>', '<Space>', '<Space>')
-call smartinput#define_rule({
-      \     'at'    : '(\%#)',
-      \     'char'  : '<Space>',
-      \     'input' : '<Space><Space><Left>',
-      \     })
-call smartinput#define_rule({
-      \     'at'    : '( \%# )',
-      \     'char'  : '<BS>',
-      \     'input' : '<Del><BS>',
-      \     })
-call smartinput#define_rule({
-      \     'at'    : '{\%#}',
-      \     'char'  : '<Space>',
-      \     'input' : '<Space><Space><Left>',
-      \     })
-call smartinput#define_rule({
-      \     'at'    : '{ \%# }',
-      \     'char'  : '<BS>',
-      \     'input' : '<Del><BS>',
-      \     })
 
 " vim-go
 let g:go_fmt_command = "goimports"
