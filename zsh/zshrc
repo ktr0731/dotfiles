@@ -114,17 +114,26 @@ precmd () {
   echo $*
 }
 
+# Used by other shellscripts only
+# gitcommit <commit msg>
+gitcommit() {
+  if [ "$#" -ne 1 ]; then
+    return 1
+  fi
+
+  git add .
+  git commit -m "$1"
+  git push origin master
+}
+
 # dotc "commit message"
 dotc() {
   if [ "$#" -ne 1 ]; then
     echo "Usage: dotc commit_msg"
-    return
+    return 1
   fi
 
-  cd "$HOME"/dotfiles
-  git add .
-  git commit -m "$1"
-  git push origin master
+  (cd "$HOME"/dotfiles && gitcommit "$1")
 }
 
 # gini [--gh repo_name]
