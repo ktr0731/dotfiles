@@ -10,6 +10,8 @@ syntax enable
 " Show bottom status
 set laststatus=2
 
+set encoding=utf-8
+
 set backspace=indent,eol,start
 set ambiwidth=double
 
@@ -124,6 +126,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'junegunn/seoul256.vim'
 
 Plug 'itchyny/lightline.vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
@@ -142,7 +145,7 @@ Plug 'mattn/emmet-vim',            { 'for': ['html', 'jsx', 'typescript', 'riot'
 Plug 'mattn/jscomplete-vim',       { 'for': 'javascript' }
 Plug 'hail2u/vim-css3-syntax',     { 'for': 'css' }
 Plug 'elzr/vim-json',              { 'for': 'json' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+" Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
 Plug 'pangloss/vim-javascript',    { 'for': ['javascript', 'riot'] }
 Plug 'ryym/vim-riot',              { 'for': 'riot' }
@@ -176,9 +179,10 @@ Plug 'fatih/vim-go',         { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'nsf/gocode',           { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go',           { 'for': 'go' }
+" Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
 Plug 'Shougo/neco-syntax'
-Plug 'zchee/deoplete-go',    { 'for': 'go' }
 Plug 'ujihisa/neco-look'
 
 call plug#end()
@@ -209,6 +213,7 @@ let g:neomake_javascript_enabled_markers  = ['eslint']
 let g:neomake_html_enabled_markers        = ['htmlhint']
 let g:neomake_sh_enabled_markers          = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
+let g:neomake_vim_enabled_markers         = ['vint']
 let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
 autocmd! BufWritePost * Neomake
 
@@ -250,4 +255,4 @@ let g:vim_tags_auto_generate = 1
 " fzf
 " TODO: godocを開きたい
 
-" set runtimepath^=~/private_works/tweet-nvim
+set runtimepath^=~/private_works/tree.vim
