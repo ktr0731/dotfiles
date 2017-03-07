@@ -19,6 +19,7 @@ Session.vim
 .netrwhist
 *~
 *.vim-rplugin~
+tmp/
 
 #
 # Programming languages
