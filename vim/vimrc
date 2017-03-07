@@ -1,54 +1,43 @@
-""" Basic
+set encoding=utf-8
+scriptencoding utf-8
+
 source $VIMRUNTIME/macros/matchit.vim
 
 let b:match_ignorecase = 1
 
-let g:python3_host_prog = expand($HOME) . "/.pyenv/shims/python3"
+let g:python3_host_prog = expand($HOME) . '/.pyenv/shims/python3'
 
 syntax enable
 
 " Show bottom status
 set laststatus=2
 
-set encoding=utf-8
-
 set backspace=indent,eol,start
 set ambiwidth=double
-
 set nowrap
-
-" Not create swap file
 set noswapfile
+set nobackup
 
 set hlsearch
-
-" Search options
 set ignorecase
 set smartcase " When a capital letter is included, not ignore the uppercase
 
 set ruler
-
-" Show row number
 set number
-
-" Show space char
-set list
+set list " Show space char
 set listchars=tab:>-,trail:.,nbsp:+
+set scrolloff=5 " Margin scroll
+set cursorline
+set cursorcolumn
 
 " Use tab completion
 set wildmenu
-
 set showcmd
 
 " Use clipboard of system
 set clipboard=unnamed
 
 set autoindent
-
-" Margin scroll
-set scrolloff=5
-
-set nobackup
 
 set mouse=c
 
@@ -61,13 +50,8 @@ augroup auto_comment_off
   autocmd BufEnter * setlocal formatoptions-=o
 augroup END
 
-""" Color
 set t_Co=256
 set background=dark
-
-" Highlight current position
-set cursorline
-set cursorcolumn
 
 " Indent type: c lang
 " set cindent
@@ -116,7 +100,7 @@ tnoremap <C-j> <C-\><C-n>
 nnoremap <C-]> g<C-]>
 
 """ Plugins
-if !filereadable(expand("~/.config/nvim/autoload/plug.vim"))
+if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
   execute '!curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
 
@@ -197,15 +181,21 @@ let g:deoplete#max_list = 20 " Default: 100
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_settings = {
-      \ 'variables': {
-      \   'lang' : 'ja'
-      \ }
-      \}
+  \   'variables': {
+  \     'lang': 'ja'
+  \   }
+  \ }
 
 "" Lightline
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
-      \ }
+  \   'colorscheme': 'solarized',
+  \ }
+
+let g:quickrun_config = {
+  \   'javascript': {
+  \     'command': 'node'
+  \   }
+  \ }
 
 "" neomake
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -215,7 +205,7 @@ let g:neomake_sh_enabled_markers          = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
 let g:neomake_vim_enabled_markers         = ['vint']
 let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 
 "" neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -223,23 +213,21 @@ smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
-" imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><TAB>
+  \   pumvisible() ? <C-n> :
+  \   neosnippet#expandable_or_jumpable() ? <Plug>(neosnippet_expand_or_jump) : <TAB>
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ? <Plug>(neosnippet_expand_or_jump)" : <TAB>
 
 "" NERDTree
 " For conceal markers.
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-let NERDTreeShowHidden = 1
+let g:NERDTreeShowHidden = 1
 
 " vim-go
-let g:go_fmt_command = "goimports"
-let g:go_list_type = "quickfix"
+let g:go_fmt_command = 'goimports'
+let g:go_list_type = 'quickfix'
 au FileType go nmap <C-g>b <Plug>(go-build)
 au FileType go nmap <C-g>t <Plug>(go-test)
 au FileType go nmap <C-g>r <Plug>(go-run)
