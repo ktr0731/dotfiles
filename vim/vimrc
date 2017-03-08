@@ -163,8 +163,9 @@ Plug 'fatih/vim-go',         { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'nsf/gocode',           { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
-Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go',           { 'for': 'go' }
+Plug 'Shougo/deoplete.nvim',          { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go',             { 'for': 'go' }
+Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
 " Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
