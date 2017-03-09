@@ -204,6 +204,7 @@ zplug "mollifier/cd-gitroot"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "Tarrasch/zsh-bd"
 zplug "hlissner/zsh-autopair", defer:3
+zplug "felixr/docker-zsh-completion"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
