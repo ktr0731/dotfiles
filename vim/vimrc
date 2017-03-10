@@ -61,9 +61,12 @@ set background=dark
 " set expandtab
 
 """ Mappings
+let g:mapleader = "\<Space>"
+let g:maplocalleader = "\<Space>"
+
 inoremap <C-j> <Esc>
 
-" Emacs bind in insert mode
+" Emacs bind
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
