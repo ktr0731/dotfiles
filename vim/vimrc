@@ -114,6 +114,7 @@ Plug 'junegunn/seoul256.vim'
 
 Plug 'itchyny/lightline.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'vim-jp/vital.vim'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
