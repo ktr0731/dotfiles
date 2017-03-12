@@ -27,12 +27,17 @@ set number
 set list " Show space char
 set listchars=tab:>-,trail:.,nbsp:+
 set scrolloff=5 " Margin scroll
+set sidescroll=1
+set sidescrolloff=15
 set cursorline
 set cursorcolumn
 
 " Use tab completion
 set wildmenu
 set showcmd
+set wildignore+=*.o,*.obj,*.out
+set wildignore+=*.zip,*.tar.gz
+set wildignore+=*/vendor/*,.git
 
 " Use clipboard of system
 set clipboard=unnamed
@@ -43,6 +48,10 @@ set mouse=c
 
 " Do auto write when do make
 set autowrite
+
+" Do auto read when opened file is changed
+set autoread
+
 
 augroup auto_comment_off
   autocmd!
@@ -81,10 +90,15 @@ nnoremap <Space>j <C-w>j
 nnoremap <Space>k <C-w>k
 nnoremap <Space>l <C-w>l
 
-nnoremap <silent> [q :cprevious<CR>
-nnoremap <silent> ]q :cnext<CR>
-nnoremap <silent> [Q :cfirst<CR>
-nnoremap <silent> ]Q :clast<CR>
+nnoremap <silent>[q :cprevious<CR>
+nnoremap <silent>]q :cnext<CR>
+nnoremap <silent>[Q :cfirst<CR>
+nnoremap <silent>]Q :clast<CR>
+
+nnoremap Y y$
+
+nnoremap n nzz
+nnoremap N Nzz
 
 nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
 

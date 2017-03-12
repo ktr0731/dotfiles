@@ -14,6 +14,7 @@ indent_size = 4
 
 [*.py]
 indent_size = 4
+max_line_length = 80
 
 [*.md]
 trim_trailing_whitespace = false
@@ -22,6 +23,5 @@ trim_trailing_whitespace = false
 indent_style = tab
 indent_size = 8
 
-[*.c]
-indent_style = space
-indent_size = 2
+[*.js]
+max_line_length = 80
