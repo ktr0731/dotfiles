@@ -189,6 +189,7 @@ Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 call plug#end()
 
@@ -268,6 +269,5 @@ let g:rustfmt_autosave = 1
 if $DEV_VIM == 1
   exe "set runtimepath^=" . getcwd()
   autocmd! BufWritePost *.vim source %
-
-  nnoremap <Space><Space> :TreexpExpand<CR>
+  vnoremap <Space><Space> :'<,'>CTree<CR>
 endif
