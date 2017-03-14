@@ -45,12 +45,19 @@ fi
 
 export GOPATH=~/.go
 
+#
+# Cargo
+#
+
+export CARGO_HOME=~/.cargo
+
 # Environment variables path
 path=(
   $PYENV_ROOT/bin(N-/)
   $RBENV_ROOT/bin(N-/)
   $PHPENV_ROOT/bin(N-/)
   $GOPATH/bin(N-/)
+  $CARGO_HOME/bin(N-/)
   $HOME/Library/Android/sdk/platform-tools(N-/)
   $HOME/Library/Android/sdk/tools(N-/)
   $HOME/bin(N-/)
