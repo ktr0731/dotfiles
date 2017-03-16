@@ -227,7 +227,10 @@ let g:neomake_sh_enabled_markers          = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
 let g:neomake_vim_enabled_markers         = ['vint']
 let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
-autocmd! BufWritePost * Neomake
+augroup neomake
+  au!
+  au BufWritePost * Neomake
+augroup END
 
 "" neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -250,14 +253,12 @@ let g:NERDTreeShowHidden = 1
 " vim-go
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
-au FileType go nmap <C-g>b <Plug>(go-build)
-au FileType go nmap <C-g>t <Plug>(go-test)
-au FileType go nmap <C-g>r <Plug>(go-run)
-
-" augroup golang
-"   autocmd!
-"   au BufWritePost *.go GoBuild
-" augroup END
+augroup golang
+  au!
+  au FileType go nmap <C-g>b <Plug>(go-build)
+  au FileType go nmap <C-g>t <Plug>(go-test)
+  au FileType go nmap <C-g>r <Plug>(go-run)
+augroup END
 
 " vim-tags
 let g:vim_tags_auto_generate = 1
@@ -267,7 +268,10 @@ let g:rustfmt_autosave = 1
 
 """ development
 if $DEV_VIM == 1
-  exe "set runtimepath^=" . getcwd()
-  autocmd! BufWritePost *.vim source %
+  exe 'set runtimepath^=' . getcwd()
+  augroup dev_vim
+    au!
+    au BufWritePost *.vim source %
+  augroup END
   vnoremap <Space><Space> :'<,'>CTree<CR>
 endif
