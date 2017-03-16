@@ -1,0 +1,16 @@
+snippet     goa
+abbr        goa bootstrap
+options     head
+  package design
+
+  import (
+          . "github.com/goadesign/goa/design"
+          . "github.com/goadesign/goa/design/apidsl"
+  )
+
+  var _ = API("${1:name}", func() {
+          Title("${2:title}")
+          Description("${3:description}")
+          Scheme("${4:http}")
+          Host("${0:TARGET:localhost:8080}")
+  })
