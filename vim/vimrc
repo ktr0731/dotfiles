@@ -81,14 +81,16 @@ inoremap <C-b> <Left>
 
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
-nnoremap <Space>s <C-w>s
-nnoremap <Space>v <C-w>v
-nnoremap <Space>q <C-w>q
-nnoremap <Space>w <C-w>w
-nnoremap <Space>h <C-w>h
-nnoremap <Space>j <C-w>j
-nnoremap <Space>k <C-w>k
-nnoremap <Space>l <C-w>l
+nnoremap <Leader>s <C-w>s
+nnoremap <Leader>v <C-w>v
+nnoremap <Leader>q <C-w>q
+nnoremap <Leader>w <C-w>w
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
+
+nmap <Space>] :vs<CR><C-]>
 
 nnoremap <silent>[q :cprevious<CR>
 nnoremap <silent>]q :cnext<CR>
@@ -110,8 +112,8 @@ nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 nnoremap <silent><Space> :GFiles<CR>
 
 tnoremap <C-j> <C-\><C-n>
-" nnoremap <silent><Space>t :sp<CR>:terminal<CR>
-" nnoremap <silent><Space>vt :vs<CR>:terminal<CR>
+nnoremap <silent><Leader>t :sp<CR>:terminal<CR>
+nnoremap <silent><Leader>vt :vs<CR>:terminal<CR>
 
 """ ctags
 nnoremap <C-]> g<C-]>
@@ -256,12 +258,19 @@ let g:NERDTreeShowHidden = 1
 " vim-go
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
-augroup golang
-  au!
-  au FileType go nmap <C-g>b <Plug>(go-build)
-  au FileType go nmap <C-g>t <Plug>(go-test)
-  au FileType go nmap <C-g>r <Plug>(go-run)
-augroup END
+au FileType go nmap <C-g>b <Plug>(go-build)
+au FileType go nmap <C-g>t <Plug>(go-test)
+au FileType go nmap <C-g>r <Plug>(go-run)
+
+au FileType go nmap <C-g>ds <Plug>(go-def-split)
+au FileType go nmap <C-g>dv <Plug>(go-def-vertical)
+au FileType go nmap <C-g>dt <Plug>(go-def-tab)
+
+au FileType go nmap <C-g>gd <Plug>(go-doc)
+au FileType go nmap <C-g>gv <Plug>(go-doc-vertical)
+
+au FileType go nmap <C-g>s <Plug>(go-implements)
+au FileType go nmap <C-g>e <Plug>(go-rename)
 
 " vim-tags
 let g:vim_tags_auto_generate = 1
