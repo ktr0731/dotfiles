@@ -84,6 +84,10 @@ alias zshrc='vim ~/.zshrc'
 
 alias gip='curl inet-ip.info'
 
+if which sshrc > /dev/null 2>&1; then
+  alias ssh='sshrc'
+fi
+
 alias -s js='node'
 alias -s php='php'
 alias -s rb='ruby'
