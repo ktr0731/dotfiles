@@ -39,6 +39,9 @@ set wildignore+=*.o,*.obj,*.out
 set wildignore+=*.zip,*.tar.gz
 set wildignore+=*/vendor/*,.git
 
+" Neovim
+set inccommand=split
+
 " Use clipboard of system
 set clipboard=unnamed
 
