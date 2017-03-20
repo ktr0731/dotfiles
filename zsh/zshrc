@@ -82,6 +82,8 @@ alias ghql='(cd $(ghq list -p | fzf); $SHELL)'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 
+alias gip='curl inet-ip.info'
+
 alias -s js='node'
 alias -s php='php'
 alias -s rb='ruby'
