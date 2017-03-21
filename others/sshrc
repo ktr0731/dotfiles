@@ -14,7 +14,7 @@ alias cp='cp -r'
 alias gip='curl inet-ip.info'
 
 # Vim
-cat << EOF >> ~/.vimrc
+cat << EOF >> /tmp/.sshrc.vimrc
 let g:mapleader = "\<Space>"
 let g:maplocalleader = "\<Space>"
 
@@ -59,3 +59,4 @@ nnoremap <silent><Space> :GFiles<CR>
 nnoremap <silent><Leader>t :sp<CR>:terminal<CR>
 nnoremap <silent><Leader>vt :vs<CR>:terminal<CR>
 EOF
+export VIMINIT='source /tmp/.sshrc.vimrc'
