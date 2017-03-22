@@ -118,8 +118,11 @@ tnoremap <C-j> <C-\><C-n>
 nnoremap <silent><Leader>t :sp<CR>:terminal<CR>
 nnoremap <silent><Leader>vt :vs<CR>:terminal<CR>
 
-""" ctags
+" ctags
 nnoremap <C-]> g<C-]>
+
+" Dash.vim
+nnoremap <silent><leader>d <Plug>DashSearch
 
 """ Plugins
 if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -141,6 +144,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-surround'
 Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
+Plug 'rizzatti/dash.vim'
 
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
@@ -164,10 +168,10 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'cespare/vim-toml', { 'for': ['toml', 'tml'] }
 
 Plug 'benekastah/neomake'
-augroup neomake
-  autocmd!
-  autocmd! BufWritePost * Neomake
-augroup END
+" augroup neomake
+"   autocmd!
+autocmd! BufWritePost * Neomake
+" augroup END
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/neosnippet.vim'
