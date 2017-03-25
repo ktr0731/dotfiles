@@ -77,7 +77,7 @@ alias tmprm='tmp ls F tmp rm'
 
 alias it='itunes'
 
-alias ghql='(cd $(ghq list -p | fzf); $SHELL)'
+alias ghql='(cd $(ghq list -p | fzf))'
 
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
