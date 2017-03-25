@@ -43,7 +43,7 @@ fi
 # Go
 #
 
-export GOPATH=~/.go
+export GOPATH=~/.ghq
 
 #
 # Cargo

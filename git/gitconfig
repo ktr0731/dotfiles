@@ -22,8 +22,7 @@
   excludesfile = ~/.gitignore_global
 
 [ghq]
-  root = ~/.ghq
-  root = ~/.go/src
+  root = ~/.ghq/src
 
 [filter "lfs"]
   clean = git-lfs clean -- %f
