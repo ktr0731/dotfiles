@@ -36,9 +36,9 @@ tmp/
 tags
 !tags/
 
-#
 # dotenv, direnv
-#
-
 .env
 .envrc
+
+# Terraform
+terraform.tfstate
