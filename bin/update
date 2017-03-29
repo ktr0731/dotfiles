@@ -7,9 +7,5 @@ DOTPATH="$HOME"/dotfiles
 cd "$DOTPATH"
 
 if type git > /dev/null 2>&1; then
-  git stash -u
-  git pull origin master
+  git pull origin master | true
 fi
-
-[ -f "$HOME"/.zshrc ] && source "$HOME"/.zshrc
-[ -f "$HOME"/.zshenv ] && source "$HOME"/.zshenv
