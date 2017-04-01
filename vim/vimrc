@@ -265,6 +265,7 @@ let g:NERDTreeShowHidden = 1
 " vim-go
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
+
 au FileType go nmap <C-g>b <Plug>(go-build)
 au FileType go nmap <C-g>t <Plug>(go-test)
 au FileType go nmap <C-g>r <Plug>(go-run)
@@ -278,6 +279,9 @@ au FileType go nmap <C-g>gv <Plug>(go-doc-vertical)
 
 au FileType go nmap <C-g>s <Plug>(go-implements)
 au FileType go nmap <C-g>e <Plug>(go-rename)
+
+" gocode
+let g:go_gocode_unimported_packages = 1
 
 " vim-tags
 let g:vim_tags_auto_generate = 1

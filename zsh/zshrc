@@ -172,12 +172,6 @@ gini() {
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #
-# direnv
-#
-
-eval "$(direnv hook zsh)"
-
-#
 # ssh-agent
 #
 
@@ -238,6 +232,12 @@ zplug load
 #            It can be said that this is an final ultimatum from the god to the people who can fight.
 #
 # STEINS_GATE
+
+#
+# direnv
+#
+
+eval "$(direnv hook zsh)"
 
 # For profile performance
 if type zprof > /dev/null 2>&1; then
