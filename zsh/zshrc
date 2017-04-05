@@ -10,6 +10,15 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
 fi
 
 #
+# User configuration sourced by interactive shells
+#
+
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
+
+#
 # History
 #
 
@@ -29,6 +38,7 @@ export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>'
 #
 
 source /usr/local/bin/aws_zsh_completer.sh
+source ~/.kubectl.compl.zsh
 
 #
 # Aliases
