@@ -42,3 +42,5 @@ tags
 
 # Terraform
 terraform.tfstate
+terraform.tfvars
+terraform.tfstate.backup
