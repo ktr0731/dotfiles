@@ -37,8 +37,13 @@ export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>'
 # Source
 #
 
-source /usr/local/bin/aws_zsh_completer.sh
-source ~/.kubectl.compl.zsh
+if type aws > /dev/null 2>&1; then
+  source /usr/local/bin/aws_zsh_completer.sh
+fi
+
+if type kubectl > /dev/null 2>&1; then
+  source $(kubectl completion zsh)
+fi
 
 #
 # Aliases
