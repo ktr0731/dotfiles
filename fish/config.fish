@@ -43,3 +43,22 @@ function cdg
   end
   cd $p
 end
+
+function c
+  set p
+  z -l | awk '{ print $2 }' | fzy | read p
+  cd $p
+end
+
+function fish_prompt
+  echo -n "❯❯"
+  if [ $status -eq 0 ]
+     echo -n (set_color blue)"❯ "(set_color normal)
+   else
+     echo -n (set_color red)"❯ "(set_color normal)
+  end
+end
+
+function fish_right_prompt
+  echo (set_color 999)(prompt_pwd)(set_color normal)
+end
