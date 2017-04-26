@@ -3,7 +3,6 @@ alias g='git'
 
 alias d='docker'
 alias dcom='docker-compose'
-
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -al"
@@ -36,6 +35,11 @@ alias make='mmake'
 
 alias ctags=(brew --prefix)"/bin/ctags"
 
+function ghql
+  ghq list -p | fzf | read -l p
+  cd $p
+end
+
 function cdg
   set p (git rev-parse --show-cdup)
   if [ $p = '' ]
@@ -45,17 +49,17 @@ function cdg
 end
 
 function c
-  set p
-  z -l | awk '{ print $2 }' | fzy | read p
+  z -l | awk '{ print $2 }' | fzy | read -l p
   cd $p
 end
 
 function fish_prompt
-  echo -n "❯❯"
-  if [ $status -eq 0 ]
-     echo -n (set_color blue)"❯ "(set_color normal)
-   else
-     echo -n (set_color red)"❯ "(set_color normal)
+  set stat $status
+  echo -n "❯❯❯"
+  if [ $stat -eq 0 ]
+    echo -n (set_color green)"❯ "(set_color normal)
+  else
+    echo -n (set_color red)"❯ "(set_color normal)
   end
 end
 
