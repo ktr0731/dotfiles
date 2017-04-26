@@ -167,6 +167,8 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 
 Plug 'cespare/vim-toml', { 'for': ['toml', 'tml'] }
 
+Plug 'dag/vim-fish'
+
 Plug 'benekastah/neomake'
 " augroup neomake
 "   autocmd!
