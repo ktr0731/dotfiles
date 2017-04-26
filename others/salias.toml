@@ -1,0 +1,15 @@
+[go]
+b = "build"
+i = "install"
+r = "run"
+
+[docker]
+l = "logs"
+i = "image"
+c = "container"
+
+[kubectl]
+c = "create"
+
+[git]
+l = "log --graph --oneline"
