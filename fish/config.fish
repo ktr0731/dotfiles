@@ -22,6 +22,7 @@ alias tmprm='tmp ls F tmp rm'
 
 alias it='itunes'
 
+alias gl='cd (ghq list -p | fzf)'
 alias ghql='cd (ghq list -p | fzf)'
 
 alias vimrc='vim ~/.vimrc'

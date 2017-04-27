@@ -9,17 +9,17 @@ LANGUAGE='en'
 # pyenv
 #
 
-PYENV_ROOT=$HOME/.pyenv
-PYTHONPATH=(
-  $PYTHONPATH
-  /usr/local/google_appengine(N-/)
-  /usr/local/google_appengine/lib(N-/)
-  /usr/local/google_appengine/lib/yaml/lib(N-/)
-)
+# PYENV_ROOT=$HOME/.pyenv
+# PYTHONPATH=(
+#   $PYTHONPATH
+#   /usr/local/google_appengine(N-/)
+#   /usr/local/google_appengine/lib(N-/)
+#   /usr/local/google_appengine/lib/yaml/lib(N-/)
+# )
 
-if type pyenv > /dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+# if type pyenv > /dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
 
 #
 # rbenv
@@ -53,7 +53,7 @@ export CARGO_HOME=~/.cargo
 
 # Environment variables path
 path=(
-  $PYENV_ROOT/bin(N-/)
+  # $PYENV_ROOT/bin(N-/)
   $RBENV_ROOT/bin(N-/)
   $PHPENV_ROOT/bin(N-/)
   $GOPATH/bin(N-/)
