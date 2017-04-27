@@ -48,11 +48,6 @@ function cdg
   cd $p
 end
 
-function c
-  z -l | awk '{ print $2 }' | fzy | read -l p
-  cd $p
-end
-
 function fish_prompt
   set stat $status
   echo -n "❯❯❯"
@@ -65,4 +60,16 @@ end
 
 function fish_right_prompt
   echo (set_color 999)(prompt_pwd)(set_color normal)
+end
+
+function cd
+  if [ (count $argv) -ne 0 ]
+    builtin cd $argv
+  else
+    z -l | awk '{ print $2 }' | fzy | read -l p
+    builtin cd $p
+  end
+
+  ls
+  echo ''
 end
