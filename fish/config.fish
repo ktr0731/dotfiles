@@ -1,3 +1,13 @@
+set -x LANG 'en_US.UTF-8'
+set -x LANGUAGE 'en'
+
+set -x GOPATH ~/.ghq
+set -x CARGO_HOME ~/.cargo
+set -x PATH $PATH $GOPATH/bin $CARGO_HOME/bin $HOME/bin
+if [ uname = "SunOS" ]
+  set -x PATH $PATH $HOME/usr/solaris/bin
+end
+
 alias vim='nvim'
 alias g='git'
 
