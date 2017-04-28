@@ -3,9 +3,11 @@ set -x LANGUAGE 'en'
 
 set -x GOPATH ~/.ghq
 set -x CARGO_HOME ~/.cargo
-set -x PATH $PATH $GOPATH/bin $CARGO_HOME/bin $HOME/bin
+set -x PATH $GOPATH/bin $PATH
+set -x PATH $CARGO_HOME/bin $PATH
+set -x PATH $HOME/bin $PATH
 if [ uname = "SunOS" ]
-  set -x PATH $PATH $HOME/usr/solaris/bin
+  set -x PATH $HOME/usr/solaris/bin $PATH
 end
 
 alias vim='nvim'
