@@ -10,7 +10,10 @@ if [ uname = "SunOS" ]
   set -x PATH $HOME/usr/solaris/bin $PATH
 end
 
+set -x ITUNES_CLI_FUZZY_TOOL fzf
+
 alias vim='nvim'
+alias v=vim
 alias g='git'
 
 alias d='docker'
@@ -37,6 +40,7 @@ alias it='itunes'
 alias gl='cd (ghq list -p | fzf)'
 alias ghql='cd (ghq list -p | fzf)'
 
+alias fishrc='vim ~/.config/fish/config.fish'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 
@@ -50,7 +54,13 @@ alias ctags=(brew --prefix)"/bin/ctags"
 
 function ghql
   ghq list -p | fzf | read -l p
+  if [ $status -ne 0 ]
+    return $status
+  end
+
   cd $p
+  ls
+  echo ''
 end
 
 function cdg
@@ -62,9 +72,10 @@ function cdg
 end
 
 function fish_prompt
-  set stat $status
+  set _status $status
+
   echo -n "❯❯❯"
-  if [ $stat -eq 0 ]
+  if [ $_status -eq 0 ]
     echo -n (set_color green)"❯ "(set_color normal)
   else
     echo -n (set_color red)"❯ "(set_color normal)
@@ -80,6 +91,11 @@ function cd
     builtin cd $argv
   else
     z -l | awk '{ print $2 }' | fzy | read -l p
+
+    if [ $status -ne 0 ]
+      return $status
+    end
+
     builtin cd $p
   end
 
