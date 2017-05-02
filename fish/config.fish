@@ -37,8 +37,7 @@ alias tmprm='tmp ls F tmp rm'
 
 alias it='itunes'
 
-alias gl='cd (ghq list -p | fzf)'
-alias ghql='cd (ghq list -p | fzf)'
+alias gl=ghql
 
 alias fishrc='vim ~/.config/fish/config.fish'
 alias vimrc='vim ~/.vimrc'
@@ -51,6 +50,9 @@ alias ssh='sshrc'
 alias make='mmake'
 
 alias ctags=(brew --prefix)"/bin/ctags"
+
+# Load salias
+source (salias __init__ | psub)
 
 function ghql
   ghq list -p | fzf | read -l p
