@@ -1,4 +1,19 @@
+set -x LANG 'en_US.UTF-8'
+set -x LANGUAGE 'en'
+
+set -x GOPATH ~/.ghq
+set -x CARGO_HOME ~/.cargo
+set -x PATH $GOPATH/bin $PATH
+set -x PATH $CARGO_HOME/bin $PATH
+set -x PATH $HOME/bin $PATH
+if [ uname = "SunOS" ]
+  set -x PATH $HOME/usr/solaris/bin $PATH
+end
+
+set -x ITUNES_CLI_FUZZY_TOOL fzf
+
 alias vim='nvim'
+alias v=vim
 alias g='git'
 
 alias d='docker'
@@ -22,9 +37,9 @@ alias tmprm='tmp ls F tmp rm'
 
 alias it='itunes'
 
-alias gl='cd (ghq list -p | fzf)'
-alias ghql='cd (ghq list -p | fzf)'
+alias gl=ghql
 
+alias fishrc='vim ~/.config/fish/config.fish'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 
@@ -36,9 +51,18 @@ alias make='mmake'
 
 alias ctags=(brew --prefix)"/bin/ctags"
 
+# Load salias
+source (salias __init__ | psub)
+
 function ghql
   ghq list -p | fzf | read -l p
+  if [ $status -ne 0 ]
+    return $status
+  end
+
   cd $p
+  ls
+  echo ''
 end
 
 function cdg
@@ -50,9 +74,10 @@ function cdg
 end
 
 function fish_prompt
-  set stat $status
+  set _status $status
+
   echo -n "❯❯❯"
-  if [ $stat -eq 0 ]
+  if [ $_status -eq 0 ]
     echo -n (set_color green)"❯ "(set_color normal)
   else
     echo -n (set_color red)"❯ "(set_color normal)
@@ -68,6 +93,11 @@ function cd
     builtin cd $argv
   else
     z -l | awk '{ print $2 }' | fzy | read -l p
+
+    if [ $status -ne 0 ]
+      return $status
+    end
+
     builtin cd $p
   end
 
