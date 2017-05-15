@@ -156,7 +156,7 @@ Plug 'mattn/emmet-vim',            { 'for': ['html', 'jsx', 'typescript', 'riot'
 Plug 'mattn/jscomplete-vim',       { 'for': 'javascript' }
 Plug 'hail2u/vim-css3-syntax',     { 'for': 'css' }
 Plug 'elzr/vim-json',              { 'for': 'json' }
-" Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
 Plug 'pangloss/vim-javascript',    { 'for': ['javascript', 'riot'] }
 Plug 'ryym/vim-riot',              { 'for': 'riot' }
@@ -170,9 +170,9 @@ Plug 'cespare/vim-toml', { 'for': ['toml', 'tml'] }
 Plug 'dag/vim-fish'
 
 Plug 'benekastah/neomake'
+let g:neomake_verbose = 3
 " augroup neomake
 "   autocmd!
-autocmd! BufWritePost * Neomake
 " augroup END
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -195,7 +195,7 @@ Plug 'nsf/gocode',           { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/goco
 Plug 'Shougo/deoplete.nvim',          { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go',             { 'for': 'go' }
 Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
-" Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
 
@@ -233,17 +233,19 @@ let g:quickrun_config = {
   \ }
 
 "" neomake
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-let g:neomake_javascript_enabled_markers  = ['eslint']
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:neomake_javascript_standard_maker = {}
+let g:neomake_javascript_enabled_markers  = ['eslint', 'standard']
 let g:neomake_html_enabled_markers        = ['htmlhint']
 let g:neomake_sh_enabled_markers          = ['shellcheck']
 let g:neomake_python_enabled_markers      = ['pep8']
 let g:neomake_vim_enabled_markers         = ['vint']
 let g:neomake_typescript_tsc_markers      = { 'args': ['--experimentalDecorators'] }
-augroup neomake
-  au!
-  au BufWritePost * Neomake
-augroup END
+autocmd! BufWritePost * Neomake
+" augroup neomake
+"   au!
+"   au BufWritePost * Neomake
+" augroup END
 
 "" neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)

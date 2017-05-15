@@ -254,6 +254,8 @@ zplug load
 
 eval "$(direnv hook zsh)"
 
+source <(salias __init__)
+
 # For profile performance
 if type zprof > /dev/null 2>&1; then
   zprof | less
