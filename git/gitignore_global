@@ -44,3 +44,6 @@ tags
 terraform.tfstate
 terraform.tfvars
 terraform.tfstate.backup
+
+# My files
+idea.txt

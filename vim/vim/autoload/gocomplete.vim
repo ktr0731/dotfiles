@@ -1,1 +1,1 @@
-/Users/lycoris/.vim/plugged/gocode/vim/autoload/gocomplete.vim
+/Users/ktr/.config/nvim/plugged/gocode/nvim/autoload/gocomplete.vim
