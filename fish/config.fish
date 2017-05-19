@@ -8,7 +8,7 @@ set -x PATH $CARGO_HOME/bin $PATH
 set -x PATH $HOME/bin $PATH
 set -x PATH ~/google-cloud-sdk/bin $PATH
 set -x MANPATH ~/google-cloud-sdk/help/man /usr/local/share/man /usr/share/man /opt/x11/share/man
-if [ uname = "SunOS" ]
+if [ uname = 'SunOS' ]
   set -x PATH $HOME/usr/solaris/bin $PATH
 end
 
@@ -20,9 +20,9 @@ alias g='git'
 
 alias d='docker'
 alias dcom='docker-compose'
-alias la="ls -a"
-alias ll="ls -l"
-alias lla="ls -al"
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -al'
 
 alias l='less'
 
@@ -51,7 +51,7 @@ alias ssh='sshrc'
 
 alias make='mmake'
 
-alias ctags=(brew --prefix)"/bin/ctags"
+alias ctags=(brew --prefix)'/bin/ctags'
 
 # Load salias
 source (salias __init__ | psub)
@@ -78,11 +78,11 @@ end
 function fish_prompt
   set _status $status
 
-  echo -n "❯❯❯"
+  echo -n '❯❯❯'
   if [ $_status -eq 0 ]
-    echo -n (set_color green)"❯ "(set_color normal)
+    echo -n (set_color green)'❯ '(set_color normal)
   else
-    echo -n (set_color red)"❯ "(set_color normal)
+    echo -n (set_color red)'❯ '(set_color normal)
   end
 end
 
@@ -118,7 +118,7 @@ function gini
 
   if count $argv > /dev/null
     switch $argv[1]
-    case "--gh"
+    case '--gh'
       if [ (count $argv) -eq 2 ]
         set REPO_NAME $argv[2]
       else
