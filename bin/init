@@ -24,11 +24,3 @@ if type zsh > /dev/null 2>&1; then
     sudo apt install zsh
   fi
 fi
-
-#
-# Zim
-#
-
-if [ ! -d ${ZDOTDIR:-${HOME}}/.zim ]; then
-  git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
-fi
