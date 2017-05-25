@@ -87,7 +87,9 @@ function fish_prompt
 end
 
 function fish_right_prompt
-  echo (set_color 999)(prompt_pwd)(set_color normal)
+  set -l branch (git branch 2>/dev/null | awk '{ print $2 }')
+  echo -n (set_color green)$branch(set_color normal)
+  echo -n (set_color 999)(prompt_pwd)(set_color normal)
 end
 
 function cd

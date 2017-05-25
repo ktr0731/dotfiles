@@ -173,6 +173,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/denite.nvim'
 Plug 'thinca/vim-quickrun'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/limelight.vim'
@@ -296,4 +297,16 @@ if $DEV_VIM == 1
     au BufWritePost *.vim source %
   augroup END
   vnoremap <Space><Space> :'<,'>CTree<CR>
+endif
+
+" my func
+if !exists("*ReloadVimrc")
+  function! ReloadVimrc() abort
+    :write
+    :edit!
+    :source ~/.vimrc
+  endfunction
+
+  " my command
+  command! ReloadVimrc :call ReloadVimrc()
 endif
