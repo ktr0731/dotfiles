@@ -253,7 +253,10 @@ let g:neomake_python_enabled_makers      = ['pep8']
 let g:neomake_vim_enabled_makers         = ['vint']
 let g:neomake_typescript_tsc_makers      = { 'args': ['--experimentalDecorators'] }
 
-au BufWritePost * Neomake
+augroup Neomake
+  autocmd!
+  autocmd BufWritePost * Neomake
+augroup END
 
 "" neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -280,19 +283,22 @@ let g:NERDTreeShowHidden = 1
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
 
-au FileType go nmap <C-g>b <Plug>(go-build)
-au FileType go nmap <C-g>t <Plug>(go-test)
-au FileType go nmap <C-g>r <Plug>(go-run)
+augroup vim-go
+  autocmd!
+  autocmd FileType go nmap <C-g>b <Plug>(go-build)
+  autocmd FileType go nmap <C-g>t <Plug>(go-test)
+  autocmd FileType go nmap <C-g>r <Plug>(go-run)
 
-au FileType go nmap <C-g>ds <Plug>(go-def-split)
-au FileType go nmap <C-g>dv <Plug>(go-def-vertical)
-au FileType go nmap <C-g>dt <Plug>(go-def-tab)
+  autocmd FileType go nmap <C-g>ds <Plug>(go-def-split)
+  autocmd FileType go nmap <C-g>dv <Plug>(go-def-vertical)
+  autocmd FileType go nmap <C-g>dt <Plug>(go-def-tab)
 
-au FileType go nmap <C-g>gd <Plug>(go-doc)
-au FileType go nmap <C-g>gv <Plug>(go-doc-vertical)
+  autocmd FileType go nmap <C-g>gd <Plug>(go-doc)
+  autocmd FileType go nmap <C-g>gv <Plug>(go-doc-vertical)
 
-au FileType go nmap <C-g>s <Plug>(go-implements)
-au FileType go nmap <C-g>e <Plug>(go-rename)
+  autocmd FileType go nmap <C-g>s <Plug>(go-implements)
+  autocmd FileType go nmap <C-g>e <Plug>(go-rename)
+augroup END
 
 " gocode
 let g:go_gocode_unimported_packages = 1
