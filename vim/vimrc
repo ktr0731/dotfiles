@@ -318,3 +318,5 @@ if !exists("*ReloadVimrc")
   " my command
   command! ReloadVimrc :call ReloadVimrc()
 endif
+
+command! Vimrc :e ~/.vimrc
