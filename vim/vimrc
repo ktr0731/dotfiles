@@ -39,8 +39,9 @@ set wildignore+=*.o,*.obj,*.out
 set wildignore+=*.zip,*.tar.gz
 set wildignore+=*/vendor/*,.git
 
-" Neovim
-set inccommand=split
+if has('nvim')
+  set inccommand=split
+endif
 
 " Use clipboard of system
 set clipboard=unnamed
@@ -120,9 +121,11 @@ nnoremap <silent><Leader>h :History<CR>
 nnoremap <silent><Leader>s :History/<CR>
 nnoremap <silent><Leader>w :Windows<CR>
 
-tnoremap <C-j> <C-\><C-n>
-nnoremap <silent><Leader>t :sp<CR>:terminal<CR>
-nnoremap <silent><Leader>vt :vs<CR>:terminal<CR>
+if has('nvim')
+  tnoremap <C-j> <C-\><C-n>
+  nnoremap <silent><Leader>t :sp<CR>:terminal<CR>
+  nnoremap <silent><Leader>vt :vs<CR>:terminal<CR>
+endif
 
 " ctags
 nnoremap <C-]> g<C-]>
@@ -181,7 +184,16 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/denite.nvim'
+
+if has('nvim')
+  Plug 'Shougo/denite.nvim'
+  Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
+  Plug 'zchee/deoplete-go', { 'for': 'go' }
+  Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
+endif
+
 Plug 'thinca/vim-quickrun'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/limelight.vim'
@@ -194,12 +206,6 @@ let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',         { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'nsf/gocode',           { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-
-Plug 'Shougo/deoplete.nvim',          { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go',             { 'for': 'go' }
-Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
 
@@ -308,7 +314,7 @@ if $DEV_VIM == 1
 endif
 
 " my func
-if !exists("*ReloadVimrc")
+if !exists('*ReloadVimrc')
   function! ReloadVimrc() abort
     :write
     :edit!
