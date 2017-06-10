@@ -212,6 +212,8 @@ Plug 'ujihisa/neco-look'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
+Plug 'uarun/vim-protobuf', { 'for': 'proto' }
+
 Plug 'hashivim/vim-hashicorp-tools'
 
 call plug#end()
