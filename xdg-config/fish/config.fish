@@ -14,6 +14,8 @@ end
 
 set -x ITUNES_CLI_FUZZY_TOOL fzf
 
+eval (direnv hook fish)
+
 alias vim='nvim'
 alias v=vim
 alias g='git'
