@@ -67,11 +67,11 @@ set t_Co=256
 set background=dark
 
 " Indent type: c lang
-" set cindent
-"
-" set shiftwidth=2
-" set softtabstop=2
-" set expandtab
+set cindent
+
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 
 """ Mappings
 let g:mapleader = "\<Space>"
