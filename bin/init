@@ -24,3 +24,6 @@ if type zsh > /dev/null 2>&1; then
     sudo apt install zsh
   fi
 fi
+
+# Install fish plugins
+fisher up

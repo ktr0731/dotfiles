@@ -1,13 +1,14 @@
 #!/bin/zsh
 
-DOTPATH=$HOME/dotfiles
+DOTPATH="$HOME"/dotfiles
 
 echo "\$DOTPATH : $DOTPATH"
 echo "Created dotfile symbolic links."
 
-directories=(zsh vim git others)
+directories=(vim git others)
 
-for dir in ${directories[@]}; do
+# Root
+for dir in "${directories[@]}"; do
   echo "$dir"
 
   for rcfile in "$DOTPATH"/"$dir"/*; do
@@ -16,19 +17,20 @@ for dir in ${directories[@]}; do
       print "    - $rcfile"
     fi
   done
-
-  # Neovim
-  if [ "$dir" = vim ]; then
-    ln -s "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-      print "    - nvim (Neovim)"
-    fi
-
-    ln -s "$DOTPATH"/"$dir"/vimrc "$HOME"/.config/nvim/init.vim > /dev/null 2>&1
-    if [ $? -eq 0 ]; then
-      print "    - init.vim (Neovim)"
-    fi
-  fi
-
-  echo ""
 done
+
+echo ""
+
+# XDG config
+directories=(xdg-config/fish)
+
+if [ "$dir" = vim ]; then
+  ln -s "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    print "    - nvim (Neovim)"
+  fi
+  ln -s "$DOTPATH"/"$dir"/vimrc "$HOME"/.config/nvim/init.vim > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    print "    - init.vim (Neovim)"
+  fi
+fi
