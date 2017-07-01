@@ -7,7 +7,3 @@ function select-window
   tmux list-window -F '#{window_id}: #{window_name}' | fzf | read -l p
   tmux select-window -t (echo $p | cut -d : -f 1)
 end
-
-function t
-  tmux new-window -n (basename (pwd))
-end
