@@ -110,6 +110,9 @@ nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
 nnoremap ; :
 nnoremap : ;
 
+vnoremap ; :
+vnoremap : ;
+
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 
 nnoremap <silent><Leader><Space> :GFiles<CR>
