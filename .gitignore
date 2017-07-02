@@ -1,0 +1,5 @@
+xdg-config/fish/fundle/
+vim/plugged
+vim/ftplugin
+vim/autoload/*
+!vim/autoload/plug.vim

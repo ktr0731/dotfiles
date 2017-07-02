@@ -22,7 +22,7 @@ done
 echo ""
 
 # XDG config
-directories=(xdg-config/fish)
+directories=(vim)
 
 if [ "$dir" = vim ]; then
   ln -s "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim > /dev/null 2>&1

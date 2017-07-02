@@ -1,6 +1,8 @@
 set -x LANG 'en_US.UTF-8'
 set -x LANGUAGE 'en'
 
+set -x EDITOR nvim
+
 set -x GOPATH ~/.ghq
 set -x CARGO_HOME ~/.cargo
 set -x PATH $GOPATH/bin $PATH
@@ -57,3 +59,8 @@ alias ctags=(brew --prefix)'/bin/ctags'
 
 # Load salias
 source (salias __init__ | psub)
+
+fundle plugin 'decors/fish-ghq'
+fundle plugin 'fisherman/z'
+
+fundle init
