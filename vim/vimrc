@@ -187,6 +187,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'mattn/vim-xxdcursor'
 
 if has('nvim')
   Plug 'Shougo/denite.nvim'
