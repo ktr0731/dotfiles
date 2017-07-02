@@ -1,4 +1,7 @@
-xdg-config/fish/fundle/
+xdg-config/fish/
+!xdg-config/fish/functions
+!xdg-config/fish/config.fish
+
 vim/plugged
 vim/ftplugin
 vim/autoload/*
