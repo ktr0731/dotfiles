@@ -24,7 +24,7 @@ fisher:
 
 .PHONY: fish-deps 
 fish-deps: fisher
-	fisher up
+	fisher
 
 .PHONY: links
 links:

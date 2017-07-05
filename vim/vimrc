@@ -110,6 +110,9 @@ nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
 nnoremap ; :
 nnoremap : ;
 
+vnoremap ; :
+vnoremap : ;
+
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 
 nnoremap <silent><Leader><Space> :GFiles<CR>
@@ -248,9 +251,6 @@ let g:quickrun_config = {
 
 "" neomake
 let g:neomake_javascript_enabled_makers  = ['eslint', 'standard']
-let g:neomake_javascript_standard_maker = {
-  \   'args': ['--fix']
-  \ }
 let g:neomake_html_enabled_makers        = ['htmlhint']
 let g:neomake_sh_enabled_makers          = ['shellcheck']
 let g:neomake_python_enabled_makers      = ['pep8']
