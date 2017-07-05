@@ -195,6 +195,7 @@ if has('nvim')
   Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
 endif
 
+Plug 'AndrewRadev/inline_edit.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/limelight.vim'
