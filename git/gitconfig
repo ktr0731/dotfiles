@@ -10,6 +10,7 @@
   c = commit
   cm = commit -m
   d = diff
+  co = ! git branch --no-color | egrep -v '^\\*' | fzf | xargs git checkout
   ch = checkout
   chb = checkout -b
   p = push
@@ -40,3 +41,5 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   required = true
+[http]
+	cookiefile = /Users/ktr/.gitcookies
