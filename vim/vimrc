@@ -157,6 +157,7 @@ Plug 'tpope/vim-surround'
 Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 Plug 'rizzatti/dash.vim'
+Plug 'rhysd/conflict-marker.vim'
 
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 

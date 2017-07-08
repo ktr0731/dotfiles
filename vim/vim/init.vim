@@ -1,1 +1,1 @@
-/Users/lycoris/dotfiles/vim/vimrc
+/Users/ktr/dotfiles/vim/vimrc
