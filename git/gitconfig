@@ -20,6 +20,8 @@
   br = for-each-ref --sort=committerdate refs/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
   delb = ! git branch --merged | egrep -v 'master|develop' | xargs git branch -d
 
+  conf = grep --name-only '<<<<<<< HEAD'
+
   change = codereview change
   gofmt = codereview gofmt
   mail = codereview mail
