@@ -16,6 +16,8 @@ end
 
 set -x ITUNES_CLI_FUZZY_TOOL fzf
 
+set -x LESS "-m -M -i -R"
+
 eval (direnv hook fish)
 
 alias vim='nvim'
@@ -59,8 +61,3 @@ alias ctags=(brew --prefix)'/bin/ctags'
 
 # Load salias
 source (salias __init__ | psub)
-
-fundle plugin 'decors/fish-ghq'
-fundle plugin 'fisherman/z'
-
-fundle init

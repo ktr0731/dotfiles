@@ -54,7 +54,7 @@ function $fisher_cmd_name -d "fish plugin manager"
             end
     end
 
-    set -g fisher_version "2.12.0"
+    set -g fisher_version "2.13.0"
     set -g fisher_spinners ⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏
     set -g __fisher_stdout /dev/stdout
     set -g __fisher_stderr /dev/stderr
@@ -117,7 +117,7 @@ function $fisher_cmd_name -d "fish plugin manager"
     command mkdir -p {"$fish_path","$fish_config"}/{conf.d,functions,completions} "$fisher_config" "$fisher_cache"
     or return 1
 
-    set -l completions "$fish_config/completions/$fisher_cmd_name.fish"
+    set -l completions "$fish_path/completions/$fisher_cmd_name.fish"
 
     if test ! -e "$completions"
         echo "$fisher_cmd_name --complete" > "$completions"
