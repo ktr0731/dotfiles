@@ -2,6 +2,9 @@
 b = "build"
 i = "install"
 r = "run"
+test = "test -v"
+t = "test -v"
+ta = "test -v ./..."
 
 [docker]
 l = "logs"
