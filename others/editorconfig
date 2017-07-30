@@ -25,3 +25,6 @@ indent_size = 8
 
 [*.js]
 max_line_length = 80
+
+[*.snip]
+trim_trailing_whitespace = false
