@@ -221,6 +221,7 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 
 Plug 'hashivim/vim-hashicorp-tools'
+Plug 'lifepillar/pgsql.vim'
 
 call plug#end()
 
@@ -287,23 +288,28 @@ let g:NERDTreeShowHidden = 1
 " vim-go
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
+let g:go_auto_type_info = 1
+let g:go_snippet_engine = "neosnippet"
 
-augroup vim-go
-  autocmd!
-  autocmd FileType go nmap <C-g>b <Plug>(go-build)
-  autocmd FileType go nmap <C-g>t <Plug>(go-test)
-  autocmd FileType go nmap <C-g>r <Plug>(go-run)
+autocmd FileType go nmap <C-g>b <Plug>(go-build)
+autocmd FileType go nmap <C-g>t <Plug>(go-test)
+autocmd FileType go nmap <C-g>r <Plug>(go-run)
 
-  autocmd FileType go nmap <C-g>ds <Plug>(go-def-split)
-  autocmd FileType go nmap <C-g>dv <Plug>(go-def-vertical)
-  autocmd FileType go nmap <C-g>dt <Plug>(go-def-tab)
+autocmd FileType go nmap <C-g>ds <Plug>(go-def-split)
+autocmd FileType go nmap <C-g>dv <Plug>(go-def-vertical)
+autocmd FileType go nmap <C-g>dt <Plug>(go-def-tab)
 
-  autocmd FileType go nmap <C-g>gd <Plug>(go-doc)
-  autocmd FileType go nmap <C-g>gv <Plug>(go-doc-vertical)
+autocmd FileType go nmap <C-g>gd <Plug>(go-doc)
+autocmd FileType go nmap <C-g>gv <Plug>(go-doc-vertical)
 
-  autocmd FileType go nmap <C-g>s <Plug>(go-implements)
-  autocmd FileType go nmap <C-g>e <Plug>(go-rename)
-augroup END
+autocmd FileType go nmap <C-g>s <Plug>(go-implements)
+autocmd FileType go nmap <C-g>e <Plug>(go-rename)
+
+autocmd FileType go nmap <C-g>a <Plug>(go-alternate)
+autocmd FileType go nmap <C-g>i <Plug>(go-impl)
+
+autocmd FileType go nmap <F9> :GoCoverageToggle -short<CR>
+autocmd FileType go nmap <F10> :GoTest -short<CR>
 
 " gocode
 let g:go_gocode_unimported_packages = 1
