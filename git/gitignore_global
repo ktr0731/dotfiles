@@ -48,3 +48,4 @@ terraform.tfstate.backup
 # My files
 idea.txt
 .idea/
+cockroach-data/
