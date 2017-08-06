@@ -179,6 +179,7 @@ Plug 'nikvdp/ejs-syntax',          { 'for': 'ejs' }
 Plug 'wavded/vim-stylus',          { 'for': 'stylus' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'mephux/vim-jsfmt', { 'for': ['javascript'] }
 
 Plug 'derekwyatt/vim-scala'
 
@@ -255,7 +256,7 @@ let g:quickrun_config = {
   \ }
 
 "" neomake
-let g:neomake_javascript_enabled_makers  = ['eslint', 'standard']
+" let g:neomake_javascript_enabled_makers  = ['eslint']
 let g:neomake_html_enabled_makers        = ['htmlhint']
 let g:neomake_sh_enabled_makers          = ['shellcheck']
 let g:neomake_python_enabled_makers      = ['pep8']
@@ -322,6 +323,9 @@ let g:vim_tags_auto_generate = 1
 
 " rust.vim
 let g:rustfmt_autosave = 1
+
+" jsfmt
+let g:js_fmt_autosave = 1
 
 """ development
 if $DEV_VIM == 1
