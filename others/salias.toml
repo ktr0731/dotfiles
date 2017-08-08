@@ -19,3 +19,4 @@ l = "log --graph --oneline"
 
 [m]
 s = "sleep"
+l = "lock"
