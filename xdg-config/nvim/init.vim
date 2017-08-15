@@ -350,3 +350,4 @@ if !exists('*ReloadVimrc')
 endif
 
 command! Vimrc :e ~/.vimrc
+

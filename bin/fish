@@ -1,0 +1,4 @@
+#!/usr/bin/env fish
+
+# Install fish plugins
+fisher up

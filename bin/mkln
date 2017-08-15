@@ -5,7 +5,7 @@ DOTPATH="$HOME"/dotfiles
 echo "\$DOTPATH : $DOTPATH"
 echo "Created dotfile symbolic links."
 
-directories=(vim git others)
+directories=(git others)
 
 # Root
 for dir in "${directories[@]}"; do
@@ -23,14 +23,4 @@ echo ""
 
 # XDG config
 directories=(vim)
-
-if [ "$dir" = vim ]; then
-  ln -s "$DOTPATH"/"$dir"/vim "$HOME"/.config/nvim > /dev/null 2>&1
-  if [ $? -eq 0 ]; then
-    print "    - nvim (Neovim)"
-  fi
-  ln -s "$DOTPATH"/"$dir"/vimrc "$HOME"/.config/nvim/init.vim > /dev/null 2>&1
-  if [ $? -eq 0 ]; then
-    print "    - init.vim (Neovim)"
-  fi
-fi
+ln -sf "$DOTPATH"/xdg-config/nvim "$HOME"/.config/nvim

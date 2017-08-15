@@ -1,0 +1,1 @@
+/Users/ktr/.config/nvim/plugged/gocode/nvim/autoload/gocomplete.vim

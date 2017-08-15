@@ -15,15 +15,15 @@ if [ ! -d "$DOTPATH" ]; then
   fi
 fi
 
-if type zsh > /dev/null 2>&1; then
+if type fish > /dev/null 2>&1; then
   if [ "$(uname)" = 'Darwin' ] && ! type brew > /dev/null 2>&1; then
-    "$BREW_INSTALL_COMMAND" && brew install zsh
-  fi
-
-  if ! type apt > /dev/null 2>&1; then
+    "$BREW_INSTALL_COMMAND" && brew install fish
+  elif ! type apt > /dev/null 2>&1; then
     sudo apt install zsh
   fi
 fi
 
-# Install fish plugins
-fisher up
+if ! type fisher > /dev/null 2>&1; then
+  echo "Installing fisher..."
+  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+fi

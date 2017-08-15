@@ -1,0 +1,128 @@
+set encoding=utf-8
+scriptencoding utf-8
+
+source $VIMRUNTIME/macros/matchit.vim
+
+let b:match_ignorecase = 1
+
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+syntax enable
+
+" Show bottom status
+set laststatus=2
+
+set backspace=indent,eol,start
+set ambiwidth=double
+set nowrap
+set noswapfile
+set nobackup
+
+set hlsearch
+set ignorecase
+set smartcase " When a capital letter is included, not ignore the uppercase
+
+set ruler
+set number
+set list " Show space char
+set listchars=tab:>-,trail:.,nbsp:+
+set scrolloff=5 " Margin scroll
+set sidescroll=1
+set sidescrolloff=15
+set cursorline
+set cursorcolumn
+
+" Use tab completion
+set wildmenu
+set showcmd
+set wildignore+=*.o,*.obj,*.out
+set wildignore+=*.zip,*.tar.gz
+set wildignore+=*/vendor/*,.git
+
+if has('nvim')
+  set inccommand=split
+endif
+
+" Use clipboard of system
+set clipboard=unnamed
+
+set autoindent
+
+set mouse=c
+
+" Do auto write when do make
+set autowrite
+
+" Do auto read when opened file is changed
+set autoread
+
+
+augroup auto_comment_off
+  autocmd!
+  autocmd BufEnter * setlocal formatoptions-=r
+  autocmd BufEnter * setlocal formatoptions-=o
+augroup END
+
+set t_Co=256
+set background=dark
+
+" Indent type: c lang
+set cindent
+
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+""" Mappings
+let g:mapleader = "\<Space>"
+let g:maplocalleader = "\<Space>"
+
+inoremap <C-j> <Esc>
+inoremap jj <Esc>
+
+" Emacs bind
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
+nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
+
+nnoremap <M-s> <C-w>s
+nnoremap <M-v> <C-w>v
+nnoremap <M-w> <C-w>w
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l
+
+nmap <Space>] :vs<CR><C-]>
+
+nnoremap <silent>[q :cprevious<CR>
+nnoremap <silent>]q :cnext<CR>
+nnoremap <silent>[Q :cfirst<CR>
+nnoremap <silent>]Q :clast<CR>
+
+nnoremap Y y$
+
+nnoremap n nzz
+nnoremap N Nzz
+
+nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
+
+nnoremap ; :
+nnoremap : ;
+
+vnoremap ; :
+vnoremap : ;
+
+nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
+
+nnoremap <silent><Leader><Space> :GFiles<CR>
+nnoremap <silent><Leader>a :Ag<CR>
+nnoremap <silent><Leader>b :Buffers<CR>
+nnoremap <silent><Leader>c :History:<CR>
+nnoremap <silent><Leader>g :Files ~/.ghq/src<CR>
+nnoremap <silent><Leader>h :History<CR>
+nnoremap <silent><Leader>s :History/<CR>
+nnoremap <silent><Leader>w :Windows<CR>
+nnoremap V v
+nnoremap v V
