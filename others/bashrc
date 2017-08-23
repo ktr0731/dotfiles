@@ -1,0 +1,65 @@
+export EDITOR=nvim
+
+export GOPATH=~/.ghq
+export CARGO_HOME=~/.cargo
+export PATH="$GOPATH/bin:$CARGO_HOME/bin:$HOME/bin:~/.pyenv/bin:$PATH"
+
+export ITUNES_CLI_FUZZY_TOOL=fzf
+export LESS="-m -M -i -R"
+eval $(direnv hook bash)
+
+alias vim='nvim'
+alias v=vim
+alias g='git'
+
+alias d='docker'
+alias dcom='docker-compose'
+alias la='ls -a'
+alias ll='ls -l'
+alias lla='ls -al'
+
+alias l='less'
+
+alias sha1='openssl sha1'
+
+alias rm='rm -rf'
+alias cp='cp -r'
+
+alias strace='strace -fi'
+alias ltrace='ltrace -fi'
+
+alias tmpcd='tmp ls F cd'
+alias tmprm='tmp ls F tmp rm'
+
+alias it='itunes'
+
+alias gl=ghql
+
+alias fishrc='vim ~/.config/fish/config.fish'
+alias vimrc='vim ~/.vimrc'
+alias zshrc='vim ~/.zshrc'
+
+alias gip='curl inet-ip.info'
+
+alias ssh='sshrc'
+
+alias make='mmake'
+
+alias ctags=$(brew --prefix)'/bin/ctags'
+
+# Load salias
+source <(salias __init__)
+
+# pyenv
+# source $(pyenv init -)
+
+PS1="❯❯❯\`
+if [ \$? = 0 ]; then
+    echo \[\e[36m\];
+else
+    echo \[\e[31m\];
+fi
+\`❯ \[\e[0m\]"
+
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

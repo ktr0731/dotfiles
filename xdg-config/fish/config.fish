@@ -9,6 +9,7 @@ set -x PATH $GOPATH/bin $PATH
 set -x PATH $CARGO_HOME/bin $PATH
 set -x PATH $HOME/bin $PATH
 set -x PATH ~/google-cloud-sdk/bin $PATH
+set -x PATH ~/.pyenv/bin $PATH
 set -x MANPATH ~/google-cloud-sdk/help/man /usr/local/share/man /usr/share/man /opt/x11/share/man
 if [ uname = 'SunOS' ]
   set -x PATH $HOME/usr/solaris/bin $PATH
@@ -48,7 +49,7 @@ alias it='itunes'
 alias gl=ghql
 
 alias fishrc='vim ~/.config/fish/config.fish'
-alias vimrc='vim ~/.vimrc'
+alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'
 
 alias gip='curl inet-ip.info'
@@ -61,3 +62,7 @@ alias ctags=(brew --prefix)'/bin/ctags'
 
 # Load salias
 source (salias __init__ | psub)
+
+# pyenv
+. (pyenv init - | psub)
+

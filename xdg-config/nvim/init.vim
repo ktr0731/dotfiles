@@ -78,6 +78,7 @@ let g:mapleader = "\<Space>"
 let g:maplocalleader = "\<Space>"
 
 inoremap <C-j> <Esc>
+inoremap jj <Esc>
 
 " Emacs bind
 inoremap <C-f> <Right>
