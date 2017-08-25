@@ -50,9 +50,6 @@ alias ctags=$(brew --prefix)'/bin/ctags'
 # Load salias
 source <(salias __init__)
 
-# pyenv
-# source $(pyenv init -)
-
 PS1="❯❯❯\`
 if [ \$? = 0 ]; then
     echo \[\e[36m\];
