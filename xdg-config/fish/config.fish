@@ -66,3 +66,4 @@ source (salias __init__ | psub)
 # pyenv
 . (pyenv init - | psub)
 
+rbenv init - | source

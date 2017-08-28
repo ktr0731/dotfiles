@@ -36,7 +36,6 @@
 [core]
   editor = nvim
   excludesfile = ~/.gitignore_global
-  symlinks = false
 
 [ghq]
   root = ~/.ghq/src
