@@ -6,9 +6,7 @@ source $VIMRUNTIME/macros/matchit.vim
 let b:match_ignorecase = 1
 
 let g:python3_host_prog = '/usr/local/bin/python3'
-
 syntax enable
-
 " Show bottom status
 set laststatus=2
 
@@ -145,10 +143,12 @@ if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
   execute '!curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 endif
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'cocopon/iceberg.vim'
 Plug 'junegunn/seoul256.vim'
+" Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 Plug 'itchyny/lightline.vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -343,7 +343,7 @@ if !exists('*ReloadVimrc')
   function! ReloadVimrc() abort
     :write
     :edit!
-    :source ~/.vimrc
+    :source ~/.config/nvim/init.vim
   endfunction
 
   " my command
