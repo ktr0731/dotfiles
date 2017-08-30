@@ -65,6 +65,6 @@ alias ctags=(brew --prefix)'/bin/ctags'
 source (salias __init__ | psub)
 
 # pyenv
-. (pyenv init - | psub)
+pyenv init - | source
 
 rbenv init - | source

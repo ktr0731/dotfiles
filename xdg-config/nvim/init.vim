@@ -124,7 +124,11 @@ nnoremap <silent><Leader>s :History/<CR>
 nnoremap <silent><Leader>w :Windows<CR>
 
 nnoremap V v
-nnoremap v V
+" nnoremap v V
+
+nnoremap re :Grep<Space>
+nnoremap J :lprevious<CR>
+nnoremap K :lnext<CR>
 
 if has('nvim')
   tnoremap <C-j> <C-\><C-n>
@@ -151,6 +155,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/limelight.vim'
 
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-grep'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-jp/vital.vim'
 
