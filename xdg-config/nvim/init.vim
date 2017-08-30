@@ -158,6 +158,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-grep'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-jp/vital.vim'
+Plug 'jceb/vim-hier'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
