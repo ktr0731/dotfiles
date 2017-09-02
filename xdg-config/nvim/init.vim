@@ -123,8 +123,8 @@ nnoremap <silent><Leader>h :History<CR>
 nnoremap <silent><Leader>s :History/<CR>
 nnoremap <silent><Leader>w :Windows<CR>
 
-nnoremap V v
-" nnoremap v V
+" nnoremap V v
+nnoremap v V
 
 nnoremap re :Grep<Space>
 nnoremap J :lprevious<CR>
@@ -141,6 +141,9 @@ nnoremap <C-]> g<C-]>
 
 " Dash.vim
 nnoremap <silent><leader>d <Plug>DashSearch
+
+cnoremap <C-f> <Right>
+:cnoremap <C-b> <Left>
 
 """ Plugins
 if !filereadable(expand('~/.config/nvim/autoload/plug.vim'))
@@ -343,6 +346,12 @@ if $DEV_VIM == 1
   augroup END
   vnoremap <Space><Space> :'<,'>CTree<CR>
 endif
+
+" fzf
+nnoremap <silent> <C-i> :call fzf#run({
+\   'source': 'itunes list',
+\   'sink':   '!itunes play',
+\ })<CR>
 
 " my func
 if !exists('*ReloadVimrc')

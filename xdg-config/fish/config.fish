@@ -9,8 +9,8 @@ set -x PATH $GOPATH/bin $PATH
 set -x PATH $CARGO_HOME/bin $PATH
 set -x PATH $HOME/bin $PATH
 set -x PATH ~/google-cloud-sdk/bin $PATH
-set -x PATH ~/.pyenv/bin $PATH
-set -x PATH ~/.rbenv/shims $PATH
+# set -x PATH ~/.pyenv/bin $PATH
+# set -x PATH ~/.rbenv/shims $PATH
 set -x MANPATH ~/google-cloud-sdk/help/man /usr/local/share/man /usr/share/man /opt/x11/share/man
 if [ uname = 'SunOS' ]
   set -x PATH $HOME/usr/solaris/bin $PATH
