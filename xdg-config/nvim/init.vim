@@ -161,9 +161,9 @@ Plug 'junegunn/limelight.vim'
 
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-grep'
+Plug 'itchyny/vim-cursorword'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-jp/vital.vim'
-Plug 'jceb/vim-hier'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
@@ -350,10 +350,12 @@ if $DEV_VIM == 1
 endif
 
 " fzf
-nnoremap <silent> <C-i> :call fzf#run({
+nnoremap <C-i> :call fzf#run({
 \   'source': 'itunes list',
 \   'sink':   '!itunes play',
 \ })<CR>
+
+nnoremap <silent> <tab> :GFiles<CR>
 
 " my func
 if !exists('*ReloadVimrc')
