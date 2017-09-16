@@ -82,8 +82,6 @@ inoremap jj <Esc>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
-nmap <C-o> <C-t>
-
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 nnoremap <M-s> <C-w>s
