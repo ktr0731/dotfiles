@@ -127,8 +127,8 @@ nnoremap <silent><Leader>w :Windows<CR>
 nnoremap v V
 
 nnoremap re :Grep<Space>
-nnoremap J :lprevious<CR>
-nnoremap K :lnext<CR>
+nnoremap <C-j> :lprevious<CR>
+nnoremap <C-k> :lnext<CR>
 
 if has('nvim')
   tnoremap <C-j> <C-\><C-n>

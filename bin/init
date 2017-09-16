@@ -23,7 +23,7 @@ if type fish > /dev/null 2>&1; then
   fi
 fi
 
-if ! type fisher > /dev/null 2>&1; then
+if type fisher > /dev/null 2>&1; then
   echo "Installing fisher..."
   curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 fi
