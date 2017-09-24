@@ -125,7 +125,7 @@ nnoremap <silent><Leader>h :History<CR>
 nnoremap <silent><Leader>s :History/<CR>
 nnoremap <silent><Leader>w :Windows<CR>
 
-" nnoremap V v
+nnoremap V v
 nnoremap v V
 
 nnoremap re :Grep<Space>
