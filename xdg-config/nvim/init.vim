@@ -104,7 +104,8 @@ nnoremap Y y$
 nnoremap n nzz
 nnoremap N Nzz
 
-nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
+" cannot jump from location list by this
+" nnoremap <CR> :<C-u>call append(expand('.'), '')<CR>j
 
 nnoremap ; :
 nnoremap : ;
@@ -126,7 +127,7 @@ nnoremap <silent><Leader>w :Windows<CR>
 nnoremap V v
 nnoremap v V
 
-nnoremap re :Grep<Space>
+nnoremap re :Grep<CR>
 nnoremap <C-j> :lprevious<CR>
 nnoremap <C-k> :lnext<CR>
 
