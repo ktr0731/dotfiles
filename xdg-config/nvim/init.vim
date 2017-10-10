@@ -78,6 +78,15 @@ let g:maplocalleader = "\<Space>"
 inoremap <C-j> <Esc>
 inoremap jj <Esc>
 
+map *   <Plug>(asterisk-*)
+map #   <Plug>(asterisk-#)
+map g*  <Plug>(asterisk-g*)
+map g#  <Plug>(asterisk-g#)
+map z*  <Plug>(asterisk-z*)
+map gz* <Plug>(asterisk-gz*)
+map z#  <Plug>(asterisk-z#)
+map gz# <Plug>(asterisk-gz#)
+
 " Emacs bind
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
@@ -163,6 +172,7 @@ Plug 'itchyny/vim-grep'
 Plug 'itchyny/vim-cursorword'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-jp/vital.vim'
+Plug 'haya14busa/vim-asterisk'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
@@ -190,6 +200,7 @@ Plug 'nikvdp/ejs-syntax',          { 'for': 'ejs' }
 Plug 'wavded/vim-stylus',          { 'for': 'stylus' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'tpope/vim-fugitive'
 " Plug 'mephux/vim-jsfmt', { 'for': ['javascript'] }
 
 Plug 'derekwyatt/vim-scala'
