@@ -104,7 +104,7 @@ nnoremap Y y$
 nnoremap n nzz
 nnoremap N Nzz
 
-nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
+" nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
 
 nnoremap ; :
 nnoremap : ;
@@ -115,6 +115,7 @@ vnoremap : ;
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 
 nnoremap <silent><Leader><Space> :GFiles<CR>
+nnoremap <silent><Leader>f :GFiles<CR>
 nnoremap <silent><Leader>a :Ag<CR>
 nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>c :History:<CR>
@@ -127,8 +128,8 @@ nnoremap <silent><Leader>w :Windows<CR>
 nnoremap v V
 
 nnoremap re :Grep<Space>
-nnoremap <C-j> :lprevious<CR>
-nnoremap <C-k> :lnext<CR>
+nnoremap <C-j> :cprevious<CR>
+nnoremap <C-k> :cnext<CR>
 
 if has('nvim')
   tnoremap <C-j> <C-\><C-n>
@@ -220,6 +221,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'lambdalisue/gina.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'jremmen/vim-ripgrep'
 
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.

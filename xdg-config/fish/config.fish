@@ -17,7 +17,10 @@ if [ uname = 'SunOS' ]
   set -x PATH $HOME/usr/solaris/bin $PATH
 end
 
+set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow'
+
 set -x ITUNES_CLI_FUZZY_TOOL fzf
+set -x AUDIRVANA_CLI_FUZZY_TOOL fzf
 
 set -x LESS "-m -M -i -R"
 
