@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 # http://www.kammerl.de/ascii/AsciiSignature.php, Font: stop
 cat << TITLE
