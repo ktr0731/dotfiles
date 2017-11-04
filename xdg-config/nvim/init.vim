@@ -10,6 +10,9 @@ syntax enable
 " Show bottom status
 set laststatus=2
 
+set spell
+set spelllang=en,cjk
+
 set backspace=indent,eol,start
 set ambiwidth=double
 set nowrap
