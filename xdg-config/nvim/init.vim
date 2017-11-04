@@ -198,7 +198,6 @@ Plug 'nikvdp/ejs-syntax',          { 'for': 'ejs' }
 Plug 'wavded/vim-stylus',          { 'for': 'stylus' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'tpope/vim-fugitive'
 " Plug 'mephux/vim-jsfmt', { 'for': ['javascript'] }
 
 Plug 'derekwyatt/vim-scala'
