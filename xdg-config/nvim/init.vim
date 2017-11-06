@@ -10,6 +10,9 @@ syntax enable
 " Show bottom status
 set laststatus=2
 
+set spell
+set spelllang=en,cjk
+
 set backspace=indent,eol,start
 set ambiwidth=double
 set nowrap
@@ -199,7 +202,6 @@ Plug 'nikvdp/ejs-syntax',          { 'for': 'ejs' }
 Plug 'wavded/vim-stylus',          { 'for': 'stylus' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'tpope/vim-fugitive'
 " Plug 'mephux/vim-jsfmt', { 'for': ['javascript'] }
 
 Plug 'derekwyatt/vim-scala'
