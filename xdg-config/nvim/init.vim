@@ -171,6 +171,7 @@ Plug 'itchyny/vim-cursorword'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-jp/vital.vim'
 Plug 'haya14busa/vim-asterisk'
+Plug 'easymotion/vim-easymotion'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
