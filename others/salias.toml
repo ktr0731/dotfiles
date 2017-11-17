@@ -5,6 +5,7 @@ r = "run"
 test = "test -v"
 t = "test -v"
 ta = "test -v ./..."
+tr = "test -run"
 
 [docker]
 l = "logs"
