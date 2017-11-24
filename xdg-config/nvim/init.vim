@@ -10,7 +10,7 @@ syntax enable
 " Show bottom status
 set laststatus=2
 
-set spell
+" set spell
 set spelllang=en,cjk
 
 set backspace=indent,eol,start
@@ -252,6 +252,8 @@ Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'lifepillar/pgsql.vim'
 
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+
 call plug#end()
 
 colorscheme seoul256
@@ -284,7 +286,7 @@ let g:quickrun_config = {
 " let g:neomake_javascript_enabled_makers  = ['eslint']
 let g:neomake_html_enabled_makers        = ['htmlhint']
 let g:neomake_sh_enabled_makers          = ['shellcheck']
-let g:neomake_python_enabled_makers      = ['pep8']
+let g:neomake_python_enabled_makers      = ['pylint']
 let g:neomake_vim_enabled_makers         = ['vint']
 let g:neomake_typescript_tsc_makers      = { 'args': ['--experimentalDecorators'] }
 
@@ -321,7 +323,8 @@ let g:go_list_type = 'quickfix'
 let g:go_snippet_engine = "neosnippet"
 
 autocmd FileType go nmap <C-g>b <Plug>(go-build)
-autocmd FileType go nmap <C-g>t <Plug>(go-test)
+autocmd FileType go nmap <C-g>t <Plug>(go-test-func)
+autocmd FileType go nmap <C-g>T <Plug>(go-test)
 autocmd FileType go nmap <C-g>r <Plug>(go-run)
 
 autocmd FileType go nmap <C-g>ds <Plug>(go-def-split)
@@ -339,6 +342,17 @@ autocmd FileType go nmap <C-g>i <Plug>(go-impl)
 
 autocmd FileType go nmap <F9> :GoCoverageToggle -short<CR>
 autocmd FileType go nmap <F10> :GoTest -short<CR>
+
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <leader>gb :<C-u>call <SID>build_go_files()<CR>
 
 " gocode
 let g:go_gocode_unimported_packages = 1
@@ -396,6 +410,12 @@ nnoremap <C-i> :call fzf#run({
 \ })<CR>
 
 nnoremap <silent> <tab> :GFiles<CR>
+
+" yapf
+augroup YAPF
+  autocmd!
+  autocmd BufWritePost * :call yapf#YAPF()
+augroup END
 
 " my func
 if !exists('*ReloadVimrc')
