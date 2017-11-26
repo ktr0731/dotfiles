@@ -47,6 +47,8 @@ alias make='mmake'
 
 alias ctags=$(brew --prefix)'/bin/ctags'
 
+alias ghql='cd $(ghq root)/$(ghq list | fzf)'
+
 # Load salias
 source <(salias __init__)
 
