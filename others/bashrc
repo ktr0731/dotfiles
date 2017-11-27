@@ -52,6 +52,9 @@ alias ghql='cd $(ghq root)/$(ghq list | fzf)'
 # Load salias
 source <(salias __init__)
 
+# Load enhancd
+source "$(ghq root)/github.com/b4b4r07/enhancd/init.sh"
+
 PS1="❯❯❯\`
 if [ \$? = 0 ]; then
     echo \[\e[36m\];
