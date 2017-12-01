@@ -171,11 +171,11 @@ Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-grep'
 Plug 'itchyny/vim-cursorword'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-jp/vital.vim'
 Plug 'haya14busa/vim-asterisk'
 Plug 'easymotion/vim-easymotion'
 
+Plug 'cohama/lexima.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -184,6 +184,7 @@ Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 Plug 'rizzatti/dash.vim'
 Plug 'rhysd/conflict-marker.vim'
+Plug 'rhysd/clever-f.vim'
 
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
@@ -218,7 +219,6 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'mattn/vim-xxdcursor'
 
 if has('nvim')
-  Plug 'Shougo/denite.nvim'
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
@@ -322,9 +322,17 @@ let g:go_list_type = 'quickfix'
 " let g:go_auto_type_info = 1
 let g:go_snippet_engine = "neosnippet"
 
-autocmd FileType go nmap <C-g>b <Plug>(go-build)
-autocmd FileType go nmap <C-g>t <Plug>(go-test-func)
-autocmd FileType go nmap <C-g>T <Plug>(go-test)
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap <C-g>t <Plug>(go-test)
 autocmd FileType go nmap <C-g>r <Plug>(go-run)
 
 autocmd FileType go nmap <C-g>ds <Plug>(go-def-split)
@@ -429,5 +437,5 @@ if !exists('*ReloadVimrc')
   command! ReloadVimrc :call ReloadVimrc()
 endif
 
-command! Vimrc :e ~/.vimrc
+command! Vimrc :e ~/.config/nvim/init.vim
 

@@ -9,6 +9,7 @@
   a = add
   c = commit
   cm = commit -m
+  rf = rm -r
   d = diff
   co = ! git branch --no-color | egrep -v '^\\*' | fzf | xargs git checkout
   ch = checkout
