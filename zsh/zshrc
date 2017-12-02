@@ -1,0 +1,262 @@
+
+
+#
+# User configuration sourced by interactive shells
+#
+
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
+
+#
+# User configuration sourced by interactive shells
+#
+
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
+
+#
+# History
+#
+
+export HISTFILE=~/.zhistory
+export HISTSIZE=10000
+export SAVEHIST=50000
+
+#
+# Bindkey
+#
+
+bindkey -e
+export WORDCHARS='*?_.[]~-=&;!#$%^(){}<>'
+
+#
+# Source
+#
+
+if type aws > /dev/null 2>&1; then
+  source /usr/local/bin/aws_zsh_completer.sh
+fi
+
+if type kubectl > /dev/null 2>&1; then
+  source <(kubectl completion zsh)
+fi
+
+#
+# Aliases
+#
+
+alias -g A=' | ag'
+alias -g F=' | fzy |'
+alias -g G=' | grep'
+alias -g H=' | head'
+alias -g L=' | less'
+alias -g T=' | tail'
+alias -g W=' | wc'
+
+if type pbcopy > /dev/null 2>&1; then
+  alias -g P=' | pbcopy'
+fi
+
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
+alias cdg='cd-gitroot'
+alias trans='trans -t'
+
+alias g='git'
+
+alias d='docker'
+alias dcom='docker-compose'
+
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -al"
+
+alias l='less'
+
+alias sha1='openssl sha1'
+
+alias rm='rm -rf'
+alias cp='cp -r'
+
+alias strace='strace -fi'
+alias ltrace='ltrace -fi'
+
+alias tmpcd='tmp ls F cd'
+alias tmprm='tmp ls F tmp rm'
+
+alias it='itunes'
+
+alias ghql='cd $(ghq list -p | fzf)'
+
+alias vimrc='vim ~/.vimrc'
+alias zshrc='vim ~/.zshrc'
+
+alias gip='curl inet-ip.info'
+
+if which sshrc > /dev/null 2>&1; then
+  alias ssh='sshrc'
+fi
+
+alias -s js='node'
+alias -s php='php'
+alias -s rb='ruby'
+
+if which mmake > /dev/null 2>&1; then
+  alias make='mmake'
+fi
+
+if [ uname = 'Darwin' ]; then
+  alias ctags=$(brew --prefix)"/bin/ctags"
+fi
+
+#
+# Functions
+#
+
+dic() {
+  grep "$1" $HOME/utils/gene.txt -A 1 -wi --color
+}
+
+mkcd() {
+  mkdir "$1"
+  cd "$1"
+}
+
+chpwd () {
+  ls
+}
+
+precmd () {
+  echo $*
+}
+
+# Used by other shellscripts only
+# gitcommit <commit msg>
+gitcommit() {
+  if [ "$#" -ne 1 ]; then
+    return 1
+  fi
+
+  git add .
+  git commit -m "$1"
+  git push origin master
+}
+
+# dotc "commit message"
+dotc() {
+  if [ "$#" -ne 1 ]; then
+    echo "Usage: dotc commit_msg"
+    return 1
+  fi
+
+  (cd "$HOME"/dotfiles && gitcommit "$1")
+}
+
+# gini [--gh repo_name]
+# gini does initial commit after initialize current directory
+gini() {
+  touch README.md
+
+  git init
+  git add .
+  git commit -m '[ADD] Initial commit'
+
+  if [ "$#" -ge 1 ]; then
+    case "$1" in
+      "--gh")
+        REPO_NAME=${2:-$(basename $(pwd))}
+        hub create -p "$REPO_NAME"
+        ;;
+      *)
+        echo 'Usage: dotc commit_msg --gh repo_name'
+        return
+    esac
+  fi
+}
+
+#
+# fzf
+#
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#
+# ssh-agent
+#
+
+# eval "$(ssh-agent)"
+
+#
+# zplug
+#
+
+if [ ! -e $HOME"/.zplug" ]; then
+  curl -sL zplug.sh/installer | zsh
+fi
+
+source ~/.zplug/init.zsh
+
+# My CLI tools
+zplug "lycoris0731/tmp", as:command
+zplug "lycoris0731/clip", as:command
+export ITUNES_CLI_FUZZY_TOOL='fzf'
+
+# Other CLI tools
+zplug "nishanths/license", as:command
+zplug "motemen/ghq", as:command
+zplug "tj/mmake", as:command
+
+# Plugins
+zplug "b4b4r07/enhancd", use:init.sh
+zplug "zsh-users/zsh-completions"
+zplug "mollifier/cd-gitroot"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "Tarrasch/zsh-bd"
+zplug "hlissner/zsh-autopair", defer:3
+zplug "felixr/docker-zsh-completion"
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
+# cat << STEINS_GATE
+#                                                               ............
+#            .|'''.|     .             ||                       ||'' ...'|||          .
+#            ||..  '   .||.    ....   ...  .. ...    ....    || |' .|||||.||   ....   .||.     ....
+#             ''|||.    ||   .|...||   ||   ||  ||  ||. '       |  ||||''''|  '' .||   ||    .|...||
+#           .     '||   ||   ||        ||   ||  ||  . '|..   || |. '||||  ||  .|' ||   ||    ||
+#           |'....|'    '|.'  '|...'  .||. .||. ||. |'..|'   |' ||.. ..'. ||  '|..'|'  '|.'   '|.
+#                                                           '  '''''''''''''"
+#  ============================================================================================================
+#                         There is no end though there is a start in space. -- Infinity.
+#          It has own power, it ruins, and it goes though there is a start also in the star. ---Finite.
+#                 Only the person who was wisdom can read the most foolish one from the history.
+# The fish that lives in the sea doesn't know the world in the land. It also ruins and goes if they have wisdom.
+#             It is funnier that man exceeds the speed of light than fish start living in the land.
+#            It can be said that this is an final ultimatum from the god to the people who can fight.
+#
+# STEINS_GATE
+
+#
+# direnv
+#
+
+eval "$(direnv hook zsh)"
+
+source <(salias __init__)
+
+# For profile performance
+if type zprof > /dev/null 2>&1; then
+  zprof | less
+fi
