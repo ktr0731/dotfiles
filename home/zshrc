@@ -25,6 +25,20 @@ setopt auto_cd
 setopt prompt_subst
 
 #
+# environment variables
+#
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+if hascmd nvim; then
+  export EDITOR nvim
+else
+  export EDITOR vim
+fi
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
+export ITUNES_CLI_FUZZY_TOOL='fzf'
+export LESS='-m -M -i -R'
+
+#
 # Functions
 #
 
@@ -170,8 +184,6 @@ alias tmpcd='tmp ls F cd'
 alias tmprm='tmp ls F tmp rm'
 
 alias it='itunes'
-
-# alias gl=ghql
 
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'
