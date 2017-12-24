@@ -1,26 +1,23 @@
 #!/usr/bin/env bash
 
-DOTPATH="$HOME"/dotfiles
+if [[ "$(basename "$(pwd)")" != dotfiles ]]; then
+  echo "need to execute in root of dotfiles repository"
+  exit 1
+fi
 
-echo "\$DOTPATH : $DOTPATH"
-echo "Created dotfile symbolic links."
+echo "created dotfile symbolic links."
 
-directories=(git others)
+# home
+echo "home"
 
-# Root
-for dir in "${directories[@]}"; do
-  echo "$dir"
-
-  for rcfile in "$DOTPATH"/"$dir"/*; do
-    ln -sf "$rcfile" "$HOME/.${rcfile:t}"
-    if [ $? -eq 0 ]; then
-      print "    - $rcfile"
-    fi
-  done
+for f in $(find "$PWD"/home); do
+  if ln -sf "$f" "$HOME/.$(basename "$f")"; then
+    echo "    - $f"
+  fi
 done
 
 echo ""
 
 # XDG config
 directories=(vim)
-ln -sf "$DOTPATH"/xdg-config/nvim "$HOME"/.config/nvim
+ln -sf "$PWD"/xdg-config/nvim "$HOME"/.config/nvim

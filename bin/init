@@ -1,29 +1,7 @@
 #!/usr/bin/env bash
 
-DOTPATH=$HOME/dotfiles
-REPOSITORY_URL=https://github.com/lycoris0731/dotfiles
 BREW_INSTALL_COMMAND="/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install) # From brew.sh/index_ja.html
 
-if [ ! -d "$DOTPATH" ]; then
-  # Clone repository
-  if type git > /dev/null 2>&1; then
-    git clone --recursive "$REPOSITORY_URL" "$DOTPATH"
-    cd "$DOTPATH" || exit
-  else
-    echo "Please install git!"
-    exit 1
-  fi
-fi
-
-if type fish > /dev/null 2>&1; then
-  if [ "$(uname)" = 'Darwin' ] && ! type brew > /dev/null 2>&1; then
-    "$BREW_INSTALL_COMMAND" && brew install fish
-  elif ! type apt > /dev/null 2>&1; then
-    sudo apt install zsh
-  fi
-fi
-
-if type fisher > /dev/null 2>&1; then
-  echo "Installing fisher..."
-  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+if [[ -x $(which brew) ]]; then
+  $BREW_INSTALL_COMMAND
 fi

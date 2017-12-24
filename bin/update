@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-DOTPATH="$HOME"/dotfiles
+if [[ "$(basename "$(pwd)")" != dotfiles ]]; then
+  echo "need to execute in root of dotfiles repository"
+  exit 1
+fi
 
-[ ! -e "$DOTPATH" ] && echo "\$DOTPATH does not exist" && exit 0
-
-cd "$DOTPATH"
-
-if type git > /dev/null 2>&1; then
+if [[ -x $(which git) ]]; then
   git pull origin master | true
 fi

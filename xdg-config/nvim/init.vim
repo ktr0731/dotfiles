@@ -419,11 +419,11 @@ nnoremap <C-i> :call fzf#run({
 
 nnoremap <silent> <tab> :GFiles<CR>
 
-" yapf
-augroup YAPF
-  autocmd!
-  autocmd BufWritePost * :call yapf#YAPF()
-augroup END
+" " yapf
+" augroup YAPF
+"   autocmd!
+"   autocmd BufWritePost * :call yapf#YAPF()
+" augroup END
 
 " my func
 if !exists('*ReloadVimrc')
