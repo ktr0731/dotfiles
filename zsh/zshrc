@@ -45,10 +45,6 @@ mkcd() {
   cd "$1"
 }
 
-chpwd () {
-  ls -aF
-}
-
 # Used by other shellscripts only
 # gitcommit <commit msg>
 gitcommit() {
@@ -90,6 +86,13 @@ gini() {
         echo 'Usage: dotc commit_msg --gh repo_name'
         return
     esac
+  fi
+}
+
+gl() {
+  dir=$(ghq list | fzf)
+  if [[ -n "$dir" ]]; then
+    cd "$(ghq root)/$dir"
   fi
 }
 
@@ -168,8 +171,7 @@ alias tmprm='tmp ls F tmp rm'
 
 alias it='itunes'
 
-alias ghql='cd $(ghq list -p | fzf)'
-alias gl='ghql'
+# alias gl=ghql
 
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'
@@ -222,6 +224,9 @@ zplug "tj/mmake", as:command
 
 # Plugins
 zplug "b4b4r07/enhancd", use:init.sh
+export ENHANCD_DISABLE_HOME=0
+export ENHANCD_DISABLE_DOT=1
+export ENHANCD_DISABLE_HYPHEN=1
 zplug "zsh-users/zsh-completions"
 zplug "mollifier/cd-gitroot"
 zplug "zsh-users/zsh-autosuggestions"
