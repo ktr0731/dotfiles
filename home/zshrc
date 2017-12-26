@@ -271,7 +271,7 @@ fi
 #
 # prompt
 #
-PROMPT='❯❯❯%(?.%F{cyan}.%F{red})❯%f '
+PROMPT='❯❯❯%(?.%F{green}.%F{red})❯%f '
 
 zstyle ':vcs_info:*' formats '%F{yellow}%b%f'
 zstyle ':vcs_info:*' actionformats '%F{yellow}%b%f(%F{red}%a%f)'
