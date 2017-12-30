@@ -30,5 +30,8 @@ indent_size = 4
 [*.snip]
 trim_trailing_whitespace = false
 
+[*.vim]
+trim_trailing_whitespace = false
+
 [*.scala]
 indent_size = 2
