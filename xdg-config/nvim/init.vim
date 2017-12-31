@@ -122,19 +122,17 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-nnoremap <C-l> :NERDTreeTabsToggle<CR>
+nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 
-nnoremap <Leader><Space> :GFiles<CR>
-nnoremap <Leader>f :GFiles<CR>
-nnoremap <Leader>a :Ag<CR>
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>c :History:<CR>
-nnoremap <Leader>g :Files ~/.ghq/src<CR>
-nnoremap <Leader>h :History<CR>
-nnoremap <Leader>s :History/<CR>
-nnoremap <Leader>w :Windows<CR>
-
-nnoremap <C-i> :Gina 
+nnoremap <silent><Leader><Space> :GFiles<CR>
+nnoremap <silent><Leader>f :GFiles<CR>
+nnoremap <silent><Leader>a :Ag<CR>
+nnoremap <silent><Leader>b :Buffers<CR>
+nnoremap <silent><Leader>c :History:<CR>
+nnoremap <silent><Leader>g :Files ~/.ghq/src<CR>
+nnoremap <silent><Leader>h :History<CR>
+nnoremap <silent><Leader>s :History/<CR>
+nnoremap <silent><Leader>w :Windows<CR>
 
 nnoremap V v
 nnoremap v V
@@ -224,6 +222,7 @@ if has('nvim')
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
+  Plug 'zchee/deoplete-go', { 'for': 'go' }
   Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
 endif
 
@@ -402,15 +401,6 @@ let g:rustfmt_autosave = 1
 " jsfmt
 let g:js_fmt_autosave = 1
 
-" gina
-call gina#custom#command#alias('status', 's')
-call gina#custom#command#alias('add', 'a')
-
-call gina#custom#command#alias('commit', 'cm')
-call gina#custom#command#option('cm', '-m')
-
-call gina#custom#command#alias('push', 'p')
-
 """ development
 if $DEV_VIM == 1
   exe 'set runtimepath^=' . getcwd()
@@ -420,6 +410,20 @@ if $DEV_VIM == 1
   augroup END
   vnoremap <Space><Space> :'<,'>CTree<CR>
 endif
+
+" fzf
+nnoremap <C-i> :call fzf#run({
+\   'source': 'itunes list',
+\   'sink':   '!itunes play',
+\ })<CR>
+
+nnoremap <silent> <tab> :GFiles<CR>
+
+" " yapf
+" augroup YAPF
+"   autocmd!
+"   autocmd BufWritePost * :call yapf#YAPF()
+" augroup END
 
 " my func
 if !exists('*ReloadVimrc')
