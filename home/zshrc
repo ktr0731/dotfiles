@@ -96,6 +96,16 @@ gl() {
   fi
 }
 
+# find by the value
+agv() {
+  ag -l "$@" | fzf | xargs nvim
+}
+
+# find by the fle name
+agf() {
+  ag -l -g "$@" | fzf | xargs nvim
+}
+
 #
 # environment variables
 #
