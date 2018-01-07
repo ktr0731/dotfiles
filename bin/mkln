@@ -10,7 +10,7 @@ echo "created dotfile symbolic links."
 # home
 echo "home"
 
-for f in $(find "$PWD"/home); do
+for f in $(find "$PWD"/home | tail -n +2); do
   if ln -sf "$f" "$HOME/.$(basename "$f")"; then
     echo "    - $f"
   fi

@@ -173,7 +173,7 @@ Plug 'itchyny/vim-grep'
 Plug 'itchyny/vim-cursorword'
 Plug 'vim-jp/vital.vim'
 Plug 'haya14busa/vim-asterisk'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 
 Plug 'cohama/lexima.vim'
 Plug 'jiangmiao/auto-pairs'
