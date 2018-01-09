@@ -10,9 +10,6 @@ syntax enable
 " Show bottom status
 set laststatus=2
 
-" set spell
-set spelllang=en,cjk
-
 set backspace=indent,eol,start
 set ambiwidth=double
 set nowrap
@@ -39,6 +36,8 @@ set showcmd
 set wildignore+=*.o,*.obj,*.out
 set wildignore+=*.zip,*.tar.gz
 set wildignore+=*/vendor/*,.git
+
+set hidden
 
 if has('nvim')
   set inccommand=split
@@ -81,15 +80,6 @@ let g:maplocalleader = "\<Space>"
 inoremap <C-j> <Esc>
 inoremap jj <Esc>
 
-map *   <Plug>(asterisk-*)
-map #   <Plug>(asterisk-#)
-map g*  <Plug>(asterisk-g*)
-map g#  <Plug>(asterisk-g#)
-map z*  <Plug>(asterisk-z*)
-map gz* <Plug>(asterisk-gz*)
-map z#  <Plug>(asterisk-z#)
-map gz# <Plug>(asterisk-gz#)
-
 " Emacs bind
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
@@ -116,6 +106,8 @@ nnoremap Y y$
 nnoremap n nzz
 nnoremap N Nzz
 
+nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
+
 nnoremap ; :
 nnoremap : ;
 
@@ -125,7 +117,6 @@ vnoremap : ;
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 
 nnoremap <silent><Leader><Space> :GFiles<CR>
-nnoremap <silent><Leader>f :GFiles<CR>
 nnoremap <silent><Leader>a :Ag<CR>
 nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>c :History:<CR>
@@ -134,12 +125,12 @@ nnoremap <silent><Leader>h :History<CR>
 nnoremap <silent><Leader>s :History/<CR>
 nnoremap <silent><Leader>w :Windows<CR>
 
-nnoremap V v
+" nnoremap V v
 nnoremap v V
 
 nnoremap re :Grep<Space>
-nnoremap <C-j> :cprevious<CR>
-nnoremap <C-k> :cnext<CR>
+nnoremap <C-j> :lprevious<CR>
+nnoremap <C-k> :lnext<CR>
 
 if has('nvim')
   tnoremap <C-j> <C-\><C-n>
@@ -171,11 +162,9 @@ Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-grep'
 Plug 'itchyny/vim-cursorword'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-jp/vital.vim'
-Plug 'haya14busa/vim-asterisk'
-" Plug 'easymotion/vim-easymotion'
 
-Plug 'cohama/lexima.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -184,7 +173,6 @@ Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 Plug 'rizzatti/dash.vim'
 Plug 'rhysd/conflict-marker.vim'
-Plug 'rhysd/clever-f.vim'
 
 Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
 
@@ -219,11 +207,17 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'mattn/vim-xxdcursor'
 
 if has('nvim')
+  Plug 'Shougo/denite.nvim'
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'roxma/nvim-completion-manager'
   Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
   Plug 'zchee/deoplete-go', { 'for': 'go' }
   Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
+
+
+  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+
 endif
 
 Plug 'AndrewRadev/inline_edit.vim'
@@ -233,13 +227,11 @@ Plug 'junegunn/limelight.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'lambdalisue/gina.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
 
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',         { 'for': 'go' }
-Plug 'jodosha/vim-godebug',  { 'for': 'go' }
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
@@ -251,8 +243,6 @@ Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'lifepillar/pgsql.vim'
-
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 
 call plug#end()
 
@@ -286,7 +276,7 @@ let g:quickrun_config = {
 " let g:neomake_javascript_enabled_makers  = ['eslint']
 let g:neomake_html_enabled_makers        = ['htmlhint']
 let g:neomake_sh_enabled_makers          = ['shellcheck']
-let g:neomake_python_enabled_makers      = ['pylint']
+let g:neomake_python_enabled_makers      = ['pep8']
 let g:neomake_vim_enabled_makers         = ['vint']
 let g:neomake_typescript_tsc_makers      = { 'args': ['--experimentalDecorators'] }
 
@@ -322,16 +312,7 @@ let g:go_list_type = 'quickfix'
 " let g:go_auto_type_info = 1
 let g:go_snippet_engine = "neosnippet"
 
-" run :GoBuild or :GoTestCompile based on the go file
-function! s:build_go_files()
-  let l:file = expand('%')
-  if l:file =~# '^\f\+_test\.go$'
-    call go#test#Test(0, 1)
-  elseif l:file =~# '^\f\+\.go$'
-    call go#cmd#Build(0)
-  endif
-endfunction
-autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+autocmd FileType go nmap <C-g>b <Plug>(go-build)
 autocmd FileType go nmap <C-g>t <Plug>(go-test)
 autocmd FileType go nmap <C-g>r <Plug>(go-run)
 
@@ -351,55 +332,25 @@ autocmd FileType go nmap <C-g>i <Plug>(go-impl)
 autocmd FileType go nmap <F9> :GoCoverageToggle -short<CR>
 autocmd FileType go nmap <F10> :GoTest -short<CR>
 
-function! s:build_go_files()
-  let l:file = expand('%')
-  if l:file =~# '^\f\+_test\.go$'
-    call go#test#Test(0, 1)
-  elseif l:file =~# '^\f\+\.go$'
-    call go#cmd#Build(0)
-  endif
-endfunction
-
-autocmd FileType go nmap <leader>gb :<C-u>call <SID>build_go_files()<CR>
-
 " gocode
 let g:go_gocode_unimported_packages = 1
 
 " vim-tags
 let g:vim_tags_auto_generate = 1
-let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
 
 " rust.vim
 let g:rustfmt_autosave = 1
 
 " jsfmt
 let g:js_fmt_autosave = 1
+
+" laungage server
+let g:LanguageClient_serverCommands = {
+\   'rust': ['rustup', 'run', 'nightly', 'rls'],
+\   'python': ['pyls'],
+\   'javascript': ['javascript-typescript-stdio'],
+\   'javascript.jsx': ['javascript-typescript-stdio'],
+\ }
 
 """ development
 if $DEV_VIM == 1
@@ -419,12 +370,6 @@ nnoremap <C-i> :call fzf#run({
 
 nnoremap <silent> <tab> :GFiles<CR>
 
-" " yapf
-" augroup YAPF
-"   autocmd!
-"   autocmd BufWritePost * :call yapf#YAPF()
-" augroup END
-
 " my func
 if !exists('*ReloadVimrc')
   function! ReloadVimrc() abort
@@ -437,5 +382,5 @@ if !exists('*ReloadVimrc')
   command! ReloadVimrc :call ReloadVimrc()
 endif
 
-command! Vimrc :e ~/.config/nvim/init.vim
+command! Vimrc :e ~/.vimrc
 
