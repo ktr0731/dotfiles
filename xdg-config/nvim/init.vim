@@ -351,6 +351,7 @@ let g:LanguageClient_serverCommands = {
 \   'javascript': ['javascript-typescript-stdio'],
 \   'javascript.jsx': ['javascript-typescript-stdio'],
 \ }
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
 
 """ development
 if $DEV_VIM == 1
