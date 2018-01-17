@@ -23,6 +23,7 @@ setopt share_history
 setopt histignorealldups
 setopt auto_cd
 setopt prompt_subst
+setopt rm_star_silent
 
 #
 # Functions
@@ -70,6 +71,8 @@ dotc() {
 # gini [--gh repo_name]
 # gini does initial commit after initialize current directory
 gini() {
+  cd "$(ghq root)/github.com/ktr0731"
+
   touch README.md
 
   git init
@@ -197,6 +200,8 @@ alias it='itunes'
 
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'
+
+alias sed='gsed'
 
 alias gip='curl inet-ip.info'
 
