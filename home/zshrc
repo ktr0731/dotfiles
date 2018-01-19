@@ -26,11 +26,29 @@ setopt prompt_subst
 setopt rm_star_silent
 
 #
+# environment variables
+#
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+if hascmd nvim; then
+  export EDITOR nvim
+else
+  export EDITOR vim
+fi
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
+export ITUNES_CLI_FUZZY_TOOL='fzf'
+export LESS='-m -M -i -R'
+
+#
 # Functions
 #
 
 hascmd() {
   [[ -x $(which "$1") ]]
+}
+
+isdebian() {
+  uname -v | grep Debian
 }
 
 chpwd() {
@@ -155,6 +173,8 @@ fi
 # Aliases
 #
 
+# commons
+
 alias -g A=' | ag'
 alias -g F=' | fzf |'
 alias -g G=' | grep'
@@ -172,7 +192,6 @@ if hascmd nvim; then
 fi
 
 alias cdg='cd-gitroot'
-alias trans='trans -t'
 
 alias g='git'
 
@@ -215,6 +234,11 @@ fi
 
 if [ uname = 'Darwin' ]; then
   alias ctags=$(brew --prefix)"/bin/ctags"
+fi
+
+# Debian
+if isdebian; then
+  alias apt='apt -y'
 fi
 
 #
@@ -286,7 +310,7 @@ fi
 #
 # prompt
 #
-PROMPT='❯❯❯%(?.%F{cyan}.%F{red})❯%f '
+PROMPT='❯❯❯%(?.%F{green}.%F{red})❯%f '
 
 zstyle ':vcs_info:*' formats '%F{yellow}%b%f'
 zstyle ':vcs_info:*' actionformats '%F{yellow}%b%f(%F{red}%a%f)'
