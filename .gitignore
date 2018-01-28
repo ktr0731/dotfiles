@@ -7,3 +7,5 @@ vim/ftplugin
 vim/autoload/*
 !vim/autoload/plug.vim
 xdg-config/nvim/nvin
+
+xdg-config/nvim/autoload/plug.vim.old

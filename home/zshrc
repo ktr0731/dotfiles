@@ -75,7 +75,13 @@ dotc() {
 # gini [--gh repo_name]
 # gini does initial commit after initialize current directory
 gini() {
-  cd "$(ghq root)/github.com/ktr0731"
+  if [ "$#" -lt 2 ]; then
+    echo "Usage: gini --gh repo_name"
+    return 1
+  fi
+
+  mkdir "$(ghq root)/github.com/ktr0731/$2"
+  cd "$(ghq root)/github.com/ktr0731/$2"
 
   touch README.md
 
@@ -209,6 +215,8 @@ alias sed='gsed'
 
 alias gip='curl inet-ip.info'
 
+alias diff='colordiff -u'
+
 if hascmd sshrc; then
   alias ssh='sshrc'
 fi
@@ -303,3 +311,16 @@ precmd() {
   vcs_info
 }
 RPROMPT='%F{grey}%~%f%f ${vcs_info_msg_0_}'
+
+#
+# fzf
+#
+# fzf-locate-widget() {
+#   local selected
+#   if selected=$(locate / | fzf -q "$LBUFFER"); then
+#     LBUFFER=$selected
+#   fi
+#   zle redisplay
+# }
+# zle     -N   fzf-locate-widget
+# bindkey '^I' fzf-locate-widget

@@ -106,8 +106,6 @@ nnoremap Y y$
 nnoremap n nzz
 nnoremap N Nzz
 
-nnoremap <CR> :<C-u>call append(expand('.'), '')<Cr>j
-
 nnoremap ; :
 nnoremap : ;
 
@@ -128,9 +126,11 @@ nnoremap <silent><Leader>w :Windows<CR>
 " nnoremap V v
 nnoremap v V
 
-nnoremap re :Grep<Space>
-nnoremap <C-j> :lprevious<CR>
-nnoremap <C-k> :lnext<CR>
+nnoremap re :Rg<Space>
+nnoremap <C-S-j> :lprevious<CR>
+nnoremap <C-S-k> :lnext<CR>
+nnoremap <C-j> :cprevious<CR>
+nnoremap <C-k> :cnext<CR>
 
 if has('nvim')
   tnoremap <C-j> <C-\><C-n>
@@ -156,11 +156,11 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'cocopon/iceberg.vim'
 Plug 'junegunn/seoul256.vim'
-" Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-grep'
+Plug 'jremmen/vim-ripgrep'
 Plug 'itchyny/vim-cursorword'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'vim-jp/vital.vim'
@@ -209,15 +209,9 @@ Plug 'mattn/vim-xxdcursor'
 if has('nvim')
   Plug 'Shougo/denite.nvim'
   Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'roxma/nvim-completion-manager'
   Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
-  Plug 'zchee/deoplete-go', { 'for': 'go' }
-  Plug 'sebastianmarkow/deoplete-rust', { 'for': 'rust' }
-
-
-  Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-
+  Plug 'roxma/nvim-completion-manager'
+  Plug 'roxma/nvim-cm-racer'
 endif
 
 Plug 'AndrewRadev/inline_edit.vim'
@@ -236,23 +230,19 @@ Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
 
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
-
 Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'lifepillar/pgsql.vim'
+
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
 colorscheme seoul256
 
 """ Plugin settings
-"" deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#max_list = 20 " Default: 100
-
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_settings = {
@@ -340,6 +330,12 @@ let g:vim_tags_auto_generate = 1
 
 " rust.vim
 let g:rustfmt_autosave = 1
+let g:racer_cmd = $HOME . "/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <buffer> <silent> <C-]> <Plug>(rust-def)
 
 " jsfmt
 let g:js_fmt_autosave = 1
@@ -351,7 +347,7 @@ let g:LanguageClient_serverCommands = {
 \   'javascript': ['javascript-typescript-stdio'],
 \   'javascript.jsx': ['javascript-typescript-stdio'],
 \ }
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <Leader>d :call LanguageClient_textDocument_definition()<CR>
 
 """ development
 if $DEV_VIM == 1

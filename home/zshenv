@@ -50,6 +50,7 @@ export GOPATH=~/.ghq
 #
 
 export CARGO_HOME=~/.cargo
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # Environment variables path
 path=(
@@ -62,6 +63,7 @@ path=(
   $HOME/Library/Android/sdk/tools(N-/)
   $HOME/bin(N-/)
   $HOME/.yarn/bin(N-/)
+  $HOME/.cargo/bin(N-/)
   ./node_modules/.bin(N-/)
   /usr/local/go/bin(N-/)
   $HOME/google-cloud-sdk/bin(N-/)
