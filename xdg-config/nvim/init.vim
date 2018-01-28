@@ -138,9 +138,6 @@ if has('nvim')
   nnoremap <silent><Leader>vt :vs<CR>:terminal<CR>
 endif
 
-" ctags
-nnoremap <C-]> g<C-]>
-
 " Dash.vim
 nnoremap <silent><leader>d <Plug>DashSearch
 
@@ -208,10 +205,11 @@ Plug 'mattn/vim-xxdcursor'
 
 if has('nvim')
   Plug 'Shougo/denite.nvim'
-  Plug 'nsf/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-  Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
   Plug 'roxma/nvim-completion-manager'
-  Plug 'roxma/nvim-cm-racer'
+
+  Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+  Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
+  Plug 'roxma/nvim-cm-racer', { 'for': 'rust' }
 endif
 
 Plug 'AndrewRadev/inline_edit.vim'
@@ -235,14 +233,31 @@ Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'lifepillar/pgsql.vim'
 
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+
+Plug 'autozimu/LanguageClient-neovim', {
+\ 'branch': 'next',
+\ 'do': 'bash install.sh',
+\ }
 
 call plug#end()
 
 colorscheme seoul256
 
 """ Plugin settings
+" laungage server
+let g:LanguageClient_serverCommands = {
+\   'python': ['pyls'],
+\   'javascript': ['javascript-typescript-stdio'],
+\   'javascript.jsx': ['javascript-typescript-stdio'],
+\ }
+
+let s:ft = &filetype
+if s:ft != 'rust' && s:ft != 'go'
+  nnoremap <silent> <C-]> :call LanguageClient_textDocument_definition()<CR>
+endif
+
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_settings = {
@@ -340,14 +355,6 @@ au FileType rust nmap <buffer> <silent> <C-]> <Plug>(rust-def)
 " jsfmt
 let g:js_fmt_autosave = 1
 
-" laungage server
-let g:LanguageClient_serverCommands = {
-\   'rust': ['rustup', 'run', 'nightly', 'rls'],
-\   'python': ['pyls'],
-\   'javascript': ['javascript-typescript-stdio'],
-\   'javascript.jsx': ['javascript-typescript-stdio'],
-\ }
-nnoremap <silent> <Leader>d :call LanguageClient_textDocument_definition()<CR>
 
 """ development
 if $DEV_VIM == 1
@@ -380,4 +387,3 @@ if !exists('*ReloadVimrc')
 endif
 
 command! Vimrc :e ~/.vimrc
-
