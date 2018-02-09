@@ -64,6 +64,7 @@ path=(
   $HOME/bin(N-/)
   $HOME/.yarn/bin(N-/)
   $HOME/.cargo/bin(N-/)
+  $(yarn global bin)(N-/)
   ./node_modules/.bin(N-/)
   /usr/local/go/bin(N-/)
   $HOME/google-cloud-sdk/bin(N-/)
