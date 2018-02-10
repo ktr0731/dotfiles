@@ -224,7 +224,8 @@ Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',         { 'for': 'go' }
-Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'google/yapf',          { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
 
@@ -347,6 +348,9 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <buffer> <silent> <C-]> <Plug>(rust-def)
+
+" python
+" au BufWritePre *.py <silent> :call yapf#YAPF()<CR>
 
 " jsfmt
 let g:js_fmt_autosave = 1
