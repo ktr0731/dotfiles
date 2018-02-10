@@ -163,6 +163,10 @@ if hascmd kubectl; then
   source <(kubectl completion zsh)
 fi
 
+if [ -f ~/.cred.zsh ]; then
+  source ~/.cred.zsh
+fi
+
 #
 # Aliases
 #
