@@ -38,7 +38,7 @@ isdebian() {
 }
 
 chpwd() {
-  ls
+  ls -F
 }
 
 dic() {
@@ -99,6 +99,13 @@ gini() {
         echo 'Usage: dotc commit_msg --gh repo_name'
         return
     esac
+  fi
+}
+
+sshf() {
+  host=$(cat ~/.ssh/config | grep 'Host ' | cut -d ' ' -f 2 | fzf)
+  if [[ "$?" -eq 0 ]]; then
+    ssh $host
   fi
 }
 
