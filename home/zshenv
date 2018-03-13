@@ -9,8 +9,8 @@ LANGUAGE='en'
 # rbenv
 #
 
-RBENV_ROOT=$HOME/.rbenv
 if type rbenv > /dev/null 2>&1; then
+  RBENV_ROOT=$HOME/.rbenv
   eval "$(rbenv init -)"
 fi
 
@@ -18,9 +18,18 @@ fi
 # phpenv
 #
 
-PHPENV_ROOT=$HOME/.phpenv
 if type phpenv > /dev/null 2>&1; then
+  PHPENV_ROOT=$HOME/.phpenv
   eval "$(phpenv init -)"
+fi
+
+#
+# pyenv
+#
+
+if type pyenv > /dev/null 2>&1; then
+  PYENV_ROOT=$HOME/.pyenv
+  eval "$(pyenv init -)"
 fi
 
 #
@@ -40,7 +49,7 @@ fi
 
 # Environment variables path
 path=(
-  # $PYENV_ROOT/bin(N-/)
+  $PYENV_ROOT/bin(N-/)
   $RBENV_ROOT/bin(N-/)
   $PHPENV_ROOT/bin(N-/)
   $GOPATH/bin(N-/)
