@@ -5,7 +5,7 @@ source $VIMRUNTIME/macros/matchit.vim
 
 let b:match_ignorecase = 1
 
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/Users/ktr/.pyenv/shims/python3'
 syntax enable
 " Show bottom status
 set laststatus=2
@@ -205,7 +205,11 @@ Plug 'mattn/vim-xxdcursor'
 
 if has('nvim')
   Plug 'Shougo/denite.nvim'
-  Plug 'roxma/nvim-completion-manager'
+
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  let g:deoplete#enable_at_startup = 1
+
+  " Plug 'roxma/nvim-completion-manager'
 
   Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
@@ -387,3 +391,7 @@ if !exists('*ReloadVimrc')
 endif
 
 command! Vimrc :e ~/.vimrc
+
+let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+let $NVIM_NCM_LOG_LEVEL="DEBUG"
+let $NVIM_NCM_MULTI_THREAD=0
