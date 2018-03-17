@@ -206,8 +206,10 @@ Plug 'mattn/vim-xxdcursor'
 if has('nvim')
   Plug 'Shougo/denite.nvim'
 
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'go' }
   let g:deoplete#enable_at_startup = 1
+
+  Plug 'zchee/deoplete-go', { 'for': 'go' }
 
   " Plug 'roxma/nvim-completion-manager'
 
