@@ -63,6 +63,7 @@ path=(
   ./node_modules/.bin(N-/)
   /usr/local/go/bin(N-/)
   $HOME/google-cloud-sdk/bin(N-/)
+  $HOME/google-cloud-sdk/platform/google_appengine(N-/)
   $path
 )
 
