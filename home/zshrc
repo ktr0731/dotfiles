@@ -196,6 +196,7 @@ alias -g H=' | head'
 alias -g L=' | less'
 alias -g T=' | tail'
 alias -g W=' | wc'
+alias -g J=' | jq "."'
 
 if hascmd xsel; then
   alias pbcopy='xsel --clipboard --input'
@@ -342,3 +343,15 @@ RPROMPT='%F{grey}%~%f%f ${vcs_info_msg_0_}'
 # }
 # zle     -N   fzf-locate-widget
 # bindkey '^I' fzf-locate-widget
+
+#
+# GAE
+#
+
+if [ -f '/Users/ktr/google-cloud-sdk/path.zsh.inc' ]; then
+  source '/Users/ktr/google-cloud-sdk/path.zsh.inc'
+fi
+
+if [ -f '/Users/ktr/google-cloud-sdk/completion.zsh.inc' ]; then
+  source '/Users/ktr/google-cloud-sdk/completion.zsh.inc'
+fi
