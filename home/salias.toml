@@ -11,6 +11,7 @@ tr = "test -race -v -run"
 l = "logs"
 i = "image"
 c = "container"
+n = "network"
 
 [kubectl]
 c = "create"
