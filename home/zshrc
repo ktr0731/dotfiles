@@ -197,6 +197,7 @@ alias -g L=' | less'
 alias -g T=' | tail'
 alias -g W=' | wc'
 alias -g J=' | jq "."'
+alias -g JL=' | jq "." | less'
 
 if hascmd xsel; then
   alias pbcopy='xsel --clipboard --input'
