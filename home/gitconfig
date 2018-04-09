@@ -23,6 +23,7 @@
   st = stash
   rb = rebase -i
   rs = reset
+  m = merge
 
   conf = grep --name-only '<<<<<<< HEAD'
 
