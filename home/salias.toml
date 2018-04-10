@@ -12,6 +12,7 @@ l = "logs"
 i = "image"
 c = "container"
 n = "network"
+p = "push"
 
 [kubectl]
 c = "create"
