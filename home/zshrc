@@ -215,6 +215,8 @@ alias cdg='cd-gitroot'
 
 alias g='git'
 
+alias gc='gcloud'
+
 alias d='docker'
 alias dcom='docker-compose'
 
