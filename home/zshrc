@@ -276,7 +276,7 @@ fi
 # ssh-agent
 #
 
-# eval "$(ssh-agent)"
+eval "$(ssh-agent)"
 
 #
 # zplug
