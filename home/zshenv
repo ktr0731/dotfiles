@@ -45,6 +45,7 @@ export GOPATH=~/.ghq
 export CARGO_HOME=~/.cargo
 if which rustc > /dev/null; then
   export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+  source ~/.cargo/env
 fi
 
 # Environment variables path
