@@ -289,6 +289,7 @@ let g:quickrun_config = {
 let g:neomake_html_enabled_makers        = ['htmlhint']
 let g:neomake_sh_enabled_makers          = ['shellcheck']
 let g:neomake_python_enabled_makers      = ['pep8']
+let g:neomake_rust_enabled_makers        = ['rustc']
 let g:neomake_vim_enabled_makers         = ['vint']
 let g:neomake_typescript_tsc_makers      = { 'args': ['--experimentalDecorators'] }
 
@@ -392,7 +393,7 @@ if !exists('*ReloadVimrc')
   command! ReloadVimrc :call ReloadVimrc()
 endif
 
-command! Vimrc :e ~/.vimrc
+command! Vimrc :e ~/.nvim/init.vim
 
 let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_NCM_LOG_LEVEL="DEBUG"
