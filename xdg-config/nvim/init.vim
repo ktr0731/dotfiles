@@ -202,6 +202,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'mattn/vim-xxdcursor'
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
 
 if has('nvim')
   Plug 'Shougo/denite.nvim'
@@ -211,11 +213,10 @@ if has('nvim')
 
   Plug 'zchee/deoplete-go', { 'for': 'go' }
 
-  " Plug 'roxma/nvim-completion-manager'
-
   Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
-  Plug 'roxma/nvim-cm-racer', { 'for': 'rust' }
+  " Plug 'roxma/nvim-cm-racer', { 'for': 'rust' }
+  Plug 'sebastianmarkow/deoplete-rust'
 endif
 
 Plug 'AndrewRadev/inline_edit.vim'
@@ -241,7 +242,6 @@ Plug 'hashivim/vim-hashicorp-tools'
 Plug 'lifepillar/pgsql.vim'
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
@@ -255,6 +255,7 @@ colorscheme seoul256
 """ Plugin settings
 " laungage server
 let g:LanguageClient_serverCommands = {
+\   'rust': ['rustup', 'run', 'stable', 'rls'],
 \   'python': ['pyls'],
 \   'javascript': ['javascript-typescript-stdio'],
 \   'javascript.jsx': ['javascript-typescript-stdio'],
@@ -347,14 +348,21 @@ let g:go_gocode_unimported_packages = 1
 " vim-tags
 let g:vim_tags_auto_generate = 1
 
+" deoplete-rust
+" let g:deoplete#sources#rust#racer_binary = '/usr/local/bin/racer'
+" let g:deoplete#sources#rust#rust_source_path = $HOME . '.ghq/src/github.com/rust-lang/rust/src'
+
 " rust.vim
 let g:rustfmt_autosave = 1
-let g:racer_cmd = $HOME . "/.cargo/bin/racer"
+let g:racer_cmd = '/usr/local/bin/racer'
 let g:racer_experimental_completer = 1
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <buffer> <silent> <C-]> <Plug>(rust-def)
+
+" gist-vim
+let g:gist_post_private = 1
 
 " python
 " au BufWritePre *.py <silent> :call yapf#YAPF()<CR>
@@ -393,7 +401,7 @@ if !exists('*ReloadVimrc')
   command! ReloadVimrc :call ReloadVimrc()
 endif
 
-command! Vimrc :e ~/.nvim/init.vim
+command! Vimrc :e ~/.config/nvim/init.vim
 
 let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_NCM_LOG_LEVEL="DEBUG"
