@@ -50,3 +50,6 @@
   required = true
 [http]
 	cookiefile = /Users/ktr/.gitcookies
+
+[github]
+  user = ktr0731
