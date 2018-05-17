@@ -133,6 +133,19 @@ agf() {
   ag -l -g "$@" | fzf | xargs nvim
 }
 
+mkgif() {
+  set -e
+  mkdir out
+  if [[ "$@" -ne 3 ]]; then
+    echo "usage: mkgif <in.mov> <out.gif>"
+    exit 1
+  fi
+  ffmpeg -i "$1" -an -r 10 out/%05d.png
+  mogrify -resize 720 out/*.png
+  convert out/* "$2"
+  rm -rf out
+}
+
 #
 # environment variables
 #
