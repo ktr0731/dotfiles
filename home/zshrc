@@ -134,13 +134,12 @@ agf() {
 }
 
 mkgif() {
-  set -e
-  mkdir out
-  if [[ "$@" -ne 3 ]]; then
+  if [[ "$#" -ne 2 ]]; then
     echo "usage: mkgif <in.mov> <out.gif>"
-    exit 1
+    return 1
   fi
-  ffmpeg -i "$1" -an -r 10 out/%05d.png
+  mkdir out || return 1
+  ffmpeg -i "$1" -an -r 10 'out/%05d.png'
   mogrify -resize 720 out/*.png
   convert out/* "$2"
   rm -rf out
