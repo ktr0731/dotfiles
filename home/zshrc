@@ -50,6 +50,15 @@ mkcd() {
   cd "$1"
 }
 
+fo() {
+  p='.'
+  if [ "$#" -eq 1 ]; then
+    p=$1
+  fi
+
+  find "$p" | fzf | xargs -I @ open "@"
+}
+
 # Used by other shellscripts only
 # gitcommit <commit msg>
 gitcommit() {
