@@ -37,6 +37,8 @@ set wildignore+=*.o,*.obj,*.out
 set wildignore+=*.zip,*.tar.gz
 set wildignore+=*/vendor/*,.git
 
+set completeopt=menuone,longest
+
 set hidden
 
 if has('nvim')
@@ -208,15 +210,13 @@ Plug 'mattn/webapi-vim'
 if has('nvim')
   Plug 'Shougo/denite.nvim'
 
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'go' }
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   let g:deoplete#enable_at_startup = 1
 
   Plug 'zchee/deoplete-go', { 'for': 'go' }
 
   Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
   Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
-  " Plug 'roxma/nvim-cm-racer', { 'for': 'rust' }
-  Plug 'sebastianmarkow/deoplete-rust'
 endif
 
 Plug 'AndrewRadev/inline_edit.vim'
@@ -231,7 +231,6 @@ Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',         { 'for': 'go' }
-" Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'google/yapf',          { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
@@ -242,6 +241,7 @@ Plug 'hashivim/vim-hashicorp-tools'
 Plug 'lifepillar/pgsql.vim'
 
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 Plug 'autozimu/LanguageClient-neovim', {
 \ 'branch': 'next',
@@ -260,11 +260,8 @@ let g:LanguageClient_serverCommands = {
 \   'javascript': ['javascript-typescript-stdio'],
 \   'javascript.jsx': ['javascript-typescript-stdio'],
 \ }
-
-let s:ft = &filetype
-if s:ft != 'rust' && s:ft != 'go'
-  nnoremap <silent> <C-]> :call LanguageClient_textDocument_definition()<CR>
-endif
+let g:LanguageClient_autoStart = 1
+set omnifunc=syntaxcomplete#Complete
 
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
@@ -304,10 +301,6 @@ imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
 xmap <C-k> <Plug>(neosnippet_expand_target)
 
-" SuperTab like snippets behavior.
-" imap <expr><TAB>
-"   \   pumvisible() ? <C-n> :
-"   \   neosnippet#expandable_or_jumpable() ? <Plug>(neosnippet_expand_or_jump) : <TAB>
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ? <Plug>(neosnippet_expand_or_jump)" : <TAB>
 
 " My snippets
@@ -319,7 +312,7 @@ let g:NERDTreeShowHidden = 1
 " vim-go
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
-" let g:go_auto_type_info = 1
+let g:go_auto_type_info = 1
 let g:go_snippet_engine = "neosnippet"
 
 autocmd FileType go nmap <C-g>b <Plug>(go-build)
@@ -348,12 +341,10 @@ let g:go_gocode_unimported_packages = 1
 " vim-tags
 let g:vim_tags_auto_generate = 1
 
-" deoplete-rust
-" let g:deoplete#sources#rust#racer_binary = '/usr/local/bin/racer'
-" let g:deoplete#sources#rust#rust_source_path = $HOME . '.ghq/src/github.com/rust-lang/rust/src'
-
 " rust.vim
 let g:rustfmt_autosave = 1
+
+" vim-racer
 let g:racer_cmd = '/usr/local/bin/racer'
 let g:racer_experimental_completer = 1
 au FileType rust nmap gd <Plug>(rust-def)
@@ -364,12 +355,8 @@ au FileType rust nmap <buffer> <silent> <C-]> <Plug>(rust-def)
 " gist-vim
 let g:gist_post_private = 1
 
-" python
-" au BufWritePre *.py <silent> :call yapf#YAPF()<CR>
-
 " jsfmt
 let g:js_fmt_autosave = 1
-
 
 """ development
 if $DEV_VIM == 1
