@@ -271,6 +271,8 @@ alias gip='curl inet-ip.info'
 
 alias diff='colordiff -u'
 
+alias cg='cargo'
+
 if hascmd sshrc; then
   alias ssh='sshrc'
 fi
