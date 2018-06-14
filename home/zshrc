@@ -273,10 +273,6 @@ alias diff='colordiff -u'
 
 alias cg='cargo'
 
-if hascmd sshrc; then
-  alias ssh='sshrc'
-fi
-
 if hascmd mmake; then
   alias make='mmake'
 fi
