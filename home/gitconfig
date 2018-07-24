@@ -13,6 +13,7 @@
   d = diff
   co = ! git branch --no-color | egrep -v '^\\*' | fzf | xargs git checkout
   ch = checkout
+  chh = ! git log --oneline | fzf | awk '{ print $1 }' | xargs git checkout
   chb = checkout -b
   p = push
   pf = push --force-with-lease
