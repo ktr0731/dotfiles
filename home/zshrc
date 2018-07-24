@@ -233,6 +233,10 @@ if hascmd nvim; then
   alias vim='nvim'
 fi
 
+if hascmd htop; then
+  alias htop='htop -t'
+fi
+
 alias cdg='cd-gitroot'
 
 alias g='git'
