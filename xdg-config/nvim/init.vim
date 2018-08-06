@@ -125,7 +125,7 @@ nnoremap <silent><Leader>h :History<CR>
 nnoremap <silent><Leader>s :History/<CR>
 nnoremap <silent><Leader>w :Windows<CR>
 
-" nnoremap V v
+nnoremap V v
 nnoremap v V
 
 nnoremap re :Rg<Space>
@@ -183,14 +183,12 @@ Plug 'mattn/jscomplete-vim',       { 'for': 'javascript' }
 Plug 'hail2u/vim-css3-syntax',     { 'for': 'css' }
 Plug 'elzr/vim-json',              { 'for': 'json' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
 Plug 'pangloss/vim-javascript',    { 'for': ['javascript', 'riot'] }
 Plug 'ryym/vim-riot',              { 'for': 'riot' }
 Plug 'nikvdp/ejs-syntax',          { 'for': 'ejs' }
 Plug 'wavded/vim-stylus',          { 'for': 'stylus' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-" Plug 'mephux/vim-jsfmt', { 'for': ['javascript'] }
 
 Plug 'derekwyatt/vim-scala'
 
@@ -216,7 +214,6 @@ if has('nvim')
   Plug 'zchee/deoplete-go', { 'for': 'go' }
 
   Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
-  Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
 endif
 
 Plug 'AndrewRadev/inline_edit.vim'
@@ -258,6 +255,7 @@ let g:LanguageClient_serverCommands = {
 \   'rust': ['rustup', 'run', 'stable', 'rls'],
 \   'python': ['pyls'],
 \   'javascript': ['javascript-typescript-stdio'],
+\   'typescript': ['javascript-typescript-stdio'],
 \   'javascript.jsx': ['javascript-typescript-stdio'],
 \ }
 let g:LanguageClient_autoStart = 1
@@ -283,7 +281,6 @@ let g:quickrun_config = {
   \ }
 
 "" neomake
-" let g:neomake_javascript_enabled_makers  = ['eslint']
 let g:neomake_html_enabled_makers        = ['htmlhint']
 let g:neomake_sh_enabled_makers          = ['shellcheck']
 let g:neomake_python_enabled_makers      = ['pep8']
@@ -312,7 +309,6 @@ let g:NERDTreeShowHidden = 1
 " vim-go
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
-let g:go_auto_type_info = 1
 let g:go_snippet_engine = "neosnippet"
 
 autocmd FileType go nmap <C-g>b <Plug>(go-build)
@@ -393,3 +389,48 @@ command! Vimrc :e ~/.config/nvim/init.vim
 let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_NCM_LOG_LEVEL="DEBUG"
 let $NVIM_NCM_MULTI_THREAD=0
+
+function! s:align_lists(lists)
+  let maxes = {}
+  for list in a:lists
+    let i = 0
+    while i < len(list)
+      let maxes[i] = max([get(maxes, i, 0), len(list[i])])
+      let i += 1
+    endwhile
+  endfor
+  for list in a:lists
+    call map(list, "printf('%-'.maxes[v:key].'s', v:val)")
+  endfor
+  return a:lists
+endfunction
+
+function! s:btags_source()
+  let lines = map(split(system(printf(
+    \ 'gotags %s',
+    \ expand('%:S'))), "\n"), 'split(v:val, "\t")')
+  if v:shell_error
+    throw 'failed to extract tags'
+  endif
+  return map(s:align_lists(lines), 'join(v:val, "\t")')
+endfunction
+
+function! s:btags_sink(line)
+  execute split(a:line, "\t")[2]
+endfunction
+
+function! s:btags()
+  try
+    call fzf#run({
+    \ 'source':  s:btags_source(),
+    \ 'options': '+m -d "\t" --with-nth 1,4.. -n 1 --tiebreak=index',
+    \ 'down':    '40%',
+    \ 'sink':    function('s:btags_sink')})
+  catch
+    echohl WarningMsg
+    echom v:exception
+    echohl None
+  endtry
+endfunction
+
+command! BTags call s:btags()
