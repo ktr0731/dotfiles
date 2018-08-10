@@ -5,3 +5,5 @@ BREW_INSTALL_COMMAND="/usr/bin/ruby -e "$(curl -fsSL https://raw.githubuserconte
 if [[ -x $(which brew) ]]; then
   $BREW_INSTALL_COMMAND
 fi
+
+mkdir -p $HOME/.config/

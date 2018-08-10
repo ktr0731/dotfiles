@@ -20,4 +20,4 @@ echo ""
 
 # XDG config
 directories=(vim)
-ln -sf "$PWD"/xdg-config/nvim "$HOME"/.config/nvim
+ln -sf "$PWD"/xdg-config/nvim/ "$HOME"/.config/nvim
