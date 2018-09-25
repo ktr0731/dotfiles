@@ -277,6 +277,8 @@ alias diff='colordiff -u'
 
 alias cg='cargo'
 
+alias grep='grep --color'
+
 if hascmd mmake; then
   alias make='mmake'
 fi
