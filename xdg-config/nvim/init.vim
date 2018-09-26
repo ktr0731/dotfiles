@@ -125,9 +125,6 @@ nnoremap <silent><Leader>h :History<CR>
 nnoremap <silent><Leader>s :History/<CR>
 nnoremap <silent><Leader>w :Windows<CR>
 
-nnoremap V v
-nnoremap v V
-
 nnoremap re :Rg<Space>
 nnoremap <C-S-j> :lprevious<CR>
 nnoremap <C-S-k> :lnext<CR>
