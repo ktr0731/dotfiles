@@ -96,7 +96,7 @@ gini() {
 
   git init
   git add .
-  git commit -m '[ADD] Initial commit'
+  git commit -m 'initial commit'
 
   if [ "$#" -ge 1 ]; then
     case "$1" in
