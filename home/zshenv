@@ -63,6 +63,7 @@ path=(
   $(yarn global bin)(N-/)
   ./node_modules/.bin(N-/)
   /usr/local/go/bin(N-/)
+  /usr/local/texlive/2018basic/bin/x86_64-darwin(N-/)
   $HOME/google-cloud-sdk/bin(N-/)
   $HOME/google-cloud-sdk/platform/google_appengine(N-/)
   $path
