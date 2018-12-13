@@ -211,7 +211,8 @@ if has('nvim')
 
   Plug 'zchee/deoplete-go', { 'for': 'go' }
 
-  Plug 'nsf/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+  Plug 'mdempsky/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+
 endif
 
 Plug 'AndrewRadev/inline_edit.vim'
