@@ -37,6 +37,7 @@ fi
 #
 
 export GOPATH=~/.ghq
+export GO111MODULE=on
 
 #
 # Cargo
@@ -76,6 +77,8 @@ if [ $(uname) = "SunOS" ]; then
     $path
   )
 fi
+
+LIBGL_ALWAYS_SOFTWARE=1
 
 #
 # Performance

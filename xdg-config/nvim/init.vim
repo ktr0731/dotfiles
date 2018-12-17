@@ -29,6 +29,7 @@ set sidescroll=1
 set sidescrolloff=15
 set cursorline
 set cursorcolumn
+set colorcolumn=60
 
 " Use tab completion
 set wildmenu
@@ -206,12 +207,10 @@ Plug 'mattn/webapi-vim'
 if has('nvim')
   Plug 'Shougo/denite.nvim'
 
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  let g:deoplete#enable_at_startup = 1
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " let g:deoplete#enable_at_startup = 1
 
-  Plug 'zchee/deoplete-go', { 'for': 'go' }
-
-  Plug 'mdempsky/gocode', { 'for': 'go', 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
+  " Plug 'zchee/deoplete-go', { 'for': 'go' }
 
 endif
 
@@ -239,10 +238,12 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
-Plug 'autozimu/LanguageClient-neovim', {
-\ 'branch': 'next',
-\ 'do': 'bash install.sh',
-\ }
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'natebosch/vim-lsc'
+let g:lsp_async_completion = 1
 
 call plug#end()
 
@@ -250,15 +251,17 @@ colorscheme seoul256
 
 """ Plugin settings
 " laungage server
-let g:LanguageClient_serverCommands = {
-\   'rust': ['rustup', 'run', 'stable', 'rls'],
-\   'python': ['pyls'],
-\   'javascript': ['javascript-typescript-stdio'],
-\   'typescript': ['javascript-typescript-stdio'],
-\   'javascript.jsx': ['javascript-typescript-stdio'],
-\ }
-let g:LanguageClient_autoStart = 1
-set omnifunc=syntaxcomplete#Complete
+if executable('golsp')
+  augroup LspGo
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+        \ 'name': 'golang',
+        \ 'cmd': {server_info->['golsp', '-mode', 'stdio']},
+        \ 'whitelist': ['go'],
+        \ })
+    autocmd FileType go setlocal omnifunc=lsp#complete
+  augroup END
+endif
 
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
@@ -329,9 +332,6 @@ autocmd FileType go nmap <C-g>i <Plug>(go-impl)
 
 autocmd FileType go nmap <F9> :GoCoverageToggle -short<CR>
 autocmd FileType go nmap <F10> :GoTest -short<CR>
-
-" gocode
-let g:go_gocode_unimported_packages = 1
 
 " vim-tags
 let g:vim_tags_auto_generate = 1
