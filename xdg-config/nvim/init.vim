@@ -251,12 +251,12 @@ colorscheme seoul256
 
 """ Plugin settings
 " laungage server
-if executable('golsp')
+if executable('bingo')
   augroup LspGo
     au!
     autocmd User lsp_setup call lsp#register_server({
         \ 'name': 'golang',
-        \ 'cmd': {server_info->['golsp', '-mode', 'stdio']},
+        \ 'cmd': {server_info->['bingo', '-mode', 'stdio']},
         \ 'whitelist': ['go'],
         \ })
     autocmd FileType go setlocal omnifunc=lsp#complete
