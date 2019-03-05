@@ -59,7 +59,6 @@ set autowrite
 " Do auto read when opened file is changed
 set autoread
 
-
 augroup auto_comment_off
   autocmd!
   autocmd BufEnter * setlocal formatoptions-=r
@@ -206,12 +205,6 @@ Plug 'mattn/webapi-vim'
 
 if has('nvim')
   Plug 'Shougo/denite.nvim'
-
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  " let g:deoplete#enable_at_startup = 1
-
-  " Plug 'zchee/deoplete-go', { 'for': 'go' }
-
 endif
 
 Plug 'AndrewRadev/inline_edit.vim'
