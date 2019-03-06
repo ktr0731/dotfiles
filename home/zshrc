@@ -279,6 +279,8 @@ alias cg='cargo'
 
 alias grep='grep --color'
 
+alias kf='ps | fzf -m | awk "{ print \$1 }" | xargs kill -9'
+
 if hascmd mmake; then
   alias make='mmake'
 fi
