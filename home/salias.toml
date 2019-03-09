@@ -3,7 +3,7 @@ b = "build"
 i = "install"
 r = "run"
 test = "test -race -v"
-t = "test -race -v"
+t = "test -race"
 ta = "test -race -v ./..."
 tr = "test -race -v -run"
 
@@ -13,9 +13,6 @@ i = "image"
 c = "container"
 n = "network"
 p = "push"
-
-[kubectl]
-c = "create"
 
 [git]
 l = "log --graph --oneline"
@@ -27,3 +24,11 @@ l = "lock"
 [cargo]
 b = "build"
 r = "run"
+
+[gcloud]
+c = "container"
+
+[kubectl]
+c = "create"
+d = "describe"
+g = "get"
