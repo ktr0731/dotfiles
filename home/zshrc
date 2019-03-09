@@ -242,6 +242,7 @@ alias cdg='cd-gitroot'
 alias g='git'
 
 alias gc='gcloud'
+alias kc='kubectl'
 
 alias d='docker'
 alias dcom='docker-compose'
