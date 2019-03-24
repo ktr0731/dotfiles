@@ -78,6 +78,8 @@ fi
 
 LIBGL_ALWAYS_SOFTWARE=1
 
+export fpath=(/usr/local/share/zsh/functions $fpath)
+
 #
 # Performance
 #

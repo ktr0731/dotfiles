@@ -154,6 +154,7 @@ mkgif() {
   rm -rf out
 }
 
+
 #
 # environment variables
 #
@@ -376,15 +377,7 @@ RPROMPT='%F{grey}%~%f%f ${vcs_info_msg_0_}'
 #
 # fzf
 #
-# fzf-locate-widget() {
-#   local selected
-#   if selected=$(locate / | fzf -q "$LBUFFER"); then
-#     LBUFFER=$selected
-#   fi
-#   zle redisplay
-# }
-# zle     -N   fzf-locate-widget
-# bindkey '^I' fzf-locate-widget
+
 
 #
 # GAE
