@@ -305,6 +305,16 @@ if isdebian; then
   alias apt='apt -y'
 fi
 
+gocov() {
+  if [[ "$#" -eq 1 ]]; then
+    go test -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt "./$1"
+  else
+    go test -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt ./...
+  fi
+  go tool cover -html=coverage.txt
+  rm coverage.txt
+}
+
 #
 # fzf
 #
