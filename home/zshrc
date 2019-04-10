@@ -316,7 +316,7 @@ fi
 #
 
 eval "$(ssh-agent)"
-ssh-add ~/.ssh/privkey/*
+# ssh-add ~/.ssh/privkey/*
 
 #
 # zplug
