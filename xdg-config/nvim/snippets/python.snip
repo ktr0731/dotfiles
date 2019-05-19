@@ -1,0 +1,21 @@
+snippet procon
+abbr    procon template
+alias   compe
+options head
+  #!/usr/bin/env python3
+  # -*- coding: utf-8 -*-
+
+  import sys
+
+  input = sys.stdin.readline
+
+  def main():
+    ${0:pass}
+
+  main()
+
+snippet list2
+abbr    2d list
+alias   2list, arr2, 2arr
+options head
+  [[${0:None}] * N for _ in range(N)]
