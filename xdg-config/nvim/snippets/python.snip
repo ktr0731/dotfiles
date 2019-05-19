@@ -18,4 +18,4 @@ snippet list2
 abbr    2d list
 alias   2list, arr2, 2arr
 options head
-  [[${0:None}] * N for _ in range(N)]
+  [[${0:None} for _ in range(${1:N})] for _ in range(${2:M})]
