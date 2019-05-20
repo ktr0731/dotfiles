@@ -37,7 +37,7 @@ fi
 #
 
 export GOPATH=~/.ghq
-export GO111MODULE=on
+export GO111MODULE=auto
 
 #
 # Cargo

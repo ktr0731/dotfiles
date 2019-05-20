@@ -29,7 +29,7 @@ set sidescroll=1
 set sidescrolloff=15
 set cursorline
 set cursorcolumn
-set colorcolumn=80
+set colorcolumn=120
 
 " Use tab completion
 set wildmenu
