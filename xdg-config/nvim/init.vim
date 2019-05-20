@@ -299,7 +299,7 @@ xmap <C-k> <Plug>(neosnippet_expand_target)
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ? <Plug>(neosnippet_expand_or_jump)" : <TAB>
 
 " My snippets
-let g:neosnippet#snippets_directory='~/.vim/snippets'
+let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 
 "" NERDTree
 let g:NERDTreeShowHidden = 1
@@ -308,6 +308,7 @@ let g:NERDTreeShowHidden = 1
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
 let g:go_snippet_engine = "neosnippet"
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 
 autocmd FileType go nmap <C-g>b <Plug>(go-build)
 autocmd FileType go nmap <C-g>t <Plug>(go-test)
