@@ -29,7 +29,7 @@ set sidescroll=1
 set sidescrolloff=15
 set cursorline
 set cursorcolumn
-set colorcolumn=80
+set colorcolumn=120
 
 " Use tab completion
 set wildmenu
@@ -125,11 +125,12 @@ nnoremap <silent><Leader>h :History<CR>
 nnoremap <silent><Leader>s :History/<CR>
 nnoremap <silent><Leader>w :Windows<CR>
 
-nnoremap re :Rg<Space>
 nnoremap <C-S-j> :lprevious<CR>
 nnoremap <C-S-k> :lnext<CR>
 nnoremap <C-j> :cprevious<CR>
 nnoremap <C-k> :cnext<CR>
+
+nnoremap re :Ag<Space>
 
 if has('nvim')
   tnoremap <C-j> <C-\><C-n>
