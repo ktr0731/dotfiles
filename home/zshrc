@@ -24,6 +24,7 @@ setopt histignorealldups
 setopt auto_cd
 setopt prompt_subst
 setopt rm_star_silent
+setopt hist_ignore_space
 
 #
 # Functions
@@ -163,11 +164,11 @@ export ITUNES_CLI_FUZZY_TOOL='fzf'
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 if hascmd nvim; then
-  export EDITOR nvim
-  export VISUAL nvim
+  export EDITOR=nvim
+  export VISUAL=nvim
 else
-  export EDITOR vim
-  export VISUAL nvim
+  export EDITOR=vim
+  export VISUAL=nvim
 fi
 export PAGER='less'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
@@ -307,8 +308,8 @@ if isdebian; then
 fi
 
 gocov() {
-  if [[ "$#" -eq 1 ]]; then
-    go test -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt "./$1"
+  if [[ "$#" -ne 0 ]]; then
+    go test -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt $@
   else
     go test -coverpkg ./... -covermode=atomic -coverprofile=coverage.txt ./...
   fi
