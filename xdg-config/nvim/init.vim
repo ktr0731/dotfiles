@@ -130,7 +130,8 @@ nnoremap <C-S-k> :lnext<CR>
 nnoremap <C-j> :cprevious<CR>
 nnoremap <C-k> :cnext<CR>
 
-nnoremap re :Ag<Space>
+nnoremap re :Ag<Space><C-r>=expand("<cword>")<CR><CR>
+nnoremap te :Ag<Space>
 
 if has('nvim')
   tnoremap <C-j> <C-\><C-n>
