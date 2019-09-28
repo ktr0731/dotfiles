@@ -261,6 +261,21 @@ if executable('gopls')
   augroup END
 endif
 
+if executable('javascript-typescript-stdio')
+  augroup LspTS
+    au!
+    autocmd User lsp_setup call lsp#register_server({
+          \ 'name': 'go-lang',
+          \ 'cmd': {server_info->['javascript-typescript-stdio']},
+          \ 'whitelist': ['js', 'ts'],
+          \ })
+    autocmd FileType ts setlocal omnifunc=lsp#complete
+    "autocmd FileType go nmap <buffer> gd <plug>(lsp-definition)
+    "autocmd FileType go nmap <buffer> ,n <plug>(lsp-next-error)
+    "autocmd FileType go nmap <buffer> ,p <plug>(lsp-previous-error)
+  augroup END
+endif
+
 "" Emmet
 let g:user_emmet_leader_key='<c-e>'
 let g:user_emmet_settings = {
@@ -311,6 +326,8 @@ let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
 let g:go_snippet_engine = "neosnippet"
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 autocmd FileType go nmap <C-g>b <Plug>(go-build)
 autocmd FileType go nmap <C-g>t <Plug>(go-test)
