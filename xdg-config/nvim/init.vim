@@ -86,6 +86,8 @@ inoremap jj <Esc>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
+nnoremap <Leader>o :call whichpr#open_line()<CR>
+
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
 nnoremap <M-s> <C-w>s
@@ -222,6 +224,7 @@ let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',         { 'for': 'go' }
 Plug 'google/yapf',          { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'pocke/whichpr'
 Plug 'Shougo/neco-syntax'
 Plug 'ujihisa/neco-look'
 
@@ -298,7 +301,7 @@ let g:quickrun_config = {
 "" neomake
 let g:neomake_html_enabled_makers        = ['htmlhint']
 let g:neomake_sh_enabled_makers          = ['shellcheck']
-let g:neomake_python_enabled_makers      = ['pep8']
+" let g:neomake_python_enabled_makers      = ['pep8']
 let g:neomake_rust_enabled_makers        = ['rustc']
 let g:neomake_vim_enabled_makers         = ['vint']
 let g:neomake_typescript_tsc_makers      = { 'args': ['--experimentalDecorators'] }
