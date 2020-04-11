@@ -383,12 +383,7 @@ if $DEV_VIM == 1
 endif
 
 " fzf
-nnoremap <C-i> :call fzf#run({
-\   'source': 'itunes list',
-\   'sink':   '!itunes play',
-\ })<CR>
-
-nnoremap <silent> <tab> :GFiles<CR>
+nnoremap <silent> <C-i> :GFiles<CR>
 
 " my func
 if !exists('*ReloadVimrc')
@@ -452,3 +447,5 @@ function! s:btags()
 endfunction
 
 command! BTags call s:btags()
+
+noremap <Tab> gt
