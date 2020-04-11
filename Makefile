@@ -4,11 +4,10 @@ SHELL := /bin/bash
 help: aa
 	@echo "make all    -- Install all environment settings"
 	@echo "make init   -- Initialize environment for use dotfiles"
-	@echo "make update -- Do update dotfiles by git repository"
 	@echo "make links  -- Make symbolick links"
 
 .PHONY: all
-all: aa update init links
+all: aa init links
 
 .PHONY: aa
 aa:
@@ -21,10 +20,6 @@ init:
 .PHONY: links
 links:
 	@./bin/mkln
-
-.PHONY: update
-update:
-	@./bin/update
 
 .PHONY: clean
 clean:
