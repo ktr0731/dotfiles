@@ -383,7 +383,7 @@ if $DEV_VIM == 1
 endif
 
 " fzf
-nnoremap <silent> <C-i> :GFiles<CR>
+nnoremap <silent> <C-h> :GFiles<CR>
 
 " my func
 if !exists('*ReloadVimrc')
