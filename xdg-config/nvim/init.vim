@@ -138,11 +138,9 @@ nnoremap <C-k> :cnext<CR>
 nnoremap re :Ag<Space><C-r>=expand("<cword>")<CR><CR>
 nnoremap te :Ag<Space>
 
-" if has('nvim')
 tnoremap <C-j> <C-\><C-n>
 nnoremap <silent><Leader>t :sp<CR>:terminal<CR>
 nnoremap <silent><Leader>vt :vs<CR>:terminal<CR>
-" endif
 
 " Dash.vim
 nnoremap <silent><leader>d <Plug>DashSearch
@@ -209,10 +207,6 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'mattn/vim-xxdcursor'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
-
-if has('nvim')
-  Plug 'Shougo/denite.nvim'
-endif
 
 Plug 'AndrewRadev/inline_edit.vim'
 Plug 'thinca/vim-quickrun'
