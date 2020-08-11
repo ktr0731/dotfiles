@@ -215,9 +215,11 @@ Plug 'AndrewRadev/inline_edit.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'junegunn/vim-emoji'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'lambdalisue/gina.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'simeji/winresizer'
 
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
