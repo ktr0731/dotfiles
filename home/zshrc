@@ -135,12 +135,12 @@ gh() {
 
 # find by the value
 agv() {
-  ag -l "$@" | fzf | xargs vim
+  ag -l "$@" | fzf | xargs nvim
 }
 
 # find by the fle name
 agf() {
-  ag -l -g "$@" | fzf | xargs vim
+  ag -l -g "$@" | fzf | xargs nvim
 }
 
 mkgif() {
@@ -163,8 +163,13 @@ export ITUNES_CLI_FUZZY_TOOL='fzf'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export EDITOR=vim
-export VISUAL=vim
+if hascmd nvim; then
+  export EDITOR=nvim
+  export VISUAL=nvim
+else
+  export EDITOR=vim
+  export VISUAL=nvim
+fi
 export PAGER='less'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow'
 export ITUNES_CLI_FUZZY_TOOL='fzf'
@@ -226,6 +231,10 @@ if hascmd pbcopy; then
   alias -g P=' | pbcopy'
 fi
 
+if hascmd nvim; then
+  alias vim='nvim'
+fi
+
 if hascmd htop; then
   alias htop='htop -t'
 fi
@@ -260,7 +269,7 @@ alias tmprm='tmp ls F tmp rm'
 
 alias it='itunes'
 
-alias vimrc='vim ~/.vimrc'
+alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'
 
 alias sed='gsed'
