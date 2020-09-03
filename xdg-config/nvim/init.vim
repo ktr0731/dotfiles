@@ -76,8 +76,6 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-set termwinkey=<C-g>
-
 """ Mappings
 let g:mapleader = "\<Space>"
 let g:maplocalleader = "\<Space>"
@@ -223,7 +221,7 @@ Plug 'vim-jp/vimdoc-ja'
 Plug 'lambdalisue/gina.vim'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'simeji/winresizer'
-Plug 'kassio/neoterm'
+" Plug 'kassio/neoterm'
 
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
@@ -248,7 +246,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'natebosch/vim-lsc'
 let g:lsp_async_completion = 1
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
