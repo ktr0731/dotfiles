@@ -396,4 +396,6 @@ if [ -f '/Users/ktr/google-cloud-sdk/completion.zsh.inc' ]; then
   source '/Users/ktr/google-cloud-sdk/completion.zsh.inc'
 fi
 
-source ~/secret.zsh
+if [ -f ~/secret.zsh ]; then
+  source ~/secret.zsh
+fi
