@@ -38,9 +38,6 @@
   submit = codereview submit
   sync = codereview sync
 
-[push]
-  default = tracking
-
 [core]
   editor = nvim
   excludesfile = ~/.gitignore_global
@@ -68,3 +65,5 @@
   helper = osxkeychain
 [hub]
   protocol = https
+[pull]
+	rebase = false
