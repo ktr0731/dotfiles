@@ -94,6 +94,7 @@ gini() {
   cd "$(ghq root)/github.com/ktr0731/$2"
 
   touch README.md
+  license -o LICENSE mit
 
   git init
   git add .
