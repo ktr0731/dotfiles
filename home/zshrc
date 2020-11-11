@@ -126,13 +126,6 @@ gl() {
   fi
 }
 
-gh() {
-  dir=$(ghq list | fzf)
-  if [[ "$?" -eq 0 ]]; then
-    open "https://$dir"
-  fi
-}
-
 # find by the value
 agv() {
   ag -l "$@" | fzf | xargs nvim
