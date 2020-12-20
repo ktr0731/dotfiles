@@ -50,3 +50,4 @@ idea.txt
 .idea/
 cockroach-data/
 secret
+_tmp
