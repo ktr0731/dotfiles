@@ -20,6 +20,7 @@ Session.vim
 *~
 *.vim-rplugin~
 tmp/
+_tmp/
 
 #
 # Programming languages
