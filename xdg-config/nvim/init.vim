@@ -192,6 +192,7 @@ Plug 'wavded/vim-stylus',          { 'for': 'stylus' }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'posva/vim-vue'
+Plug 'jparise/vim-graphql'
 
 Plug 'derekwyatt/vim-scala'
 
@@ -219,7 +220,8 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'lambdalisue/gina.vim'
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'simeji/winresizer'
 " Plug 'kassio/neoterm'
 
