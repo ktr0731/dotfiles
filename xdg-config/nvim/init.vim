@@ -248,6 +248,8 @@ Plug 'natebosch/vim-lsc'
 let g:lsp_async_completion = 1
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
 
 colorscheme seoul256
