@@ -349,6 +349,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "Tarrasch/zsh-bd"
 zplug "hlissner/zsh-autopair", defer:3
 zplug "felixr/docker-zsh-completion"
+zplug "sobolevn/wakatime-zsh-plugin"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
