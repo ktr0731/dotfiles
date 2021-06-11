@@ -233,6 +233,8 @@ if hascmd htop; then
   alias htop='htop -t'
 fi
 
+alias a='fillin'
+
 alias cdg='cd-gitroot'
 
 alias g='git'
@@ -255,6 +257,7 @@ alias sha1='openssl sha1'
 
 alias rm='trash -rf'
 alias cp='cp -r'
+alias mkdir='mkdir -p'
 
 alias strace='strace -fi'
 alias ltrace='ltrace -fi'
