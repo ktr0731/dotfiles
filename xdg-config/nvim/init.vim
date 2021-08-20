@@ -155,12 +155,10 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'cocopon/iceberg.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/limelight.vim'
 
 Plug 'itchyny/lightline.vim'
-Plug 'itchyny/vim-grep'
 Plug 'jremmen/vim-ripgrep'
 Plug 'itchyny/vim-cursorword'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -168,79 +166,28 @@ Plug 'vim-jp/vital.vim'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-surround'
-Plug 'szw/vim-tags'
-Plug 'majutsushi/tagbar'
-Plug 'rizzatti/dash.vim'
-Plug 'rhysd/conflict-marker.vim'
 
-Plug 'tomlion/vim-solidity', { 'for': 'solidity' }
-
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'othree/html5.vim',           { 'for': 'html' }
-Plug 'mattn/emmet-vim',            { 'for': ['html', 'jsx', 'typescript', 'riot', 'ejs'] }
-Plug 'mattn/jscomplete-vim',       { 'for': 'javascript' }
-Plug 'hail2u/vim-css3-syntax',     { 'for': 'css' }
 Plug 'elzr/vim-json',              { 'for': 'json' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'pangloss/vim-javascript',    { 'for': ['javascript', 'riot'] }
-Plug 'ryym/vim-riot',              { 'for': 'riot' }
-Plug 'nikvdp/ejs-syntax',          { 'for': 'ejs' }
-Plug 'wavded/vim-stylus',          { 'for': 'stylus' }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'posva/vim-vue'
-Plug 'jparise/vim-graphql'
-
-Plug 'derekwyatt/vim-scala'
-
 Plug 'cespare/vim-toml', { 'for': ['toml', 'tml'] }
+Plug 'jparise/vim-graphql'
+Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 
-Plug 'dag/vim-fish'
-
-Plug 'benekastah/neomake'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'mattn/vim-xxdcursor'
-Plug 'mattn/gist-vim'
-Plug 'mattn/webapi-vim'
 
-if has('nvim')
-  Plug 'Shougo/denite.nvim'
-endif
-
-Plug 'AndrewRadev/inline_edit.vim'
-Plug 'thinca/vim-quickrun'
-Plug 'junegunn/vim-emoji'
-Plug 'junegunn/limelight.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'vim-jp/vimdoc-ja'
-Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'simeji/winresizer'
-" Plug 'kassio/neoterm'
 
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
 
 Plug 'fatih/vim-go',         { 'for': 'go' }
-Plug 'google/yapf',          { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'pocke/whichpr'
-Plug 'Shougo/neco-syntax'
-Plug 'ujihisa/neco-look'
-
-Plug 'uarun/vim-protobuf', { 'for': 'proto' }
-
-Plug 'hashivim/vim-hashicorp-tools'
-Plug 'lifepillar/pgsql.vim'
-
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
@@ -273,52 +220,10 @@ if executable('gopls')
   augroup END
 endif
 
-if executable('javascript-typescript-stdio')
-  augroup LspTS
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'go-lang',
-          \ 'cmd': {server_info->['javascript-typescript-stdio']},
-          \ 'whitelist': ['js', 'ts'],
-          \ })
-    autocmd FileType ts setlocal omnifunc=lsp#complete
-    "autocmd FileType go nmap <buffer> gd <plug>(lsp-definition)
-    "autocmd FileType go nmap <buffer> ,n <plug>(lsp-next-error)
-    "autocmd FileType go nmap <buffer> ,p <plug>(lsp-previous-error)
-  augroup END
-endif
-
-"" Emmet
-let g:user_emmet_leader_key='<c-e>'
-let g:user_emmet_settings = {
-  \   'variables': {
-  \     'lang': 'ja'
-  \   }
-  \ }
-
 "" Lightline
 let g:lightline = {
   \   'colorscheme': 'solarized',
   \ }
-
-let g:quickrun_config = {
-  \   'javascript': {
-  \     'command': 'node'
-  \   }
-  \ }
-
-"" neomake
-let g:neomake_html_enabled_makers        = ['htmlhint']
-let g:neomake_sh_enabled_makers          = ['shellcheck']
-" let g:neomake_python_enabled_makers      = ['pep8']
-let g:neomake_rust_enabled_makers        = ['rustc']
-let g:neomake_vim_enabled_makers         = ['vint']
-let g:neomake_typescript_tsc_makers      = { 'args': ['--experimentalDecorators'] }
-
-augroup Neomake
-  autocmd!
-  autocmd BufWritePost * Neomake
-augroup END
 
 "" neosnippet
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -337,7 +242,7 @@ let g:NERDTreeShowHidden = 1
 let g:go_fmt_command = 'goimports'
 let g:go_list_type = 'quickfix'
 let g:go_snippet_engine = "neosnippet"
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_enabled = ['vet', 'errcheck']
 let g:go_def_mode='gopls'
 let g:go_info_mode='gopls'
 
@@ -360,26 +265,6 @@ autocmd FileType go nmap <C-g>i <Plug>(go-impl)
 
 autocmd FileType go nmap <F9> :GoCoverageToggle -short<CR>
 autocmd FileType go nmap <F10> :GoTest -short<CR>
-
-" vim-tags
-let g:vim_tags_auto_generate = 1
-
-" rust.vim
-let g:rustfmt_autosave = 1
-
-" vim-racer
-let g:racer_cmd = '/usr/local/bin/racer'
-let g:racer_experimental_completer = 1
-au FileType rust nmap gd <Plug>(rust-def)
-au FileType rust nmap gs <Plug>(rust-def-split)
-au FileType rust nmap gx <Plug>(rust-def-vertical)
-au FileType rust nmap <buffer> <silent> <C-]> <Plug>(rust-def)
-
-" gist-vim
-let g:gist_post_private = 1
-
-" jsfmt
-let g:js_fmt_autosave = 1
 
 """ development
 if $DEV_VIM == 1
@@ -407,54 +292,3 @@ if !exists('*ReloadVimrc')
 endif
 
 command! Vimrc :e ~/.config/nvim/init.vim
-
-let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
-let $NVIM_NCM_LOG_LEVEL="DEBUG"
-let $NVIM_NCM_MULTI_THREAD=0
-
-function! s:align_lists(lists)
-  let maxes = {}
-  for list in a:lists
-    let i = 0
-    while i < len(list)
-      let maxes[i] = max([get(maxes, i, 0), len(list[i])])
-      let i += 1
-    endwhile
-  endfor
-  for list in a:lists
-    call map(list, "printf('%-'.maxes[v:key].'s', v:val)")
-  endfor
-  return a:lists
-endfunction
-
-function! s:btags_source()
-  let lines = map(split(system(printf(
-    \ 'gotags %s',
-    \ expand('%:S'))), "\n"), 'split(v:val, "\t")')
-  if v:shell_error
-    throw 'failed to extract tags'
-  endif
-  return map(s:align_lists(lines), 'join(v:val, "\t")')
-endfunction
-
-function! s:btags_sink(line)
-  execute split(a:line, "\t")[2]
-endfunction
-
-function! s:btags()
-  try
-    call fzf#run({
-    \ 'source':  s:btags_source(),
-    \ 'options': '+m -d "\t" --with-nth 1,4.. -n 1 --tiebreak=index',
-    \ 'down':    '40%',
-    \ 'sink':    function('s:btags_sink')})
-  catch
-    echohl WarningMsg
-    echom v:exception
-    echohl None
-  endtry
-endfunction
-
-command! BTags call s:btags()
-
-noremap <Tab> gt
