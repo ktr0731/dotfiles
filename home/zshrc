@@ -104,7 +104,7 @@ gini() {
     case "$1" in
       "--gh")
         REPO_NAME=${2:-$(basename $(pwd))}
-        hub create -p "$REPO_NAME"
+        gh repo create -y --private -l MIT "$REPO_NAME"
         ;;
       *)
         echo 'Usage: dotc commit_msg --gh repo_name'
@@ -349,7 +349,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "Tarrasch/zsh-bd"
 zplug "hlissner/zsh-autopair", defer:3
 zplug "felixr/docker-zsh-completion"
-zplug "sobolevn/wakatime-zsh-plugin"
+# zplug "sobolevn/wakatime-zsh-plugin"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -389,6 +389,13 @@ RPROMPT='%F{grey}%~%f%f ${vcs_info_msg_0_}'
 # fzf
 #
 
+function select-history() {
+  BUFFER=$(history -n -r 1 | fzf --no-sort +m --query "$LBUFFER" --prompt="History > ")
+  CURSOR=$#BUFFER
+}
+
+zle -N select-history
+bindkey '^r' select-history
 
 #
 # GAE
