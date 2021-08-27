@@ -50,6 +50,7 @@ fi
 
 # Environment variables path
 path=(
+  /opt/homebrew/bin(N-/)
   $PYENV_ROOT/bin(N-/)
   $RBENV_ROOT/bin(N-/)
   $PHPENV_ROOT/bin(N-/)
