@@ -1,6 +1,7 @@
 [user]
   name = "ktr0731"
   email = "ktr@syfm.me"
+  signingkey = BAD23C657616CD91B3F84F77FCB6AAF08A88C8DA
 
 [alias]
 
@@ -66,7 +67,13 @@
 [hub]
   protocol = https
 [pull]
-	rebase = false
+  rebase = false
 
 [init]
-defaultBranch = main
+  defaultBranch = main
+
+[gpg]
+  program = /usr/local/bin/gpg
+
+[commit]
+  gpgsign = true
