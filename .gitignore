@@ -9,3 +9,6 @@ vim/autoload/*
 xdg-config/nvim/nvim
 
 xdg-config/nvim/autoload/plug.vim.old
+
+home/gnupg/*
+!home/gnupg/gpg-agent.conf
