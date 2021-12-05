@@ -13,25 +13,8 @@ Dotfiles
 ```
 
 ## Installation
-### Make all configuration files.
-``` sh
-$ make all
-```
 
-- If `$DOTPATH` does not exist, clone this repository.
-- Make symbolic links to `$HOME`.
-  
-### Help
 ``` sh
-$ make help
+$ curl -sL --create-dirs -o ~/.config/chezmoi/chezmoi.toml 'https://raw.githubusercontent.com/ktr0731/dotfiles/master/dot_config/chezmoi/chezmoi.toml'
+$ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply ktr0731
 ```
-
-- Show description of some make commands.
-  
-  
-## Update
-``` sh
-$ make update
-```
-  
-- Git pull
