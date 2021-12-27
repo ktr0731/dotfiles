@@ -24,7 +24,11 @@ set smartcase " When a capital letter is included, not ignore the uppercase
 set ruler
 set number
 set list " Show space char
-set listchars=tab:>-,trail:.,nbsp:+
+
+if !exists('g:vscode')
+  set listchars=tab:>-,trail:.,nbsp:+
+endif
+
 set scrolloff=5 " Margin scroll
 set sidescroll=1
 set sidescrolloff=15
