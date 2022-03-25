@@ -1,5 +1,0 @@
-alias r=run
-alias c=compile
-alias to=testOnly
-alias tc=test:compile
-alias e=exit

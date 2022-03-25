@@ -412,3 +412,5 @@ fi
 if [ -f ~/secret.zsh ]; then
   source ~/secret.zsh
 fi
+
+export GPG_TTY=$(tty)

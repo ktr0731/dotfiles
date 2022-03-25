@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-BREW_INSTALL_COMMAND="/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install) # From brew.sh/index_ja.html
-
-if [[ -x $(which brew) ]]; then
-  $BREW_INSTALL_COMMAND
-fi
-
-mkdir -p $HOME/.config/
