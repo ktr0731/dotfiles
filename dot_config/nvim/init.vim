@@ -24,6 +24,20 @@ set smartcase " When a capital letter is included, not ignore the uppercase
 set ruler
 set number
 set list " Show space char
+set signcolumn=yes
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 if !exists('g:vscode')
   set listchars=tab:>-,trail:.,nbsp:+
@@ -191,16 +205,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
 
-Plug 'fatih/vim-go',         { 'for': 'go' }
 Plug 'pocke/whichpr'
 
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'natebosch/vim-lsc'
 let g:lsp_async_completion = 1
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'wakatime/vim-wakatime'
 
@@ -209,22 +217,6 @@ call plug#end()
 colorscheme seoul256
 
 """ Plugin settings
-" laungage server
-if executable('gopls')
-  augroup LspGo
-    au!
-    autocmd User lsp_setup call lsp#register_server({
-          \ 'name': 'go-lang',
-          \ 'cmd': {server_info->['gopls']},
-          \ 'whitelist': ['go'],
-          \ })
-    autocmd FileType go setlocal omnifunc=lsp#complete
-    "autocmd FileType go nmap <buffer> gd <plug>(lsp-definition)
-    "autocmd FileType go nmap <buffer> ,n <plug>(lsp-next-error)
-    "autocmd FileType go nmap <buffer> ,p <plug>(lsp-previous-error)
-  augroup END
-endif
-
 "" Lightline
 let g:lightline = {
   \   'colorscheme': 'solarized',
@@ -243,33 +235,40 @@ let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
 "" NERDTree
 let g:NERDTreeShowHidden = 1
 
-" vim-go
-let g:go_fmt_command = 'goimports'
-let g:go_list_type = 'quickfix'
-let g:go_snippet_engine = "neosnippet"
-let g:go_metalinter_enabled = ['vet', 'errcheck']
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
+" autocmd FileType go nmap <C-g>b <Plug>(go-build)
+" autocmd FileType go nmap <C-g>t <Plug>(go-test)
+" autocmd FileType go nmap <C-g>r <Plug>(go-run)
+"
+" autocmd FileType go nmap <C-g>ds <Plug>(go-def-split)
+" autocmd FileType go nmap <C-g>dv <Plug>(go-def-vertical)
+" autocmd FileType go nmap <C-g>dt <Plug>(go-def-tab)
+"
+" autocmd FileType go nmap <C-g>e <Plug>(go-rename)
+"
+" autocmd FileType go nmap <C-g>a <Plug>(go-alternate)
+" autocmd FileType go nmap <C-g>i <Plug>(go-impl)
+"
+" autocmd FileType go nmap <F9> :GoCoverageToggle -short<CR>
+" autocmd FileType go nmap <F10> :GoTest -short<CR>
 
-autocmd FileType go nmap <C-g>b <Plug>(go-build)
-autocmd FileType go nmap <C-g>t <Plug>(go-test)
-autocmd FileType go nmap <C-g>r <Plug>(go-run)
+" GoTo code navigation.
+nmap <silent> <C-]> <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
-autocmd FileType go nmap <C-g>ds <Plug>(go-def-split)
-autocmd FileType go nmap <C-g>dv <Plug>(go-def-vertical)
-autocmd FileType go nmap <C-g>dt <Plug>(go-def-tab)
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
-autocmd FileType go nmap <C-g>gd <Plug>(go-doc)
-autocmd FileType go nmap <C-g>gv <Plug>(go-doc-vertical)
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 
-autocmd FileType go nmap <C-g>s <Plug>(go-implements)
-autocmd FileType go nmap <C-g>e <Plug>(go-rename)
-
-autocmd FileType go nmap <C-g>a <Plug>(go-alternate)
-autocmd FileType go nmap <C-g>i <Plug>(go-impl)
-
-autocmd FileType go nmap <F9> :GoCoverageToggle -short<CR>
-autocmd FileType go nmap <F10> :GoTest -short<CR>
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 """ development
 if $DEV_VIM == 1
