@@ -4,7 +4,6 @@
   signingkey = BAD23C657616CD91B3F84F77FCB6AAF08A88C8DA
 
 [alias]
-
   s = status
   g = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
   l = log
@@ -42,11 +41,6 @@
 [core]
   editor = nvim
   excludesfile = ~/.gitignore_global
-
-[pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
 
 [ghq]
   root = ~/.ghq/src
