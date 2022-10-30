@@ -257,6 +257,9 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+command! CocRename :call CocActionAsync('rename')<CR>
+command! GoAlternative :CocCommand go.test.toggle
+
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
