@@ -85,32 +85,16 @@ dotc() {
 # gini [--gh repo_name]
 # gini does initial commit after initialize current directory
 gini() {
-  if [ "$#" -lt 2 ]; then
-    echo "Usage: gini --gh repo_name"
+  if [ "$#" -ne 1 ]; then
+    echo "Usage: gini repo_name"
     return 1
   fi
 
-  mkdir "$(ghq root)/github.com/ktr0731/$2"
-  cd "$(ghq root)/github.com/ktr0731/$2"
+  REPO_NAME=$1
+  gh repo create -y --private -l MIT "$REPO_NAME"
 
-  touch README.md
-  license -o LICENSE mit
-
-  git init
-  git add .
-  git commit -m 'initial commit'
-
-  if [ "$#" -ge 1 ]; then
-    case "$1" in
-      "--gh")
-        REPO_NAME=${2:-$(basename $(pwd))}
-        gh repo create -y --private -l MIT "$REPO_NAME"
-        ;;
-      *)
-        echo 'Usage: dotc commit_msg --gh repo_name'
-        return
-    esac
-  fi
+  ghq get ktr0731/$REPO_NAME
+  cd $(ghq root)/github.com/ktr0731/$REPO_NAME
 }
 
 sshf() {
