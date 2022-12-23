@@ -29,7 +29,7 @@
   st = stash save
   sp = ! git stash list | fzf | awk -F: '{ print $1 }' | xargs git stash apply
 
-  conf = grep --name-only '<<<<<<< HEAD'
+  conf = grep --name-only '<<<<<<< '
 
   change = codereview change
   gofmt = codereview gofmt

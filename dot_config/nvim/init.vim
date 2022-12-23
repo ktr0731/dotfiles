@@ -137,7 +137,7 @@ vnoremap : ;
 
 nnoremap <silent><C-l> :NERDTreeTabsToggle<CR>
 
-nnoremap <silent><Leader><Space> :GFiles<CR>
+nnoremap <silent><Leader><Space> :Files<CR>
 nnoremap <silent><Leader>a :Ag<CR>
 nnoremap <silent><Leader>b :Buffers<CR>
 nnoremap <silent><Leader>c :History:<CR>
@@ -209,8 +209,6 @@ Plug 'pocke/whichpr'
 
 let g:lsp_async_completion = 1
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 

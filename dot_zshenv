@@ -59,6 +59,7 @@ path=(
   $HOME/Library/Android/sdk/platform-tools(N-/)
   $HOME/Library/Android/sdk/tools(N-/)
   $HOME/bin(N-/)
+  $GOPATH/src/github.com/ktr0731/dotfiles/bin(N-/)
   $HOME/.yarn/bin(N-/)
   $HOME/.cargo/bin(N-/)
   $(yarn global bin)(N-/)
