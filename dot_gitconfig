@@ -21,7 +21,7 @@
   cancel = reset --hard HEAD~
   b = branch
   br = for-each-ref --sort=committerdate refs/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
-  delb = ! git branch -D $(git branch | egrep -v '(^master$|^develop$|^\\*\\s.*)')
+  delb = ! git fetch -p && git branch --merged | egrep -v '\\*|\\+|^master$|^main$|^develop$|^development$' | xargs git branch -d #git branch -D $(git branch | egrep -v '(^master$|^develop$|^\\*\\s.*)')
   dbm = ! git branch | egrep -v '(^master$|^develop$|\\*)' | fzf -m  | xargs git branch -D
   rb = rebase -i
   rs = reset
