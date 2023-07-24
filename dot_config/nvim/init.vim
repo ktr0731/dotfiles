@@ -201,6 +201,7 @@ Plug 'mattn/vim-xxdcursor'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'github/copilot.vim'
 
 Plug 'thinca/vim-splash'
 let g:splash#path = $HOME . '/.vim/splash.txt' " All you need is Vim.
