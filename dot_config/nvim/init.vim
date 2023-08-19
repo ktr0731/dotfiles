@@ -187,7 +187,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 
 Plug 'elzr/vim-json',              { 'for': 'json' }
-Plug 'cespare/vim-toml', { 'for': ['toml', 'tml'] }
 Plug 'jparise/vim-graphql'
 Plug 'uarun/vim-protobuf', { 'for': 'proto' }
 Plug 'jjo/vim-cue', { 'for': 'cue' }
