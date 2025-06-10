@@ -1,7 +1,8 @@
 [user]
   name = "ktr0731"
   email = "ktr@syfm.me"
-  signingkey = BAD23C657616CD91B3F84F77FCB6AAF08A88C8DA
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICiUvFntO8KDJhydwUjDeqYYyW6acSWlPWnPXt1hx1sg
+
 
 [alias]
   s = status
@@ -67,7 +68,10 @@
   defaultBranch = main
 
 [gpg]
-  program = /opt/homebrew/bin/gpg
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [commit]
   gpgsign = true

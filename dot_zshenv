@@ -87,3 +87,6 @@ export fpath=(/usr/local/share/zsh/functions $fpath)
 #
 
 # zmodload zsh/zprof
+
+export AQUA_GLOBAL_CONFIG=${AQUA_GLOBAL_CONFIG:-}:${XDG_CONFIG_HOME:-$HOME/.config}/aquaproj-aqua/aqua.yaml
+export PATH="$(aqua root-dir)/bin:$PATH"

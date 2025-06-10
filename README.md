@@ -12,9 +12,6 @@ Dotfiles
 
 ```
 
-## Installation
-
-``` sh
-$ curl -sL --create-dirs -o ~/.config/chezmoi/chezmoi.toml 'https://raw.githubusercontent.com/ktr0731/dotfiles/master/dot_config/chezmoi/chezmoi.toml'
-$ sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply ktr0731
+```
+./install.sh
 ```
